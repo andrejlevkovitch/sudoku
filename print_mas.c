@@ -1,6 +1,5 @@
 //print_mas.c
 
-#include <stdio.h>
 #include "sudlib.h"
 
 void printMas (unsigned char *array)

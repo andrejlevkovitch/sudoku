@@ -1,8 +1,6 @@
 //input_type.c
 
-#include <stdlib.h>
 #include "sudlib.h"
-#include <stdio.h>
 
 unsigned char inputType (void)
 {

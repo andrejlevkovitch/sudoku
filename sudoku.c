@@ -1,7 +1,5 @@
 //sudoku.c
 
-#include <stdio.h>
-#include <stdlib.h>
 #include "sudlib.h"
 
 int main (void)

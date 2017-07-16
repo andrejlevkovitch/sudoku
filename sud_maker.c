@@ -1,7 +1,5 @@
 //sud_maker.c
 
-#include <stdlib.h>
-#include <time.h>
 #include "sudlib.h"
 
 void sudMaker (unsigned char *trueArr)
