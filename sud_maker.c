@@ -13,6 +13,9 @@ void sudMaker (unsigned char *trueArr)
     unsigned char copyArr[SIZE][SIZE] = {};
     unsigned char koordNotZero[SIZE * SIZE + 1] = {};
 
+    bool solution;
+    unsigned char psblLine[SIZE + 1][SIZE + 1] = {};
+
     unsigned char rmDigits;
     rmDigits = numCros();
 
@@ -43,6 +46,32 @@ void sudMaker (unsigned char *trueArr)
                 *(trueArr + y * SIZE + x) = UNKN_ELEMENT;
 
                 vozvrat (*copyArr, trueArr, SIZE, SIZE);
+
+
+                solution = true;
+
+                for (unsigned char i = 0; i < SIZE; ++i) {
+                    if (psblLine[i][SIZE] != UNKN_ELEMENT) {
+                        solution = false;
+                        break;
+                    }
+                }
+
+                if (!solution) {
+                    copyArr[y][x] = copyDig;
+                    ++counter;
+                }
+                else {
+                    if (counter > 0) {
+                        *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter) = *(koordNotZero + *(koordNotZero + SIZE * SIZE));
+                        *(koordNotZero + SIZE * SIZE) -= 1;
+                        counter = 0;
+                    }
+                }
+
+                if (counter = *(koordNotZero + SIZE * SIZE)) {
+                    break;
+                }
 
             } while (SIZE * SIZE - *(koordNotZero + SIZE * SIZE) < rmDigits);
         } while (counter == *(koordNotZero + SIZE * SIZE));
