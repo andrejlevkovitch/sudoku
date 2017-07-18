@@ -36,3 +36,5 @@ void inputPsblLC (unsigned char *array1, unsigned char *array2, unsigned char *m
 void revers (unsigned char *array);
 
 void subs (unsigned char *array1, unsigned char *array2);
+
+int mygetch ();
