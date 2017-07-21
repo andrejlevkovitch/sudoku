@@ -11,9 +11,9 @@
 #define MAXCROSSDIGIT 58
 #define UNKN_ELEMENT ' '
 
-void initialization (unsigned char *array);
+void initialization (unsigned char *array, unsigned char size_c);
 
-void printMas (unsigned char *array, unsigned char type);
+void printMas (unsigned char *array, unsigned char type, unsigned char size_s, unsigned char size_c);
 
 void randArr (unsigned char *outputArr, unsigned char *inputArr);
 
@@ -31,7 +31,9 @@ unsigned char randDig (unsigned char maxValue);
 
 void sudMaker (unsigned char *array);
 
-void inputPsblLC (unsigned char *array1, unsigned char *array2, unsigned char *matrix);
+void inputPsblL (unsigned char *psblArr, unsigned char *matrix);
+
+void psblSC (unsigned char *arrayS, unsigned char *arrayC, unsigned char *matrix);
 
 void revers (unsigned char *array);
 
