@@ -4,10 +4,9 @@
 #include <termios.h>
 #include <unistd.h>
 
-int mygetch( )
+int getch( )
 {
-    struct termios oldt,
-    newt;
+    struct termios oldt, newt;
     int ch;
     tcgetattr( STDIN_FILENO, &oldt );
     newt = oldt;

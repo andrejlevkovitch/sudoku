@@ -39,4 +39,6 @@ void revers (unsigned char *array);
 
 void subs (unsigned char *array1, unsigned char *array2);
 
-int mygetch ();
+void decision (unsigned char *arrayS, unsigned char *arrayC, unsigned char *matrix);
+
+int getch ();

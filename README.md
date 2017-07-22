@@ -8,6 +8,7 @@ andrejlevkovitch@gmail.com
 
 smileinshadow@mail.ru
 
+decision.c решение судоку (незакончено!)
 init.c инициализация возможных чисел (рабочая версия)
 input_psbl_lc.c составляет линию возможных (вычеркнутых) цифр (рабочая версия)
 input_type.c вводит тип судоку (рабочая версия)

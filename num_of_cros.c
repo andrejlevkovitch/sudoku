@@ -6,7 +6,7 @@ unsigned char numCros (void)
 {
     unsigned int crosDigit;
     printf ("%s 0<=n<=%i\n", "How many digits do you want to cross out?", MAXCROSSDIGIT);
-    crosDigit = mygetch() - 48;
+    scanf ("%u", &crosDigit);
     if (crosDigit > MAXCROSSDIGIT) {
         printf ("%s\n", ERROR_STRING);
         exit (EXIT_FAILURE);
