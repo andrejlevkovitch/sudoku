@@ -8,7 +8,7 @@ int main (void)
     unsigned char bgnMtrx[SIZE][SIZE] = {};
     unsigned char sudoku[SIZE][SIZE] = {};
 
-    unsigned char type;
+    unsigned char type = 0;
     type = inputType();
 
     initialization (*psblDgts, SIZE);

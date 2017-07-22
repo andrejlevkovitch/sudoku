@@ -24,6 +24,7 @@ void decision (unsigned char *arrayS, unsigned char *arrayC, unsigned char *matr
                             *(masFreeColum + SIZE) += 1;
                         }
                     }
+
                     for (char j = *(arrayS + i * (SIZE + 1) + SIZE) - 1; j >= 0; --j) {
                         unsigned char rezult = 0;
                         unsigned char numColum = 0, numString = 0;
@@ -76,8 +77,9 @@ void decision (unsigned char *arrayS, unsigned char *arrayC, unsigned char *matr
                                         *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE) -= 1;
                                         *(arrayC + *(masFreeColum + l) * (SIZE + 1) + m) = *(arrayC + *(masFreeColum + l) * (SIZE + 1) + *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE));
                                         *(arrayC + *(masFreeColum + l) * (SIZE + 1) + *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE)) = z;
+
                                         *(masBuzyQuadr + SIZE) -= 1;
-                                        *(masBuzyQuadr + l) = *(masBuzyQuadr + *(masBuzyQuadr + SIZE));
+                                        *(masBuzyQuadr + n) = *(masBuzyQuadr + *(masBuzyQuadr + SIZE));
                                         ++indexCoincidence;
                                         break;
                                     }
@@ -93,6 +95,7 @@ void decision (unsigned char *arrayS, unsigned char *arrayC, unsigned char *matr
                                 }
                             }
 
+                            *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE) += indexCoincidence;
                             if (rezult > 1) break;
                         }
 

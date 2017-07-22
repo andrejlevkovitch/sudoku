@@ -7,12 +7,12 @@ void randArr (unsigned char *outputArr, unsigned char *inputArr)
     srand (time (NULL));
 
     unsigned char y = 1;
-    unsigned char x;
-    unsigned char z;
+    unsigned char x = 0;
+    unsigned char z = 0;
 
-    unsigned char endPsblDgt;
+    unsigned char endPsblDgt = 0;
 
-    unsigned char jump;
+    unsigned char jump = 0;
 
     unsigned char copyInArr[SIZE][SIZE] = {};
     unsigned char copyMasEmpty[SIZE] = {}, masEmpty[SIZE] = {};

@@ -7,8 +7,12 @@ void printMas (unsigned char *array, unsigned char type, unsigned char size_s, u
     printf ("\n");
     for (unsigned char i = 0; i < size_s; ++i) {
         for (unsigned char j = 0; j < size_c; ++j) {
-            printf ("%-2c", *array + type);
-            ++array;
+            if (*(array + i * size_c + j) != UNKN_ELEMENT) {
+                printf ("%-2c", *(array + i * size_c + j) + type);
+            }
+            else {
+                printf ("%-2c", *(array + i * size_c + j));
+            }
         }
         printf ("\n");
     }
