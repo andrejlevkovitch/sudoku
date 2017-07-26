@@ -7,12 +7,9 @@ void randArr (unsigned char *outputArr, unsigned char *inputArr)
     srand (time (NULL));
 
     unsigned char y = 1;
-    unsigned char x = 0;
     unsigned char z = 0;
 
     unsigned char endPsblDgt = 0;
-
-    unsigned char jump = 0;
 
     unsigned char copyInArr[SIZE][SIZE] = {};
     unsigned char copyMasEmpty[SIZE] = {}, masEmpty[SIZE] = {};
@@ -52,11 +49,11 @@ void randArr (unsigned char *outputArr, unsigned char *inputArr)
                 if (y == 0) {
                     break;
                 }
-                x = 0 + rand() % y;
+                unsigned char x = 0 + rand() % y;
 
                 *(outputArr + i * SIZE + j) = *(inputArr + j * SIZE + x);
 
-                jump = 3 * (j / 3);
+                unsigned char jump = 3 * (j / 3);
                 for (unsigned char l = jump; l < SIZE; ++l) {
                     for (unsigned char k = 0; k <= endPsblDgt - *(masEmpty + l); ++k) {
                         if (j == 3 || j == 6) {

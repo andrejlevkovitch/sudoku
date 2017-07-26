@@ -4,17 +4,17 @@
 
 int main (void)
 {
+    system ("clear");
     unsigned char psblDgts[SIZE][SIZE] = {};
-    unsigned char bgnMtrx[SIZE][SIZE] = {};
-    unsigned char sudoku[SIZE][SIZE] = {};
 
-    unsigned char type = 0;
-    type = inputType();
+    unsigned char type = inputType();
 
     initialization (*psblDgts, SIZE);
 
+    unsigned char bgnMtrx[SIZE][SIZE] = {};
     randArr (*bgnMtrx, *psblDgts);
 
+    unsigned char sudoku[SIZE][SIZE] = {};
     memcpy (sudoku, bgnMtrx, SIZE * SIZE);
     sudMaker (*sudoku);
     printMas (*sudoku, type, SIZE, SIZE);
