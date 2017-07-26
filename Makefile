@@ -1,7 +1,7 @@
 # Makefile for sudoku project
 
-sudoku: main.o init.o print_mas.o rand_array.o zeros.o num_of_cros.o input_type.o sort_array.o vozvrat.o sud_maker.o revers.o input_psbl_lc.o substitution.o mygetch.o psbl_lc.o decision.o
-	gcc -o sudoku main.o init.o print_mas.o rand_array.o zeros.c num_of_cros.o input_type.o sort_array.o vozvrat.o sud_maker.o revers.o input_psbl_lc.o substitution.o mygetch.o psbl_lc.o decision.o -Wall
+sudoku: main.o init.o print_mas.o rand_array.o zeros.o num_of_cros.o input_type.o sort_array.o vozvrat.o sud_maker.o revers.o input_psbl_sc.o substitution.o mygetch.o psbl_sc.o decision.o
+	gcc -o sudoku main.o init.o print_mas.o rand_array.o zeros.c num_of_cros.o input_type.o sort_array.o vozvrat.o sud_maker.o revers.o input_psbl_sc.o substitution.o mygetch.o psbl_sc.o decision.o -Wall
 
 init.o: init.c
 	gcc -c init.c -Wall
@@ -36,8 +36,8 @@ sud_maker.o: sud_maker.c
 revers.o: revers.c
 	gcc -c revers.c -Wall
 
-input_psbl_lc.o: input_psbl_lc.c
-	gcc -c input_psbl_lc.c -Wall
+input_psbl_sc.o: input_psbl_sc.c
+	gcc -c input_psbl_sc.c -Wall
 
 substitution.o: substitution.c
 	gcc -c substitution.c -Wall
@@ -45,8 +45,8 @@ substitution.o: substitution.c
 mygetch.o: mygetch.c
 	gcc -c mygetch.c -Wall
 
-psbl_lc.o: psbl_lc.c
-	gcc -c psbl_lc.c -Wall
+psbl_sc.o: psbl_sc.c
+	gcc -c psbl_sc.c -Wall
 
 decision.o: decision.c
 	gcc -c decision.c -Wall
