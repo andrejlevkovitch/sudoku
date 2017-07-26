@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdbool.h>
+#include <string.h>
 
 #define SIZE 9
 #define ERROR_STRING "Do NOT do that!"
@@ -24,8 +25,6 @@ unsigned char numCros (void);
 unsigned char inputType (void);
 
 void sortArr (unsigned char *array, unsigned char endArr);
-
-void vozvrat (unsigned char *outputArr, unsigned char *inputArr, unsigned char size_s, unsigned char size_c);
 
 void sudMaker (unsigned char *array);
 

@@ -26,8 +26,8 @@ void sudMaker (unsigned char *matrix)
 
     if (rmDigits != 0) {
         do {
-            vozvrat (*trueArr, matrix, SIZE, SIZE);
-            vozvrat (*copyArr, *trueArr, SIZE, SIZE);
+            memcpy (trueArr, matrix, SIZE * SIZE);
+            memcpy (copyArr, trueArr, SIZE * SIZE);
 
             for (unsigned char i = 0; i < SIZE; ++i) {
                 for (unsigned char j = 0; j < SIZE; ++j) {
@@ -41,7 +41,7 @@ void sudMaker (unsigned char *matrix)
 
             do {
                 if (indexNull > 0) {
-                    vozvrat (*trueArr, *copyArr, SIZE, SIZE);
+                    memcpy (trueArr, copyArr, SIZE * SIZE);
                 }
 
                 num = 0 + rand() % (*(koordNotZero + SIZE * SIZE) - counter);
@@ -55,7 +55,7 @@ void sudMaker (unsigned char *matrix)
                 trueArr[y][x] = UNKN_ELEMENT;
                 ++indexNull;
 
-                vozvrat (*copyArr, *trueArr, SIZE, SIZE);
+                memcpy (copyArr, trueArr, SIZE * SIZE);
 
                 psblSC (*psblS, *psblC, *trueArr);
 
@@ -94,7 +94,7 @@ void sudMaker (unsigned char *matrix)
         } while (counter == *(koordNotZero + SIZE * SIZE));
     }
 
-    vozvrat (matrix, *copyArr, SIZE, SIZE);
+    memcpy (matrix, copyArr, SIZE * SIZE);
 
     return;
 }

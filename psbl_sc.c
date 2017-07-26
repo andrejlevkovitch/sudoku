@@ -1,4 +1,4 @@
-//psbl_lc.c
+//psbl_sc.c
 
 #include "sudlib.h"
 

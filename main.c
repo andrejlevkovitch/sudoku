@@ -1,4 +1,4 @@
-//sudoku.c
+//main.c
 
 #include "sudlib.h"
 
@@ -14,9 +14,8 @@ int main (void)
     initialization (*psblDgts, SIZE);
 
     randArr (*bgnMtrx, *psblDgts);
-    printMas (*bgnMtrx, type, SIZE, SIZE);
 
-    vozvrat (*sudoku, *bgnMtrx, SIZE, SIZE);
+    memcpy (sudoku, bgnMtrx, SIZE * SIZE);
     sudMaker (*sudoku);
     printMas (*sudoku, type, SIZE, SIZE);
 

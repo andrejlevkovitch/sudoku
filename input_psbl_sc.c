@@ -1,4 +1,4 @@
-//input_psbl_lc.c
+//input_psbl_sc.c
 
 #include "sudlib.h"
 

@@ -30,14 +30,14 @@ void randArr (unsigned char *outputArr, unsigned char *inputArr)
         }
         do {
             if (y > 0) {
-                vozvrat (*copyInArr, inputArr, SIZE, SIZE);
-                vozvrat (copyMasEmpty, masEmpty, 1, SIZE);
-                vozvrat (copyRezerv, rezerv, 1, SIZE);
+                memcpy (copyInArr, inputArr, SIZE * SIZE);
+                memcpy (copyMasEmpty, masEmpty, SIZE);
+                memcpy (copyRezerv, rezerv, SIZE);
             }
             else {
-                vozvrat (inputArr, *copyInArr, SIZE, SIZE);
-                vozvrat (masEmpty, copyMasEmpty, 1, SIZE);
-                vozvrat (rezerv, copyRezerv, 1, SIZE);
+                memcpy (inputArr, copyInArr, SIZE * SIZE);
+                memcpy (masEmpty, copyMasEmpty, SIZE);
+                memcpy (rezerv, copyRezerv, SIZE);
             }
 
             if (i > 0) {
