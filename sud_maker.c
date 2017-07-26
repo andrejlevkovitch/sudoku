@@ -2,7 +2,7 @@
 
 #include "sudlib.h"
 
-void sudMaker (unsigned char *trueArr)
+void sudMaker (unsigned char *matrix)
 {
     unsigned char z = 0;
     unsigned char y = 0, x = 0;
@@ -11,6 +11,7 @@ void sudMaker (unsigned char *trueArr)
     unsigned char num = 0;
     unsigned char copyDig = 0;
 
+    unsigned char trueArr[SIZE][SIZE] = {};
     unsigned char copyArr[SIZE][SIZE] = {};
     unsigned char koordNotZero[SIZE * SIZE + 1] = {};
 
@@ -25,7 +26,8 @@ void sudMaker (unsigned char *trueArr)
 
     if (rmDigits != 0) {
         do {
-            vozvrat (*copyArr, trueArr, SIZE, SIZE);
+            vozvrat (*trueArr, matrix, SIZE, SIZE);
+            vozvrat (*copyArr, *trueArr, SIZE, SIZE);
 
             for (unsigned char i = 0; i < SIZE; ++i) {
                 for (unsigned char j = 0; j < SIZE; ++j) {
@@ -39,7 +41,7 @@ void sudMaker (unsigned char *trueArr)
 
             do {
                 if (indexNull > 0) {
-                    vozvrat (trueArr, *copyArr, SIZE, SIZE);
+                    vozvrat (*trueArr, *copyArr, SIZE, SIZE);
                 }
 
                 num = 0 + rand() % (*(koordNotZero + SIZE * SIZE) - counter);
@@ -49,15 +51,15 @@ void sudMaker (unsigned char *trueArr)
                 *(koordNotZero + num) = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter);
                 *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter) = z;
 
-                copyDig = *(trueArr + y * SIZE + x);
-                *(trueArr + y * SIZE + x) = UNKN_ELEMENT;
+                copyDig = trueArr[y][x];
+                trueArr[y][x] = UNKN_ELEMENT;
                 ++indexNull;
 
-                vozvrat (*copyArr, trueArr, SIZE, SIZE);
+                vozvrat (*copyArr, *trueArr, SIZE, SIZE);
 
-                psblSC (*psblS, *psblC, trueArr);
+                psblSC (*psblS, *psblC, *trueArr);
 
-                decision (*psblS, *psblC, trueArr);
+                decision (*psblS, *psblC, *trueArr);
 
                 solution = true;
 
@@ -92,7 +94,7 @@ void sudMaker (unsigned char *trueArr)
         } while (counter == *(koordNotZero + SIZE * SIZE));
     }
 
-    vozvrat (trueArr, *copyArr, SIZE, SIZE);
+    vozvrat (matrix, *copyArr, SIZE, SIZE);
 
     return;
 }

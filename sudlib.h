@@ -8,7 +8,7 @@
 
 #define SIZE 9
 #define ERROR_STRING "Do NOT do that!"
-#define MAXCROSSDIGIT 58
+#define MAXCROSSDIGIT 59
 #define UNKN_ELEMENT 32
 
 void initialization (unsigned char *array, unsigned char size_c);
