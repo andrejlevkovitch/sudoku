@@ -11,8 +11,8 @@ void inputPsblL (unsigned char *psblArr, unsigned char *matrix)
             if (*(matrix + i * SIZE + j) != UNKN_ELEMENT) {
                 for (unsigned char l = 0; l < *(psblArr + i * (SIZE + 1) + SIZE); ++l) {
                     if (*(matrix + i * SIZE + j) == *(psblArr + i * (SIZE + 1) + l)) {
-                        *(psblArr + i * (SIZE + 1) + l) = *(psblArr + i * (SIZE + 1) + *(psblArr + i * (SIZE + 1) + SIZE) - 1);
                         *(psblArr + i * (SIZE + 1) + SIZE) -= 1;
+                        *(psblArr + i * (SIZE + 1) + l) = *(psblArr + i * (SIZE + 1) + *(psblArr + i * (SIZE + 1) + SIZE));
                         break;
                     }
                 }

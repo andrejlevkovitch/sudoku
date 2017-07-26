@@ -114,7 +114,7 @@ void decision (unsigned char *arrayS, unsigned char *arrayC, unsigned char *matr
                 }
             }
 
-        } while (!solution);
+        } while (solution);
 
         if (rezInIter) {
             for (unsigned char i = 0; i < SIZE; ++i) {
@@ -131,7 +131,7 @@ void decision (unsigned char *arrayS, unsigned char *arrayC, unsigned char *matr
             revers (matrix);
         }
 
-    } while (!rezInIter);
+    } while (rezInIter);
 
     return;
 }

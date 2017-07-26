@@ -17,7 +17,6 @@ void sudMaker (unsigned char *trueArr)
     bool solution;
     unsigned char psblS[SIZE][SIZE + 1] = {};
     unsigned char psblC[SIZE][SIZE + 1] = {};
-    unsigned char kraken[10] = {};
 
     unsigned char rmDigits = 0;
     rmDigits = numCros();
@@ -26,7 +25,6 @@ void sudMaker (unsigned char *trueArr)
 
     if (rmDigits != 0) {
         do {
-            printf ("big_iter\n");
             vozvrat (*copyArr, trueArr, SIZE, SIZE);
 
             for (unsigned char i = 0; i < SIZE; ++i) {
@@ -40,7 +38,6 @@ void sudMaker (unsigned char *trueArr)
             indexNull = 0;
 
             do {
-                printf ("iter\n");
                 if (indexNull > 0) {
                     vozvrat (trueArr, *copyArr, SIZE, SIZE);
                 }
@@ -78,7 +75,6 @@ void sudMaker (unsigned char *trueArr)
                 }
                 else {
                     *(koordNotZero + SIZE * SIZE) -= 1;
-                    printf ("%d %d\n", y, x);
 
                     if (counter > 0) {
                         z = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter);

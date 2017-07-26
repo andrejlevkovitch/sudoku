@@ -1,13 +1,13 @@
 # Makefile for sudoku project
 
-sudoku: sudoku.o init.o print_mas.o rand_array.o zeros.o num_of_cros.o input_type.o sort_array.o vozvrat.o sud_maker.o revers.o input_psbl_lc.o substitution.o mygetch.o psbl_lc.o decision.o
-	gcc -o sudoku sudoku.o init.o print_mas.o rand_array.o zeros.c num_of_cros.o input_type.o sort_array.o vozvrat.o sud_maker.o revers.o input_psbl_lc.o substitution.o mygetch.o psbl_lc.o decision.o -Wall
+sudoku: main.o init.o print_mas.o rand_array.o zeros.o num_of_cros.o input_type.o sort_array.o vozvrat.o sud_maker.o revers.o input_psbl_lc.o substitution.o mygetch.o psbl_lc.o decision.o
+	gcc -o sudoku main.o init.o print_mas.o rand_array.o zeros.c num_of_cros.o input_type.o sort_array.o vozvrat.o sud_maker.o revers.o input_psbl_lc.o substitution.o mygetch.o psbl_lc.o decision.o -Wall
 
 init.o: init.c
 	gcc -c init.c -Wall
 
-sudoku.o: sudoku.c
-	gcc -c sudoku.c -Wall
+main.o: main.c
+	gcc -c main.c -Wall
 
 print_mas.o: print_mas.c
 	gcc -c print_mas.c -Wall
