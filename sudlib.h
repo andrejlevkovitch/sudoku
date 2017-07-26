@@ -5,6 +5,10 @@
 #define MAXCROSSDIGIT 59
 #define UNKN_ELEMENT 32
 
+#ifdef linux
+    char getch ();
+#endif
+
 void initialization (unsigned char *array, unsigned char size_c);
 
 void printMas (unsigned char *array, unsigned char type, unsigned char size_s, unsigned char size_c);
@@ -30,5 +34,3 @@ void revers (unsigned char *array);
 void subs (unsigned char *array1, unsigned char *array2);
 
 void decision (unsigned char *arrayS, unsigned char *arrayC, unsigned char *matrix);
-
-char getch ();

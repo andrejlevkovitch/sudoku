@@ -4,6 +4,12 @@
 #include <stdlib.h>
 #include "sudlib.h"
 
+#ifdef _WIN32
+    #include <conio.h>
+#elif _WIN64
+    #include <conio.h>
+#endif
+
 unsigned char inputType (void)
 {
     printf ("%s\n", "If you want sudoku with numbers put key 1, if with letters - a");

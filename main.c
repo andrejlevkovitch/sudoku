@@ -6,7 +6,14 @@
 
 int main (void)
 {
+#ifdef linux
     system ("clear");
+#elif _WIN32
+    system ("cls");
+#elif _WIN64
+    system ("cls");
+#endif
+
     unsigned char psblDgts[SIZE][SIZE] = {};
 
     unsigned char type = inputType();

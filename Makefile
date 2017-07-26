@@ -1,4 +1,4 @@
-# Makefile for sudoku project
+# Makefile for sudoku project, Linux
 
 sudoku: main.o init.o print_mas.o rand_array.o zeros.o num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o mygetch.o psbl_sc.o decision.o
 	gcc -o sudoku main.o init.o print_mas.o rand_array.o zeros.c num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o mygetch.o psbl_sc.o decision.o -Wall
@@ -50,3 +50,4 @@ decision.o: decision.c
 
 clean:
 	rm -f *.o sudoku
+
