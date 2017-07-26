@@ -28,5 +28,40 @@ sudlib.h основной заголовочный файл
 Makefile директивы make
 .gitignore список игнорируемых файлов
 
+Структура:
+main.c
+{
+    input_type.c
+    {
+        mygetch.c
+    }
+
+    init.c
+
+    rand_array.c
+    {
+        sort_array.c
+        zeros.c
+    }
+
+    sud_maker.c
+    {
+        num_of_cros.c
+        psbl_sc.c
+        {
+            init.c
+            input_psbl_sc.c
+            revers.c
+        }
+
+        decision.c
+        {
+            substitution.c
+            revers.c
+        }
+
+    print_mas.c
+}
+
 версия гарантировано выводит судоку (правильное, решаемое)
 нереализован: полноценный вывод, решение судоку
