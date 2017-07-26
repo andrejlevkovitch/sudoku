@@ -1,5 +1,6 @@
 //substitution.c
 
+#include <string.h>
 #include "sudlib.h"
 
 void subs (unsigned char *array1, unsigned char *array2)

@@ -1,5 +1,8 @@
 //rand_array.c
 
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
 #include "sudlib.h"
 
 void randArr (unsigned char *outputArr, unsigned char *inputArr)

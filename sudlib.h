@@ -1,11 +1,4 @@
 //sudlib.h
-//запись необходимых ф-ций и констант
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#include <stdbool.h>
-#include <string.h>
 
 #define SIZE 9
 #define ERROR_STRING "Do NOT do that!"

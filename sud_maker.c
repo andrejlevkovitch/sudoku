@@ -1,5 +1,9 @@
 //sud_maker.c
 
+#include <stdlib.h>
+#include <time.h>
+#include <string.h>
+#include <stdbool.h>
 #include "sudlib.h"
 
 void sudMaker (unsigned char *matrix)
@@ -54,7 +58,7 @@ void sudMaker (unsigned char *matrix)
                 decision (*psblS, *psblC, *trueArr);
                 }
 
-                unsigned char solution = true;
+                bool solution = true;
 
                 for (unsigned char i = 0; i < SIZE; ++i) {
                     if (psblS[i][SIZE] != 0) {

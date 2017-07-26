@@ -1,5 +1,6 @@
 //revers.c
 
+#include <string.h>
 #include "sudlib.h"
 
 void revers (unsigned char *array) 

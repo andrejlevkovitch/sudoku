@@ -1,5 +1,7 @@
 //num_of_cros.c
 
+#include <stdio.h>
+#include <stdlib.h>
 #include "sudlib.h"
 
 unsigned char numCros (void)
