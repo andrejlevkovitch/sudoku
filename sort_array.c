@@ -1,4 +1,4 @@
-//sort_array.c
+//sort_array.c - сортирует массив, смещает обнуленные элементы в право
 
 #include "sudlib.h"
 

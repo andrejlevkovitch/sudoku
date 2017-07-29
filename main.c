@@ -1,4 +1,4 @@
-//main.c
+//main.c - основное тело
 
 #include <stdlib.h>
 #include <string.h>

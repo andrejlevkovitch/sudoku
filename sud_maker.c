@@ -1,4 +1,4 @@
-//sud_maker.c
+//sud_maker.c - создает из начальной матрицы судоку - матрицу судоку, имеющую только одно решение
 
 #include <stdlib.h>
 #include <time.h>

@@ -1,4 +1,4 @@
-//input_psbl_sc.c
+//input_psbl_sc.c - вводит возможные значения в массивы возможных чисел
 
 #include "sudlib.h"
 

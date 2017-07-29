@@ -1,4 +1,4 @@
-//print_mas.c
+//print_mas.c - выводит массив
 
 #include <stdio.h>
 #include "sudlib.h"

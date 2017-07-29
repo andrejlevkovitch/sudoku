@@ -1,4 +1,4 @@
-//rand_array.c
+//rand_array.c - рандомизирует массив, создает начальную матрицу судоку
 
 #include <stdlib.h>
 #include <time.h>

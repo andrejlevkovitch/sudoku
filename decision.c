@@ -1,4 +1,4 @@
-//decision.c
+//decision.c - решает судоку
 
 #include <stdbool.h>
 #include "sudlib.h"

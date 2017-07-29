@@ -1,4 +1,4 @@
-//sudlib.h
+//sudlib.h - заголовочный файл, включающий объявление всех используемых ф-ций в программе
 
 #define SIZE 9
 #define ERROR_STRING "Do NOT do that!"

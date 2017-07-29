@@ -1,4 +1,4 @@
-//substitution.c
+//substitution.c - меняет массивы местами
 
 #include <string.h>
 #include "sudlib.h"

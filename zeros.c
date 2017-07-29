@@ -1,4 +1,4 @@
-//zeros.c
+//zeros.c - прсваивает всем элементам массива 0
 
 #include "sudlib.h"
 

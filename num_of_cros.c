@@ -1,4 +1,4 @@
-//num_of_cros.c
+//num_of_cros.c - вводит количество вычеркиваемых элементов
 
 #include <stdio.h>
 #include <stdlib.h>

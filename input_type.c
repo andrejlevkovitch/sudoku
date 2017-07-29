@@ -1,4 +1,4 @@
-//input_type.c
+//input_type.c - ф-ция ввода типа судоку
 
 #include <stdio.h>
 #include <stdlib.h>

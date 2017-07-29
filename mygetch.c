@@ -1,4 +1,4 @@
-//mygetch.c
+//mygetch.c - вводит один символ с клавиатуры в Линукс
 
 #include <stdio.h>
 #include <termios.h>
