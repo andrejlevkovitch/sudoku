@@ -38,15 +38,15 @@ void sudMaker (unsigned char * const matrix)
             do {
                 memcpy (trueArr, copyArr, SIZE * SIZE);
 
-                unsigned char num = 0 + rand() % (*(koordNotZero + SIZE * SIZE) - counter);
-                unsigned char y = *(koordNotZero + num) / 10;
-                unsigned char x = *(koordNotZero + num) - y * 10;
+                const unsigned char num = 0 + rand() % (*(koordNotZero + SIZE * SIZE) - counter);
+                const unsigned char string = *(koordNotZero + num) / 10;
+                const unsigned char colum = *(koordNotZero + num) - string * 10;
                 unsigned char z = *(koordNotZero + num);
                 *(koordNotZero + num) = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter);
                 *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter) = z;
 
-                unsigned char copyDig = *(*(trueArr + y) + x);
-                *(*(trueArr + y) + x) = UNKN_ELEMENT;
+                const unsigned char copyDig = *(*(trueArr + string) + colum);
+                *(*(trueArr + string) + colum) = UNKN_ELEMENT;
                 ++indexNull;
 
                 memcpy (copyArr, trueArr, SIZE * SIZE);
@@ -68,7 +68,7 @@ void sudMaker (unsigned char * const matrix)
                 }
 
                 if (!solution) {
-                    *(*(copyArr + y) + x) = copyDig;
+                    *(*(copyArr + string) + colum) = copyDig;
                     ++counter;
                     --indexNull;
                 }

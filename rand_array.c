@@ -9,8 +9,8 @@ void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
 {
     srand (time (NULL));
 
-    unsigned char y = 1;
-    unsigned char z = 0;
+    unsigned char availElem = 1;
+    unsigned char tempStore = 0;
 
     unsigned char endPsblDgt = 0;
 
@@ -29,7 +29,7 @@ void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
                                     break;
         }
         do {
-            if (y > 0) {
+            if (availElem > 0) {
                 memcpy (copyInArr, inputArr, SIZE * SIZE);
                 memcpy (copyMasEmpty, masEmpty, SIZE);
                 memcpy (copyRezerv, rezerv, SIZE);
@@ -48,15 +48,15 @@ void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
             }
 
             for (unsigned char j = 0; j < SIZE; ++j) {
-                y = endPsblDgt - *(masEmpty + j) + 1;
-                if (y == 0) {
+                availElem = endPsblDgt - *(masEmpty + j) + 1;
+                if (availElem == 0) {
                     break;
                 }
-                unsigned char x = 0 + rand() % y;
+                const unsigned char randElem = 0 + rand() % availElem;
 
-                *(outputArr + i * SIZE + j) = *(inputArr + j * SIZE + x);
+                *(outputArr + i * SIZE + j) = *(inputArr + j * SIZE + randElem);
 
-                unsigned char jump = 3 * (j / 3);
+                const unsigned char jump = 3 * (j / 3);
                 for (unsigned char l = jump; l < SIZE; ++l) {
                     for (unsigned char k = 0; k <= endPsblDgt - *(masEmpty + l); ++k) {
                         if (j == 3 || j == 6) {
@@ -64,11 +64,11 @@ void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
                         }
 
                         if (*(outputArr + i * SIZE + j) == *(inputArr + l * SIZE + k)) {
-                            z = *(inputArr + l * SIZE + k);
+                            tempStore = *(inputArr + l * SIZE + k);
                             *(inputArr + l * SIZE + k) = *(inputArr + l * SIZE + endPsblDgt - *(masEmpty + l));
 
                             if (l != j) {
-                                *(inputArr + l * SIZE + endPsblDgt - *(masEmpty + l)) = z;
+                                *(inputArr + l * SIZE + endPsblDgt - *(masEmpty + l)) = tempStore;
                             }
                             else {
                                 *(inputArr + l * SIZE + endPsblDgt - *(masEmpty + l)) = UNKN_ELEMENT;
@@ -82,13 +82,13 @@ void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
                 if (i != 2 && i != 5 && i != 8) {
                     for (unsigned char l = 0; l < SIZE; ++l) {
                         if (endPsblDgt - (*(masEmpty + l) - *(rezerv + l)) < 0) {
-                            y = 0;
+                            availElem = 0;
                             break;
                         }
                     }
                 }
 
-                if (y == 0) {
+                if (availElem == 0) {
                     break;
                 }
 
@@ -96,15 +96,15 @@ void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
                     for (unsigned char l = 3; l < SIZE; ++l) {
                         for (signed char k = endPsblDgt - *(operMasEmpty + l); k > endPsblDgt - 3 - *(operMasEmpty + l); --k) {
                             if (k - *(rezerv + l) >= 0) {
-                                z = *(inputArr + l * SIZE + k - *(rezerv +l));
+                                tempStore = *(inputArr + l * SIZE + k - *(rezerv +l));
                                 *(inputArr + l * SIZE + k - *(rezerv + l)) = *(inputArr + l * SIZE + k);
-                                *(inputArr + l * SIZE + k) = z;
+                                *(inputArr + l * SIZE + k) = tempStore;
                             }
                         }
                     }
                 }
             }
-        } while (y == 0);
+        } while (availElem == 0);
 
         if (i == 2 || i == 5) {
             sortArr (inputArr, endPsblDgt);
