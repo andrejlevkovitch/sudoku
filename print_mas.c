@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "sudlib.h"
 
-void printMas (unsigned char *array, unsigned char type, unsigned char size_s, unsigned char size_c)
+void printMas (const unsigned char const *array, unsigned char type, unsigned char size_s, unsigned char size_c)
 {
     printf ("\n");
     for (unsigned char i = 0; i < size_s; ++i) {

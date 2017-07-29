@@ -11,7 +11,7 @@
 
 void initialization (unsigned char *array, unsigned char size_c);
 
-void printMas (unsigned char *array, unsigned char type, unsigned char size_s, unsigned char size_c);
+void printMas (const unsigned char const *array, unsigned char type, unsigned char size_s, unsigned char size_c);
 
 void randArr (unsigned char *outputArr, unsigned char *inputArr);
 
