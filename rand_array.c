@@ -5,7 +5,7 @@
 #include <string.h>
 #include "sudlib.h"
 
-void randArr (unsigned char *outputArr, unsigned char *inputArr)
+void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
 {
     srand (time (NULL));
 

@@ -3,7 +3,7 @@
 #include <string.h>
 #include "sudlib.h"
 
-void revers (unsigned char *array) 
+void revers (unsigned char * const array) 
 {
     unsigned char zamena[SIZE][SIZE] = {};
 

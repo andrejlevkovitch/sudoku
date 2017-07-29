@@ -2,7 +2,7 @@
 
 #include "sudlib.h"
 
-void sortArr (unsigned char *array, unsigned char endArr)
+void sortArr (unsigned char * const array, const unsigned char endArr)
 {
     for (unsigned char i = 0; i < SIZE; ++i) {
         for (unsigned char l = 1; l <= 3; ++l) {

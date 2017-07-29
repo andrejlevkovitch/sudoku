@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-void sudMaker (unsigned char *matrix)
+void sudMaker (unsigned char * const matrix)
 {
     unsigned char counter = 0;
 

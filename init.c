@@ -2,7 +2,7 @@
 
 #include "sudlib.h"
 
-void initialization (unsigned char *array, unsigned char size_c)
+void initialization (unsigned char * const array, const unsigned char size_c)
 {
     for (unsigned char i = 0; i < SIZE; ++i) {
         for (unsigned char j = 0; j < SIZE; ++j) {

@@ -2,7 +2,7 @@
 
 #include "sudlib.h"
 
-void inputPsblL (unsigned char *psblArr, unsigned char *matrix)
+void inputPsblL (unsigned char * const psblArr, const unsigned char * const matrix)
 {
     for (unsigned char i = 0; i < SIZE; ++i) {
         *(psblArr + i * (SIZE + 1) + SIZE) = 9;

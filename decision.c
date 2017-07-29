@@ -3,7 +3,7 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-void decision (unsigned char *arrayS, unsigned char *arrayC, unsigned char *matrix)
+void decision (unsigned char * const arrayS, unsigned char * const arrayC, unsigned char * const matrix)
 {
     bool reversOn = false;
     bool solution = false;

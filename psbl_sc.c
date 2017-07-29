@@ -2,7 +2,7 @@
 
 #include "sudlib.h"
 
-void psblSC (unsigned char *arrayS, unsigned char *arrayC, unsigned char *matrix)
+void psblSC (unsigned char * const arrayS, unsigned char * const arrayC, unsigned char * const matrix)
 {
     initialization (arrayS, SIZE + 1);
     initialization (arrayC, SIZE + 1);
