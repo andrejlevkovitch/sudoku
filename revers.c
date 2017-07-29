@@ -11,7 +11,7 @@ void revers (unsigned char *array)
 
     for (unsigned char i = 0; i < SIZE; ++i) {
         for (unsigned char j = 0; j < SIZE; ++j) {
-            *(array + j * SIZE + i) = zamena[i][j];
+            *(array + j * SIZE + i) = *(*(zamena + i) + j);
         }
     }
    

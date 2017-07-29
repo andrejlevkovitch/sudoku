@@ -45,8 +45,8 @@ void sudMaker (unsigned char *matrix)
                 *(koordNotZero + num) = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter);
                 *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter) = z;
 
-                unsigned char copyDig = trueArr[y][x];
-                trueArr[y][x] = UNKN_ELEMENT;
+                unsigned char copyDig = *(*(trueArr + y) + x);
+                *(*(trueArr + y) + x) = UNKN_ELEMENT;
                 ++indexNull;
 
                 memcpy (copyArr, trueArr, SIZE * SIZE);
@@ -61,14 +61,14 @@ void sudMaker (unsigned char *matrix)
                 bool solution = true;
 
                 for (unsigned char i = 0; i < SIZE; ++i) {
-                    if (psblS[i][SIZE] != 0) {
+                    if (*(*(psblS + i) + SIZE) != 0) {
                         solution = false;
                         break;
                     }
                 }
 
                 if (!solution) {
-                    copyArr[y][x] = copyDig;
+                    *(*(copyArr + y) + x) = copyDig;
                     ++counter;
                     --indexNull;
                 }
