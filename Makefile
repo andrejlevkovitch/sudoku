@@ -49,5 +49,5 @@ decision.o: decision.c
 	gcc -c decision.c -Wall
 
 clean:
-	rm -f *.o sudoku
+	rm -f *.o *.a *.so sudoku
 
