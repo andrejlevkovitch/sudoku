@@ -4,10 +4,8 @@
 #define ERROR_STRING "Do NOT do that!"
 #define MAXCROSSDIGIT 58
 #define UNKN_ELEMENT 32
-
-#ifdef linux
-    char getch ();
-#endif
+#define Y0 5
+#define X0 2
 
 void initialization (unsigned char * const array, const unsigned char size_c);
 
@@ -25,7 +23,7 @@ void sortArr (unsigned char * const array, const unsigned char endArr);
 
 void sudMaker (unsigned char * const array);
 
-void inputPsblL (unsigned char * const psblArr, const unsigned char * const matrix);
+void inputPsblS (unsigned char * const psblArr, const unsigned char * const matrix);
 
 void psblSC (unsigned char * const arrayS, unsigned char * const arrayC, unsigned char * const matrix);
 
@@ -34,3 +32,9 @@ void revers (unsigned char * const array);
 void subs (unsigned char * const array1, unsigned char * const array2);
 
 void decision (unsigned char * const arrayS, unsigned char * const arrayC, unsigned char * const matrix);
+
+void io (const unsigned char * const array, const unsigned char type);
+
+void frame (void);
+
+void cursor (void);

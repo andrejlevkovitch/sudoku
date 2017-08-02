@@ -5,13 +5,13 @@
 
 void revers (unsigned char * const array) 
 {
-    unsigned char zamena[SIZE][SIZE] = {};
+    unsigned char store [SIZE][SIZE] = {};
 
-    memcpy (zamena, array, SIZE * SIZE);
+    memcpy (store, array, SIZE * SIZE);
 
     for (unsigned char i = 0; i < SIZE; ++i) {
         for (unsigned char j = 0; j < SIZE; ++j) {
-            *(array + j * SIZE + i) = *(*(zamena + i) + j);
+            *(array + j * SIZE + i) = *(*(store + i) + j);
         }
     }
    

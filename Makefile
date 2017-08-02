@@ -1,7 +1,7 @@
 # Makefile for sudoku project, Linux
 
-sudoku: main.o init.o print_mas.o rand_array.o zeros.o num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o mygetch.o psbl_sc.o decision.o
-	gcc -o sudoku main.o init.o print_mas.o rand_array.o zeros.c num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o mygetch.o psbl_sc.o decision.o -Wall
+sudoku: main.o init.o print_mas.o rand_array.o zeros.o num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o  psbl_sc.o decision.o io.o frame.o cursor.o
+	gcc -o sudoku main.o init.o print_mas.o rand_array.o zeros.c num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o  psbl_sc.o decision.o io.o frame.o cursor.o -lncurses -Wall
 
 init.o: init.c
 	gcc -c init.c -Wall
@@ -39,14 +39,20 @@ input_psbl_sc.o: input_psbl_sc.c
 substitution.o: substitution.c
 	gcc -c substitution.c -Wall
 
-mygetch.o: mygetch.c
-	gcc -c mygetch.c -Wall
-
 psbl_sc.o: psbl_sc.c
 	gcc -c psbl_sc.c -Wall
 
 decision.o: decision.c
 	gcc -c decision.c -Wall
+
+io.o: io.c
+	gcc -c io.c -Wall
+
+frame.o: frame.c
+	gcc -c frame.c -Wall
+
+cursor.o: cursor.c
+	gcc -c cursor.c -Wall
 
 clean:
 	rm -f *.o *.a *.so sudoku

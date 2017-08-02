@@ -14,7 +14,21 @@ void sudMaker (unsigned char * const matrix)
     unsigned char copyArr[SIZE][SIZE] = {};
     unsigned char koordNotZero[SIZE * SIZE + 1] = {};
 
+    unsigned char psblS[SIZE][SIZE + 1] = {};
+    unsigned char psblC[SIZE][SIZE + 1] = {};
+
     unsigned char rmDigits = numCros();
+
+    unsigned char indexNull = 0;
+
+    unsigned char num = 0;
+    unsigned char string = 0;
+    unsigned char colum = 0;
+
+    unsigned char tempStore = 0;
+    unsigned char copyDig = 0;
+
+    bool solution = true;
 
     srand (time(NULL));
 
@@ -30,40 +44,36 @@ void sudMaker (unsigned char * const matrix)
 
             *(koordNotZero + SIZE * SIZE) = SIZE * SIZE;
             counter = 0;
-            unsigned char indexNull = 0;
+            indexNull = 0;
 
-            unsigned char psblS[SIZE][SIZE + 1] = {};
-            unsigned char psblC[SIZE][SIZE + 1] = {};
 
             do {
                 memcpy (trueArr, copyArr, SIZE * SIZE);
 
-                const unsigned char num = 0 + rand() % (*(koordNotZero + SIZE * SIZE) - counter);
-                const unsigned char string = *(koordNotZero + num) / 10;
-                const unsigned char colum = *(koordNotZero + num) - string * 10;
-                unsigned char z = *(koordNotZero + num);
+                num = 0 + rand() % (*(koordNotZero + SIZE * SIZE) - counter);
+                string = *(koordNotZero + num) / 10;
+                colum = *(koordNotZero + num) - string * 10;
+                tempStore = *(koordNotZero + num);
                 *(koordNotZero + num) = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter);
-                *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter) = z;
+                *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter) = tempStore;
 
-                const unsigned char copyDig = *(*(trueArr + string) + colum);
+                copyDig = *(*(trueArr + string) + colum);
                 *(*(trueArr + string) + colum) = UNKN_ELEMENT;
                 ++indexNull;
 
                 memcpy (copyArr, trueArr, SIZE * SIZE);
 
+                solution = true;
+
                 if (indexNull > 12) {
+                    psblSC (*psblS, *psblC, *trueArr);
+                    decision (*psblS, *psblC, *trueArr);
 
-                psblSC (*psblS, *psblC, *trueArr);
-
-                decision (*psblS, *psblC, *trueArr);
-                }
-
-                bool solution = true;
-
-                for (unsigned char i = 0; i < SIZE; ++i) {
-                    if (*(*(psblS + i) + SIZE) != 0) {
-                        solution = false;
-                        break;
+                    for (unsigned char i = 0; i < SIZE; ++i) {
+                        if (*(*(psblS + i) + SIZE) != 0) {
+                            solution = false;
+                            break;
+                        }
                     }
                 }
 
@@ -76,9 +86,9 @@ void sudMaker (unsigned char * const matrix)
                     *(koordNotZero + SIZE * SIZE) -= 1;
 
                     if (counter > 0) {
-                        z = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter);
+                        tempStore = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter);
                         *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter) = *(koordNotZero + *(koordNotZero + SIZE * SIZE));
-                        *(koordNotZero + *(koordNotZero + SIZE * SIZE)) = z;
+                        *(koordNotZero + *(koordNotZero + SIZE * SIZE)) = tempStore;
                     }
                     counter = 0;
                 }

@@ -1,5 +1,6 @@
 //num_of_cros.c - вводит количество вычеркиваемых элементов
 
+#include <ncurses.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "sudlib.h"
@@ -7,10 +8,16 @@
 unsigned char numCros (void)
 {
     unsigned int crosDigit = 0;
-    printf ("%s 0<=n<=%i\n", "How many digits do you want to cross out?", MAXCROSSDIGIT);
-    scanf ("%u", &crosDigit);
+
+    initscr();
+
+    printw ("%s 0<=n<=%i\n", "How many digits do you want to cross out?", MAXCROSSDIGIT);
+    scanw ("%u", &crosDigit);
+
+    endwin();
+
     if (crosDigit > MAXCROSSDIGIT) {
-        printf ("%s\n", ERROR_STRING);
+        printf ("\033[01;31m%s\n\033[0m", ERROR_STRING);
         exit (EXIT_FAILURE);
     }
 

@@ -6,9 +6,9 @@ void psblSC (unsigned char * const arrayS, unsigned char * const arrayC, unsigne
 {
     initialization (arrayS, SIZE + 1);
     initialization (arrayC, SIZE + 1);
-    inputPsblL (arrayS, matrix);
+    inputPsblS (arrayS, matrix);
     revers (matrix);
-    inputPsblL (arrayC, matrix);
+    inputPsblS (arrayC, matrix);
     revers (matrix);
 
     return;

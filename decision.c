@@ -5,6 +5,21 @@
 
 void decision (unsigned char * const arrayS, unsigned char * const arrayC, unsigned char * const matrix)
 {
+    unsigned char numColum = 0;
+    unsigned char numString = 0;
+
+    unsigned char krajline = 0;
+    unsigned char krajcolum = 0;
+
+    unsigned char rezult = 0;
+
+    unsigned char indexCoincidence = 0;
+
+    unsigned char tempStore = 0;
+
+    unsigned char masFreeColum [SIZE + 1] = {};
+    unsigned char masBuzyQuadr [SIZE + 1] = {};
+
     bool reversOn = false;
     bool solution = false;
     bool rezInIter = false;
@@ -17,7 +32,8 @@ void decision (unsigned char * const arrayS, unsigned char * const arrayC, unsig
 
             for (unsigned char i = 0; i < SIZE; ++i) {
                 if (*(arrayS + i * (SIZE + 1) + SIZE) != 0) {
-                    unsigned char masFreeColum[SIZE + 1] = {};
+
+                    *(masFreeColum + SIZE) = 0;
 
                     for (unsigned char j = 0; j < SIZE; ++j) {
                         if (*(matrix + i * SIZE + j) == UNKN_ELEMENT) {
@@ -27,12 +43,9 @@ void decision (unsigned char * const arrayS, unsigned char * const arrayC, unsig
                     }
 
                     for (char j = *(arrayS + i * (SIZE + 1) + SIZE) - 1; j >= 0; --j) {
-                        unsigned char rezult = 0;
-                        unsigned char numColum = 0, numString = 0;
+                        rezult = 0;
 
                         for (unsigned char l = 0; l < *(masFreeColum + SIZE); ++l) {
-                            unsigned char masBuzyQuadr[SIZE + 1] = {};
-                            unsigned char krajline = 0, krajcolum = 0;
 
                             switch (i) {
                                 case 0: case 1: case 2:
@@ -58,6 +71,8 @@ void decision (unsigned char * const arrayS, unsigned char * const arrayC, unsig
                                     break;
                             }
 
+                            *(masBuzyQuadr + SIZE) = 0;
+
                             for (unsigned char k = krajline; k < krajline + 3; ++k) {
                                 for (unsigned char n = krajcolum; n < krajcolum + 3; ++n) {
                                     if (*(matrix + k * SIZE + n) != UNKN_ELEMENT) {
@@ -67,17 +82,16 @@ void decision (unsigned char * const arrayS, unsigned char * const arrayC, unsig
                                 }
                             }
 
-                            unsigned char indexCoincidence = 0;
+                            indexCoincidence = 0;
 
                             for (char m = *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE) - 1; m >= 0; --m) {
                                 for (unsigned char n = 0; n < *(masBuzyQuadr + SIZE); ++n) {
                                     if (*(arrayC + *(masFreeColum + l) * (SIZE + 1) + m) == *(masBuzyQuadr + n)) {
-                                        unsigned char z = 0;
 
-                                        z = *(arrayC + *(masFreeColum + l) * (SIZE + 1) + m);
+                                        tempStore = *(arrayC + *(masFreeColum + l) * (SIZE + 1) + m);
                                         *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE) -= 1;
                                         *(arrayC + *(masFreeColum + l) * (SIZE + 1) + m) = *(arrayC + *(masFreeColum + l) * (SIZE + 1) + *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE));
-                                        *(arrayC + *(masFreeColum + l) * (SIZE + 1) + *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE)) = z;
+                                        *(arrayC + *(masFreeColum + l) * (SIZE + 1) + *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE)) = tempStore;
 
                                         *(masBuzyQuadr + SIZE) -= 1;
                                         *(masBuzyQuadr + n) = *(masBuzyQuadr + *(masBuzyQuadr + SIZE));

@@ -9,6 +9,10 @@ void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
 {
     srand (time (NULL));
 
+    unsigned char randElem = 0;
+
+    unsigned char jump = 0;
+
     unsigned char availElem = 1;
     unsigned char tempStore = 0;
 
@@ -18,6 +22,8 @@ void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
     unsigned char copyMasEmpty[SIZE] = {}, masEmpty[SIZE] = {};
     unsigned char copyRezerv[SIZE] = {}, rezerv[SIZE] = {};
     unsigned char operMasEmpty[SIZE] = {};
+
+    initialization (inputArr, SIZE);
 
     for (unsigned char i = 0; i < SIZE; ++i) {
         switch (i) {
@@ -52,11 +58,11 @@ void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
                 if (availElem == 0) {
                     break;
                 }
-                const unsigned char randElem = 0 + rand() % availElem;
+                randElem = 0 + rand() % availElem;
 
                 *(outputArr + i * SIZE + j) = *(inputArr + j * SIZE + randElem);
 
-                const unsigned char jump = 3 * (j / 3);
+                jump = 3 * (j / 3);
                 for (unsigned char l = jump; l < SIZE; ++l) {
                     for (unsigned char k = 0; k <= endPsblDgt - *(masEmpty + l); ++k) {
                         if (j == 3 || j == 6) {
