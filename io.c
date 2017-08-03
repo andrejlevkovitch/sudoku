@@ -15,7 +15,6 @@ void io (const unsigned char * matrix, const unsigned char type, const unsigned 
 
     frame();
 
-    start_color();
     init_pair (2, COLOR_WHITE, COLOR_GREEN);
     init_pair (3, COLOR_WHITE, COLOR_BLUE);
     init_pair (4, COLOR_YELLOW, COLOR_GREEN);

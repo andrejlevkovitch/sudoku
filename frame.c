@@ -9,9 +9,7 @@ void frame (void)
 
     chtype frameElement;
 
-    start_color();
     init_pair (1, COLOR_BLACK, COLOR_CYAN);
-
 
     printw ("  ");
 
