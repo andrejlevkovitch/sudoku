@@ -98,7 +98,7 @@ void cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
         move (Y0, X0 + 22);
         printw ("%s %d", "Turn is:", turnCounter);
         move (Y0 + 1, X0 + 22);
-        printw ("%s %d", "Empty values:", emptyValueCounter);
+        printw ("%s %2d", "Empty values:", emptyValueCounter);
 
     } while (inputChar != 27);
 
