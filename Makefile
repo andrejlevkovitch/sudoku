@@ -1,16 +1,13 @@
 # Makefile for sudoku project, Linux
 
-sudoku: main.o init.o print_mas.o rand_array.o zeros.o num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o  psbl_sc.o decision.o io.o frame.o cursor.o
-	gcc -o sudoku main.o init.o print_mas.o rand_array.o zeros.c num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o  psbl_sc.o decision.o io.o frame.o cursor.o -lncurses -Wall
+sudoku: main.o init.o rand_array.o zeros.o num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o  psbl_sc.o decision.o io.o frame.o cursor.o mesage.o coincidence.o
+	gcc -o sudoku main.o init.o rand_array.o zeros.c num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o  psbl_sc.o decision.o io.o frame.o cursor.o mesage.o coincidence.o -lncurses -Wall
 
 init.o: init.c
 	gcc -c init.c -Wall
 
 main.o: main.c
 	gcc -c main.c -Wall
-
-print_mas.o: print_mas.c
-	gcc -c print_mas.c -Wall
 
 rand_array.o: rand_array.c
 	gcc -c rand_array.c -Wall
@@ -53,6 +50,12 @@ frame.o: frame.c
 
 cursor.o: cursor.c
 	gcc -c cursor.c -Wall
+
+mesage.o: mesage.c
+	gcc -c mesage.c -Wall
+
+coincidence.o: coincidence.c
+	gcc -c coincidence.c -Wall
 
 clean:
 	rm -f *.o *.a *.so sudoku

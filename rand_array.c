@@ -5,13 +5,13 @@
 #include <string.h>
 #include "sudlib.h"
 
-void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
+void randArr (unsigned char * outputArr, unsigned char * inputArr)
 {
     srand (time (NULL));
 
     unsigned char randElem = 0;
 
-    unsigned char jump = 0;
+    unsigned char krajline = 0;
 
     unsigned char availElem = 1;
     unsigned char tempStore = 0;
@@ -62,8 +62,20 @@ void randArr (unsigned char * const outputArr, unsigned char * const inputArr)
 
                 *(outputArr + i * SIZE + j) = *(inputArr + j * SIZE + randElem);
 
-                jump = 3 * (j / 3);
-                for (unsigned char l = jump; l < SIZE; ++l) {
+                krajline = 3 * (j / 3);
+                switch (j) {
+                    case 0: case 1: case 2:
+                        krajline = 0;
+                        break;
+                    case 3: case 4: case 5:
+                        krajline = 3;
+                        break;
+                    case 6: case 7: case 8:
+                        krajline = 6;
+                        break;
+                }
+
+                for (unsigned char l = krajline; l < SIZE; ++l) {
                     for (unsigned char k = 0; k <= endPsblDgt - *(masEmpty + l); ++k) {
                         if (j == 3 || j == 6) {
                             *(rezerv + l) = *(masEmpty + l) - *(operMasEmpty + l);

@@ -3,3 +3,4 @@
 sudoku
 *.a
 *.so
+print_mas.c

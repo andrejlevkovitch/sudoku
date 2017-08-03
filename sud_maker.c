@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-void sudMaker (unsigned char * const matrix)
+void sudMaker (unsigned char * matrix, const unsigned char rmDigits)
 {
     unsigned char counter = 0;
 
@@ -16,8 +16,6 @@ void sudMaker (unsigned char * const matrix)
 
     unsigned char psblS[SIZE][SIZE + 1] = {};
     unsigned char psblC[SIZE][SIZE + 1] = {};
-
-    unsigned char rmDigits = numCros();
 
     unsigned char indexNull = 0;
 
@@ -57,8 +55,8 @@ void sudMaker (unsigned char * const matrix)
                 *(koordNotZero + num) = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter);
                 *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter) = tempStore;
 
-                copyDig = *(*(trueArr + string) + colum);
-                *(*(trueArr + string) + colum) = UNKN_ELEMENT;
+                copyDig = trueArr [string][colum];
+                trueArr [string][colum] = UNKN_ELEMENT;
                 ++indexNull;
 
                 memcpy (copyArr, trueArr, SIZE * SIZE);
@@ -70,7 +68,7 @@ void sudMaker (unsigned char * const matrix)
                     decision (*psblS, *psblC, *trueArr);
 
                     for (unsigned char i = 0; i < SIZE; ++i) {
-                        if (*(*(psblS + i) + SIZE) != 0) {
+                        if (psblS [i][SIZE] != 0) {
                             solution = false;
                             break;
                         }
@@ -78,7 +76,7 @@ void sudMaker (unsigned char * const matrix)
                 }
 
                 if (!solution) {
-                    *(*(copyArr + string) + colum) = copyDig;
+                    copyArr [string][colum] = copyDig;
                     ++counter;
                     --indexNull;
                 }

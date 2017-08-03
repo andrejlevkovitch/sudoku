@@ -3,7 +3,7 @@
 #include <string.h>
 #include "sudlib.h"
 
-void revers (unsigned char * const array) 
+void revers (unsigned char * array) 
 {
     unsigned char store [SIZE][SIZE] = {};
 
@@ -11,7 +11,7 @@ void revers (unsigned char * const array)
 
     for (unsigned char i = 0; i < SIZE; ++i) {
         for (unsigned char j = 0; j < SIZE; ++j) {
-            *(array + j * SIZE + i) = *(*(store + i) + j);
+            *(array + j * SIZE + i) = store [i][j];
         }
     }
    
