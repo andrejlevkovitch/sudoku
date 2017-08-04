@@ -42,6 +42,7 @@ Makefile директивы make
 main.c
 
 {
+
     input_type.c
 
     num_of_cros.c
