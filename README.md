@@ -40,6 +40,7 @@ Makefile директивы make
 Структура:
 
 main.c
+
 {
     input_type.c
 
