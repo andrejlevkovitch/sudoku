@@ -12,7 +12,12 @@ unsigned char numCros (void)
     initscr();
 
     printw ("%s 0<=n<=%i\n", "How many digits do you want to cross out?", MAXCROSSDIGIT);
+
+    refresh();
+
     scanw ("%u", &crosDigit);
+
+    refresh();
 
     endwin();
 

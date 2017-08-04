@@ -35,6 +35,8 @@ void mesage (const unsigned char numS, const unsigned char numC, const unsigned 
     }
             printw ("%c%c %s %c", numS + 49, numC + 65, string, value);
 
+            refresh();
+
             attroff (A_BOLD);
             attroff (COLOR_PAIR (6));
 

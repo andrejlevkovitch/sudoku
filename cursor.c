@@ -53,7 +53,7 @@ void cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
                         *(outputMatrix + string * SIZE + colum) -= tempStore;
                         *(outputMatrix + string * SIZE + colum) += UNKN_ELEMENT;
 
-                        addch (*(outputMatrix + string * SIZE + colum));
+                        addch (*(outputMatrix + string * SIZE + colum) | A_BOLD);
 
                         mesage (string, colum, REMOVE, tempStore + type);
 
@@ -99,6 +99,8 @@ void cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
         printw ("%s %d", "Turn is:", turnCounter);
         move (Y0 + 1, X0 + 22);
         printw ("%s %2d", "Empty values:", emptyValueCounter);
+
+        refresh();
 
     } while (inputChar != 27);
 

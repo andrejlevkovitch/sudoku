@@ -31,6 +31,8 @@ void frame (void)
     move (Y0 + 8, X0 + 22);
     printw ("%s", "If you want to leave the game, press ESC.");
 
+    refresh();
+
     endwin();
 
     return;

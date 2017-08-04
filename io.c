@@ -44,6 +44,8 @@ void io (const unsigned char * matrix, const unsigned char type, const unsigned 
         }
     }
 
+    refresh();
+
     cursor(*outputElements, matrix, type, quantityCrosDigits);
 
     endwin();
