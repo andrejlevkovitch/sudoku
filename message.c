@@ -4,7 +4,7 @@
 #include <string.h>
 #include "sudlib.h"
 
-void mesage (const unsigned char numS, const unsigned char numC, const unsigned char operace, const unsigned char value)
+void message (const unsigned char numS, const unsigned char numC, const unsigned char operace, const unsigned char value)
 {
     char string[40] = {};
 
