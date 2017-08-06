@@ -55,6 +55,6 @@ void frame (void);
 
 void cursor (chtype * array, const unsigned char * basisMatrix, const unsigned char type, const unsigned char quantityCrosDigits);
 
-void mesage (const unsigned char numS, const unsigned char numC, const unsigned char operace, const unsigned char value);
+void message (const unsigned char numS, const unsigned char numC, const unsigned char operace, const unsigned char value);
 
 bool coincidence (chtype * array, const unsigned char numS, const unsigned char numC);

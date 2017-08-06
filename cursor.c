@@ -58,7 +58,7 @@ void cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
 
                         addch (*(outputMatrix + string * SIZE + colum) | A_BOLD);
 
-                        mesage (string, colum, REMOVE, tempStore + type);
+                        message (string, colum, REMOVE, tempStore + type);
 
                         ++turnCounter;
                         ++emptyValueCounter;
@@ -74,7 +74,7 @@ void cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
                         if (!coincidence(outputMatrix, string, colum)) {
                             addch ((*(outputMatrix + string * SIZE + colum) + type) | A_BOLD);
 
-                            mesage (string, colum, INPUT, inputChar + type);
+                            message (string, colum, INPUT, inputChar + type);
 
                             ++turnCounter;
                         }
@@ -86,14 +86,14 @@ void cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
                             attroff (A_BOLD);
                             attroff (COLOR_PAIR(6));
 
-                            mesage (string, colum, COINCIDENCE, inputChar + type);
+                            message (string, colum, COINCIDENCE, inputChar + type);
 
                             ++turnCounter;
                         }
                     }
                 }
                 else if (inputChar == DELETE || (inputChar -= type) < SIZE) {
-                    mesage (string, colum, ERROR, UNKN_ELEMENT);
+                    message (string, colum, ERROR, UNKN_ELEMENT);
 
                     ++turnCounter;
                 }
