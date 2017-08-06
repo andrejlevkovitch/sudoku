@@ -10,15 +10,19 @@ int main (void)
     unsigned char bgnMtrx [SIZE][SIZE] = {};
     unsigned char sudoku [SIZE][SIZE] = {};
 
-    const unsigned char type = inputType();
-    const unsigned char crosDig = numCros();
+    unsigned char type = 0;
+    unsigned char crosDig =0;
 
-    randArr (*bgnMtrx, *psblDgts);
+    do {
+        type = inputType();
+        crosDig = numCros();
 
-    memcpy (sudoku, bgnMtrx, SIZE * SIZE);
-    sudMaker (*sudoku, crosDig);
+        randArr (*bgnMtrx, *psblDgts);
 
-    ioSystem (*sudoku, type, crosDig);
+        memcpy (sudoku, bgnMtrx, SIZE * SIZE);
+        sudMaker (*sudoku, crosDig);
+
+    } while (ioSystem (*sudoku, type, crosDig));
 
     return EXIT_SUCCESS;
 }

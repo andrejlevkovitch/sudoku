@@ -6,7 +6,7 @@
 
 void message (const unsigned char numS, const unsigned char numC, const unsigned char operace, const unsigned char value)
 {
-    char string[40] = {};
+    char string[55] = {};
 
     move (Y0 + 10, 0);
 
@@ -30,11 +30,17 @@ void message (const unsigned char numS, const unsigned char numC, const unsigned
             strcat (string, "There is already such a value");
             insertln();
             break;
+        case WIN:
+            strcat (string, "YOU WIN!!! If you want to play again, press Enter.");
+            insertln();
+            break;
+        case GAME:
+            strcat (string, "You want to play? If Yes - press Enter");
+            insertln();
+            break;
     }
 
     printw ("%c%c %s %c", numS + 49, numC + 65, string, value);
-
-    refresh();
 
     attroff (A_BOLD);
     attroff (COLOR_PAIR (6));

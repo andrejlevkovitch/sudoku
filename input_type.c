@@ -24,11 +24,10 @@ unsigned char inputType (void)
     const unsigned char typeOfSud = getch();
     printw ("\n");
 
-    refresh();
-
 //    endwin();// закрытие в файле io_system.c
 
     if (typeOfSud != '1' && typeOfSud != 'a' && typeOfSud != 'A') {
+        endwin();
         printf ("\033[01;31m%s\033[0m\n", ERROR_STRING);
         exit (EXIT_FAILURE);
     }

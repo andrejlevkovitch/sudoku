@@ -26,8 +26,10 @@ void frame (void)
         addch (frameElement | A_BOLD);
     }
 
-    move (Y0 + 8, X0 + 22);
+    move (Y0 + 7, X0 + 22);
     printw ("%s", "If you want to leave the game, press ESC.");
+    move (Y0 + 8, X0 + 22);
+    printw ("%s", "If you want to play a new game, press Enter.");
 
     refresh();
 

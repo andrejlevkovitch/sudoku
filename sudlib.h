@@ -20,6 +20,8 @@
 #define ERROR 'e'
 #define REMOVE 'r'
 #define COINCIDENCE 'c'
+#define WIN 'w'
+#define GAME 'g'
 
 #define DELETE 127
 
@@ -49,11 +51,11 @@ void subs (unsigned char * array1, unsigned char * array2);
 
 void decision (unsigned char * arrayS, unsigned char * arrayC, unsigned char * matrix);
 
-void ioSystem (const unsigned char * array, const unsigned char type, const unsigned char quantityCrosDigits);
+bool ioSystem (const unsigned char * array, const unsigned char type, const unsigned char quantityCrosDigits);
 
 void frame (void);
 
-void cursor (chtype * array, const unsigned char * basisMatrix, const unsigned char type, const unsigned char quantityCrosDigits);
+bool cursor (chtype * array, const unsigned char * basisMatrix, const unsigned char type, const unsigned char quantityCrosDigits);
 
 void message (const unsigned char numS, const unsigned char numC, const unsigned char operace, const unsigned char value);
 

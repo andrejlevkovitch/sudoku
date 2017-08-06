@@ -4,11 +4,13 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-void ioSystem (const unsigned char * matrix, const unsigned char type, const unsigned char quantityCrosDigits)
+bool ioSystem (const unsigned char * matrix, const unsigned char type, const unsigned char quantityCrosDigits)
 {
 //    initscr();// открытие в файле input_type.c
 
     bool biColorType = true;
+
+    bool newGame = false;
 
     chtype outputElements [SIZE][SIZE] = {};
     chtype space = 0;
@@ -46,9 +48,11 @@ void ioSystem (const unsigned char * matrix, const unsigned char type, const uns
 
     refresh();
 
-    cursor(*outputElements, matrix, type, quantityCrosDigits);
+    newGame = cursor(*outputElements, matrix, type, quantityCrosDigits);
+
+    clear();
 
     endwin();
 
-    return;
+    return newGame;
 }
