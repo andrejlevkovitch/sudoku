@@ -5,8 +5,6 @@
 
 void frame (void)
 {
-    initscr();
-
     chtype frameElement;
 
     init_pair (1, COLOR_BLACK, COLOR_CYAN);
@@ -32,8 +30,6 @@ void frame (void)
     printw ("%s", "If you want to leave the game, press ESC.");
 
     refresh();
-
-    endwin();
 
     return;
 }

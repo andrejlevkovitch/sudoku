@@ -4,9 +4,9 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-void io (const unsigned char * matrix, const unsigned char type, const unsigned char quantityCrosDigits)
+void ioSystem (const unsigned char * matrix, const unsigned char type, const unsigned char quantityCrosDigits)
 {
-    initscr();
+//    initscr();// открытие в файле input_type.c
 
     bool biColorType = true;
 

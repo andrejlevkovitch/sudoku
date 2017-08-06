@@ -34,6 +34,7 @@ void randArr (unsigned char * outputArr, unsigned char * inputArr)
             case 6: case 7: case 8: endPsblDgt = 2;
                                     break;
         }
+
         do {
             if (availElem > 0) {
                 memcpy (copyInArr, inputArr, SIZE * SIZE);
@@ -62,7 +63,6 @@ void randArr (unsigned char * outputArr, unsigned char * inputArr)
 
                 *(outputArr + i * SIZE + j) = *(inputArr + j * SIZE + randElem);
 
-                krajline = 3 * (j / 3);
                 switch (j) {
                     case 0: case 1: case 2:
                         krajline = 0;
@@ -91,6 +91,7 @@ void randArr (unsigned char * outputArr, unsigned char * inputArr)
                             else {
                                 *(inputArr + l * SIZE + endPsblDgt - *(masEmpty + l)) = UNKN_ELEMENT;
                             }
+
                             *(masEmpty + l) += 1;
                             break;
                         }

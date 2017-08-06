@@ -49,7 +49,7 @@ void subs (unsigned char * array1, unsigned char * array2);
 
 void decision (unsigned char * arrayS, unsigned char * arrayC, unsigned char * matrix);
 
-void io (const unsigned char * array, const unsigned char type, const unsigned char quantityCrosDigits);
+void ioSystem (const unsigned char * array, const unsigned char type, const unsigned char quantityCrosDigits);
 
 void frame (void);
 

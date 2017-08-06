@@ -8,8 +8,6 @@ void mesage (const unsigned char numS, const unsigned char numC, const unsigned 
 {
     char string[40] = {};
 
-    initscr();
-
     move (Y0 + 10, 0);
 
     switch (operace) {
@@ -33,14 +31,13 @@ void mesage (const unsigned char numS, const unsigned char numC, const unsigned 
             insertln();
             break;
     }
-            printw ("%c%c %s %c", numS + 49, numC + 65, string, value);
 
-            refresh();
+    printw ("%c%c %s %c", numS + 49, numC + 65, string, value);
 
-            attroff (A_BOLD);
-            attroff (COLOR_PAIR (6));
+    refresh();
 
-    endwin();
+    attroff (A_BOLD);
+    attroff (COLOR_PAIR (6));
 
     return;
 }

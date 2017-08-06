@@ -9,8 +9,6 @@ unsigned char numCros (void)
 {
     unsigned int crosDigit = 0;
 
-    initscr();
-
     printw ("%s 0<=n<=%i\n", "How many digits do you want to cross out?", MAXCROSSDIGIT);
 
     refresh();
@@ -18,8 +16,6 @@ unsigned char numCros (void)
     scanw ("%u", &crosDigit);
 
     refresh();
-
-    endwin();
 
     if (crosDigit > MAXCROSSDIGIT) {
         printf ("\033[01;31m%s\n\033[0m", ERROR_STRING);

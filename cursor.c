@@ -17,11 +17,14 @@ void cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
     unsigned short turnCounter = 0;
     unsigned char emptyValueCounter = quantityCrosDigits;
 
-    initscr();
-
     noecho();
 
     do {
+        move (Y0, X0 + 22);
+        printw ("%s %d", "Turn is:", turnCounter);
+        move (Y0 + 1, X0 + 22);
+        printw ("%s %2d", "Empty values:", emptyValueCounter);
+
         move (koordY, koordX);
 
         if ((inputChar = getch()) == 27 && getch() == 91) {
@@ -95,18 +98,12 @@ void cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
                     ++turnCounter;
                 }
             }
-        move (Y0, X0 + 22);
-        printw ("%s %d", "Turn is:", turnCounter);
-        move (Y0 + 1, X0 + 22);
-        printw ("%s %2d", "Empty values:", emptyValueCounter);
 
         refresh();
 
     } while (inputChar != 27);
 
     echo();
-
-    endwin();
 
     return;
 }

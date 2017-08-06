@@ -6,9 +6,12 @@ void psblSC (unsigned char * arrayS, unsigned char * arrayC, unsigned char * mat
 {
     initialization (arrayS, SIZE + 1);
     initialization (arrayC, SIZE + 1);
+
     inputPsblS (arrayS, matrix);
+
     revers (matrix);
     inputPsblS (arrayC, matrix);
+
     revers (matrix);
 
     return;

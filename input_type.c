@@ -26,7 +26,7 @@ unsigned char inputType (void)
 
     refresh();
 
-    endwin();
+//    endwin();// закрытие в файле io_system.c
 
     if (typeOfSud != '1' && typeOfSud != 'a' && typeOfSud != 'A') {
         printf ("\033[01;31m%s\033[0m\n", ERROR_STRING);

@@ -18,7 +18,7 @@ int main (void)
     memcpy (sudoku, bgnMtrx, SIZE * SIZE);
     sudMaker (*sudoku, crosDig);
 
-    io (*sudoku, type, crosDig);
+    ioSystem (*sudoku, type, crosDig);
 
     return EXIT_SUCCESS;
 }

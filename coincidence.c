@@ -13,8 +13,6 @@ bool coincidence (chtype * array, const unsigned char numS, const unsigned char 
     unsigned char krajline = 0;
     unsigned char krajcolum = 0;
 
-    initscr();
-
     chtype tempStore = *(array + numS * SIZE + numC);
     const unsigned char value = tempStore;
     *(array + numS * SIZE + numC) = UNKN_ELEMENT;
@@ -68,8 +66,6 @@ bool coincidence (chtype * array, const unsigned char numS, const unsigned char 
     }
 
     *(array + numS * SIZE + numC) = tempStore;
-
-    endwin();
 
     return indicator;
 }

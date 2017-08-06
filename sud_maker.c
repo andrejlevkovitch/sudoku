@@ -96,6 +96,7 @@ void sudMaker (unsigned char * matrix, const unsigned char rmDigits)
                 }
 
             } while (indexNull < rmDigits);
+
         } while (counter == *(koordNotZero + SIZE * SIZE));
 
         memcpy (matrix, copyArr, SIZE * SIZE);
