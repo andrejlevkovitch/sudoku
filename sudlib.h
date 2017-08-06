@@ -24,6 +24,8 @@
 #define GAME 'g'
 
 #define DELETE 127
+#define ESC 27
+#define RESTART 217
 
 void initialization (unsigned char * array, const unsigned char size_c);
 

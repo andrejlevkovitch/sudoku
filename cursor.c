@@ -33,7 +33,7 @@ bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
 
         move (koordY, koordX);
 
-        if ((inputChar = getch()) == 27 && getch() == 91) {
+        if ((inputChar = getch()) == ESC && getch() == 91) {
             switch (getch()) {
                 case UP:
                     if (koordY != Y0) koordY -= 1;
@@ -52,7 +52,7 @@ bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
             inputChar = 0;
             }
         else {
-            if (inputChar != 27) {
+            if (inputChar != ESC) {
                 if (emptyValueCounter != 0 || *(errorStore + MAXCROSSDIGIT) != 0) {
                     string = koordY - Y0;
                     colum = (koordX - (X0 + 1))/2;
@@ -141,23 +141,23 @@ bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
                         refresh();
                     }
 
-                    inputChar = 27;
+                    inputChar = ESC;
                     if (getch() == '\n') newGame = true;
                 }
 
-                if (inputChar == 217) {
+                if (inputChar == RESTART) {
                     message (string, colum, GAME, UNKN_ELEMENT);
                     refresh();
                     sleep(1);
 
                     if (getch() == '\n') {
-                        inputChar = 27;
+                        inputChar = ESC;
                         newGame = true;
                     }
                 }
             }
         }
-    } while (inputChar != 27);
+    } while (inputChar != ESC);
 
     echo();
 
