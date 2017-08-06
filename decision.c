@@ -42,7 +42,7 @@ void decision (unsigned char * arrayS, unsigned char * arrayC, unsigned char * m
                         }
                     }
 
-                    for (char j = *(arrayS + i * (SIZE + 1) + SIZE) - 1; j >= 0; --j) {
+                    for (signed char j = *(arrayS + i * (SIZE + 1) + SIZE) - 1; j >= 0; --j) {
                         rezult = 0;
 
                         for (unsigned char l = 0; l < *(masFreeColum + SIZE); ++l) {
@@ -84,7 +84,7 @@ void decision (unsigned char * arrayS, unsigned char * arrayC, unsigned char * m
 
                             indexCoincidence = 0;
 
-                            for (char m = *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE) - 1; m >= 0; --m) {
+                            for (signed char m = *(arrayC + *(masFreeColum + l) * (SIZE + 1) + SIZE) - 1; m >= 0; --m) {
                                 for (unsigned char n = 0; n < *(masBuzyQuadr + SIZE); ++n) {
                                     if (*(arrayC + *(masFreeColum + l) * (SIZE + 1) + m) == *(masBuzyQuadr + n)) {
 

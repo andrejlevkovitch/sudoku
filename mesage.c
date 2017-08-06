@@ -6,7 +6,7 @@
 
 void mesage (const unsigned char numS, const unsigned char numC, const unsigned char operace, const unsigned char value)
 {
-    char string[50] = {};
+    char string[40] = {};
 
     initscr();
 
