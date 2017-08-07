@@ -30,77 +30,75 @@ void sudMaker (unsigned char * matrix, const unsigned char rmDigits)
 
     srand (time(NULL));
 
-    if (rmDigits != 0) {
-        do {
-            memcpy (copyArr, matrix, SIZE * SIZE);
+    do {
+        memcpy (copyArr, matrix, SIZE * SIZE);
 
-            for (unsigned char i = 0; i < SIZE; ++i) {
-                for (unsigned char j = 0; j < SIZE; ++j) {
-                    *(koordNotZero + i * SIZE + j) = i * 10 + j;
+        for (unsigned char i = 0; i < SIZE; ++i) {
+            for (unsigned char j = 0; j < SIZE; ++j) {
+                *(koordNotZero + i * SIZE + j) = i * 10 + j;
+            }
+        }
+
+        *(koordNotZero + SIZE * SIZE) = SIZE * SIZE;
+        counter = 0;
+        indexNull = 0;
+
+        do {
+            memcpy (trueArr, copyArr, SIZE * SIZE);
+
+            num = 0 + rand() % (*(koordNotZero + SIZE * SIZE) - counter);
+            string = *(koordNotZero + num) / 10;
+            colum = *(koordNotZero + num) - string * 10;
+            tempStore = *(koordNotZero + num);
+            *(koordNotZero + num) = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter);
+            *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter) = tempStore;
+
+            copyDig = trueArr [string][colum];
+            trueArr [string][colum] = UNKN_ELEMENT;
+            ++indexNull;
+
+            memcpy (copyArr, trueArr, SIZE * SIZE);
+
+            solution = true;
+
+            if (indexNull > 12) {
+                psblSC (*psblS, *psblC, *trueArr);
+                decision (*psblS, *psblC, *trueArr);
+
+                for (unsigned char i = 0; i < SIZE; ++i) {
+                    if (psblS [i][SIZE] != 0) {
+                        solution = false;
+                        break;
+                    }
                 }
             }
 
-            *(koordNotZero + SIZE * SIZE) = SIZE * SIZE;
-            counter = 0;
-            indexNull = 0;
+            if (!solution) {
+                copyArr [string][colum] = copyDig;
+                ++counter;
+                --indexNull;
+            }
+            else {
+                *(koordNotZero + SIZE * SIZE) -= 1;
 
-
-            do {
-                memcpy (trueArr, copyArr, SIZE * SIZE);
-
-                num = 0 + rand() % (*(koordNotZero + SIZE * SIZE) - counter);
-                string = *(koordNotZero + num) / 10;
-                colum = *(koordNotZero + num) - string * 10;
-                tempStore = *(koordNotZero + num);
-                *(koordNotZero + num) = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter);
-                *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter) = tempStore;
-
-                copyDig = trueArr [string][colum];
-                trueArr [string][colum] = UNKN_ELEMENT;
-                ++indexNull;
-
-                memcpy (copyArr, trueArr, SIZE * SIZE);
-
-                solution = true;
-
-                if (indexNull > 12) {
-                    psblSC (*psblS, *psblC, *trueArr);
-                    decision (*psblS, *psblC, *trueArr);
-
-                    for (unsigned char i = 0; i < SIZE; ++i) {
-                        if (psblS [i][SIZE] != 0) {
-                            solution = false;
-                            break;
-                        }
-                    }
+                if (counter > 0) {
+                    tempStore = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter);
+                    *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter) = *(koordNotZero + *(koordNotZero + SIZE * SIZE));
+                    *(koordNotZero + *(koordNotZero + SIZE * SIZE)) = tempStore;
                 }
 
-                if (!solution) {
-                    copyArr [string][colum] = copyDig;
-                    ++counter;
-                    --indexNull;
-                }
-                else {
-                    *(koordNotZero + SIZE * SIZE) -= 1;
+                counter = 0;
+            }
 
-                    if (counter > 0) {
-                        tempStore = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter);
-                        *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter) = *(koordNotZero + *(koordNotZero + SIZE * SIZE));
-                        *(koordNotZero + *(koordNotZero + SIZE * SIZE)) = tempStore;
-                    }
-                    counter = 0;
-                }
+            if (counter == *(koordNotZero + SIZE * SIZE)) {
+                break;
+            }
 
-                if (counter == *(koordNotZero + SIZE * SIZE)) {
-                    break;
-                }
+        } while (indexNull < rmDigits);
 
-            } while (indexNull < rmDigits);
+    } while (counter == *(koordNotZero + SIZE * SIZE));
 
-        } while (counter == *(koordNotZero + SIZE * SIZE));
-
-        memcpy (matrix, copyArr, SIZE * SIZE);
-    }
+    memcpy (matrix, copyArr, SIZE * SIZE);
 
     return;
 }

@@ -20,7 +20,7 @@ int main (void)
         randArr (*bgnMtrx, *psblDgts);
 
         memcpy (sudoku, bgnMtrx, SIZE * SIZE);
-        sudMaker (*sudoku, crosDig);
+        if (crosDig != 0) sudMaker (*sudoku, crosDig);
 
     } while (ioSystem (*sudoku, type, crosDig));
 
