@@ -3,7 +3,7 @@
 #include <ncurses.h>
 
 #define SIZE 9
-#define MAXCROSSDIGIT 58
+#define MAXCROSSDIGIT 60
 #define UNKN_ELEMENT 32
 
 #define ERROR_STRING "Do NOT do that!"
