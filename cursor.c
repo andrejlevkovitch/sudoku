@@ -125,30 +125,14 @@ bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
 
                         ++turnCounter;
                     }
-                }
 
-                refresh();
-
-                if (emptyValueCounter == 0 && (*(errorStore + MAXCROSSDIGIT)) == 0) {
-                    if (quantityCrosDigits != 0) {
+                    if (emptyValueCounter == 0 && (*(errorStore + MAXCROSSDIGIT)) == 0 && quantityCrosDigits != 0) {
                         message (string, colum, WIN, UNKN_ELEMENT);
-                        refresh();
-                        sleep(1);
                     }
-
-                    if (quantityCrosDigits == 0) {
-                        message (string, colum, GAME, UNKN_ELEMENT);
-                        refresh();
-                    }
-
-                    inputChar = ESC;
-                    if (getch() == '\n') newGame = true;
                 }
 
-                if (inputChar == RESTART) {
+                if (inputChar == '\n' || inputChar == RESTART) {
                     message (string, colum, GAME, UNKN_ELEMENT);
-                    refresh();
-                    sleep(1);
 
                     if (getch() == '\n') {
                         inputChar = ESC;

@@ -7,8 +7,6 @@ void frame (void)
 {
     chtype frameElement;
 
-    init_pair (1, COLOR_BLACK, COLOR_CYAN);
-
     printw ("  ");
 
     for (unsigned char i = 0; i < SIZE; ++i) {
@@ -27,11 +25,9 @@ void frame (void)
     }
 
     move (Y0 + 7, X0 + 22);
-    printw ("%s", "If you want to leave the game, press ESC.");
+    printw ("%s", "If you want to leave the game, press ESC (twice).");
     move (Y0 + 8, X0 + 22);
     printw ("%s", "If you want to play a new game, press Enter.");
-
-    refresh();
 
     return;
 }

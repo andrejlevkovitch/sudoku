@@ -7,8 +7,8 @@
 
 unsigned char inputType (void)
 {
-    initscr();
-
+    initscr();//открытие окна ncurses; закрытие в файле io_system.c
+//проверка на поддержку цветов
     if (!has_colors()) {
         endwin();
         printf ("%s", "Colors are not supported!");
@@ -19,15 +19,11 @@ unsigned char inputType (void)
 
     printw ("%s\n", "If you want sudoku with numbers put key 1, if with letters - a/A");
 
-    refresh();
-
     const unsigned char typeOfSud = getch();
     printw ("\n");
 
-//    endwin();// закрытие в файле io_system.c
-
     if (typeOfSud != '1' && typeOfSud != 'a' && typeOfSud != 'A') {
-        endwin();
+        endwin();//аварийная остановка
         printf ("\033[01;31m%s\033[0m\n", ERROR_STRING);
         exit (EXIT_FAILURE);
     }

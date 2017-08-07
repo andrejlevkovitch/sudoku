@@ -6,7 +6,7 @@
 
 void message (const unsigned char numS, const unsigned char numC, const unsigned char operace, const unsigned char value)
 {
-    char string[55] = {};
+    char string[50] = {};
 
     move (Y0 + 10, 0);
 
@@ -31,11 +31,15 @@ void message (const unsigned char numS, const unsigned char numC, const unsigned
             insertln();
             break;
         case WIN:
-            strcat (string, "YOU WIN!!! If you want to play again, press Enter.");
+            attron (A_BOLD);
+            attron (COLOR_PAIR (7));
+            strcat (string, "YOU WIN!!!");
             insertln();
             break;
         case GAME:
-            strcat (string, "You want to play? If Yes - press Enter");
+            attron (A_BOLD);
+            attron (COLOR_PAIR (8));
+            strcat (string, "You want to play a new game? If Yes - press Enter");
             insertln();
             break;
     }
@@ -44,6 +48,8 @@ void message (const unsigned char numS, const unsigned char numC, const unsigned
 
     attroff (A_BOLD);
     attroff (COLOR_PAIR (6));
+    attroff (COLOR_PAIR (7));
+    attroff (COLOR_PAIR (8));
 
     return;
 }

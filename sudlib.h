@@ -62,3 +62,5 @@ bool cursor (chtype * array, const unsigned char * basisMatrix, const unsigned c
 void message (const unsigned char numS, const unsigned char numC, const unsigned char operace, const unsigned char value);
 
 bool coincidence (chtype * array, const unsigned char numS, const unsigned char numC);
+
+void colors (void);

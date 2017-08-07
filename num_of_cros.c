@@ -11,12 +11,10 @@ unsigned char numCros (void)
 
     printw ("%s 0<=n<=%i\n", "How many digits do you want to cross out?", MAXCROSSDIGIT);
 
-    refresh();
-
     scanw ("%u", &crosDigit);
 
     if (crosDigit > MAXCROSSDIGIT) {
-        endwin();
+        endwin();//аварийная остановка; по дефолту initscr() - input_type.c, endwin() - io_system.c
         printf ("\033[01;31m%s\n\033[0m", ERROR_STRING);
         exit (EXIT_FAILURE);
     }

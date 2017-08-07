@@ -6,8 +6,6 @@
 
 bool ioSystem (const unsigned char * matrix, const unsigned char type, const unsigned char quantityCrosDigits)
 {
-//    initscr();// открытие в файле input_type.c
-
     bool biColorType = true;
 
     bool newGame = false;
@@ -15,13 +13,9 @@ bool ioSystem (const unsigned char * matrix, const unsigned char type, const uns
     chtype outputElements [SIZE][SIZE] = {};
     chtype space = 0;
 
-    frame();
+    colors();
 
-    init_pair (2, COLOR_WHITE, COLOR_GREEN);
-    init_pair (3, COLOR_WHITE, COLOR_BLUE);
-    init_pair (4, COLOR_YELLOW, COLOR_GREEN);
-    init_pair (5, COLOR_YELLOW, COLOR_BLUE);
-    init_pair (6, COLOR_RED, COLOR_MAGENTA);
+    frame();
 
     for (unsigned char i = 0; i < 3; ++i) {
         for (unsigned char j = 0; j < 3; ++j) {
@@ -46,13 +40,11 @@ bool ioSystem (const unsigned char * matrix, const unsigned char type, const uns
         }
     }
 
-    refresh();
-
     newGame = cursor(*outputElements, matrix, type, quantityCrosDigits);
 
     clear();
 
-    endwin();
+    endwin();//закрытие окна ncurses; открытие в файле input_type.c
 
     return newGame;
 }

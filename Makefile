@@ -1,7 +1,7 @@
 # Makefile for sudoku project, Linux
 
-sudoku: main.o init.o rand_array.o zeros.o num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o  psbl_sc.o decision.o io_system.o frame.o cursor.o message.o coincidence.o
-	gcc -o sudoku main.o init.o rand_array.o zeros.c num_of_cros.o input_type.o sort_array.o sud_maker.o revers.o input_psbl_sc.o substitution.o  psbl_sc.o decision.o io_system.o frame.o cursor.o message.o coincidence.o -lncurses -Wall
+sudoku: main.o input_type.o num_of_cros.o rand_array.o init.o sort_array.o zeros.o sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o
+	gcc -o sudoku main.o input_type.o num_of_cros.o rand_array.o init.o sort_array.o zeros.c sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o -lncurses -Wall
 
 main.o: main.c
 	gcc -c main.c -Wall
@@ -44,6 +44,9 @@ substitution.o: substitution.c
 
 io_system.o: io_system.c
 	gcc -c io_system.c -Wall
+
+colors.o: colors.c
+	gcc -c colors.c -Wall
 
 frame.o: frame.c
 	gcc -c frame.c -Wall
