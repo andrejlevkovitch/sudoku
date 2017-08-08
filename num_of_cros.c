@@ -14,7 +14,7 @@ unsigned char numCros (void)
     scanw ("%u", &crosDigit);
 
     if (crosDigit > MAXCROSSDIGIT) {
-        endwin();//аварийная остановка; по дефолту initscr() - input_type.c, endwin() - io_system.c
+        endwin();
         printf ("\033[01;31m%s\n\033[0m", ERROR_STRING);
         exit (EXIT_FAILURE);
     }

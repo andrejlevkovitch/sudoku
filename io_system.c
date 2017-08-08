@@ -44,7 +44,5 @@ bool ioSystem (const unsigned char * matrix, const unsigned char type, const uns
 
     clear();
 
-    endwin();//закрытие окна ncurses; открытие в файле input_type.c
-
     return newGame;
 }

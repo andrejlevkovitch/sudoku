@@ -1,6 +1,5 @@
 //sud_maker.c - создает из начальной матрицы судоку - матрицу судоку, имеющую только одно решение
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
@@ -62,7 +61,7 @@ void sudMaker (unsigned char * matrix, const unsigned char rmDigits)
 
             solution = true;
 
-            if (indexNull > 12) {
+            if (indexNull > 15) {
                 psblSC (*psblS, *psblC, *trueArr);
                 decision (*psblS, *psblC, *trueArr);
 
