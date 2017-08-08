@@ -1,5 +1,6 @@
 //sud_maker.c - создает из начальной матрицы судоку - матрицу судоку, имеющую только одно решение
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
@@ -8,8 +9,6 @@
 
 void sudMaker (unsigned char * matrix, const unsigned char rmDigits)
 {
-    unsigned char counter = 0;
-
     unsigned char trueArr[SIZE][SIZE] = {};
     unsigned char copyArr[SIZE][SIZE] = {};
     unsigned char koordNotZero[SIZE * SIZE + 1] = {};
@@ -40,18 +39,20 @@ void sudMaker (unsigned char * matrix, const unsigned char rmDigits)
         }
 
         *(koordNotZero + SIZE * SIZE) = SIZE * SIZE;
-        counter = 0;
         indexNull = 0;
 
         do {
             memcpy (trueArr, copyArr, SIZE * SIZE);
 
-            num = 0 + rand() % (*(koordNotZero + SIZE * SIZE) - counter);
+            num = 0 + rand() % *(koordNotZero + SIZE * SIZE);
+
             string = *(koordNotZero + num) / 10;
             colum = *(koordNotZero + num) - string * 10;
+
             tempStore = *(koordNotZero + num);
-            *(koordNotZero + num) = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter);
-            *(koordNotZero + *(koordNotZero + SIZE * SIZE) - 1 - counter) = tempStore;
+            *(koordNotZero + SIZE * SIZE) -= 1;
+            *(koordNotZero + num) = *(koordNotZero + *(koordNotZero + SIZE * SIZE));
+            *(koordNotZero + *(koordNotZero + SIZE * SIZE)) = tempStore;
 
             copyDig = trueArr [string][colum];
             trueArr [string][colum] = UNKN_ELEMENT;
@@ -75,28 +76,15 @@ void sudMaker (unsigned char * matrix, const unsigned char rmDigits)
 
             if (!solution) {
                 copyArr [string][colum] = copyDig;
-                ++counter;
                 --indexNull;
             }
-            else {
-                *(koordNotZero + SIZE * SIZE) -= 1;
 
-                if (counter > 0) {
-                    tempStore = *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter);
-                    *(koordNotZero + *(koordNotZero + SIZE * SIZE) - counter) = *(koordNotZero + *(koordNotZero + SIZE * SIZE));
-                    *(koordNotZero + *(koordNotZero + SIZE * SIZE)) = tempStore;
-                }
-
-                counter = 0;
-            }
-
-            if (counter == *(koordNotZero + SIZE * SIZE)) {
+            if (*(koordNotZero + SIZE * SIZE) == 0) {
                 break;
             }
-
         } while (indexNull < rmDigits);
 
-    } while (counter == *(koordNotZero + SIZE * SIZE));
+    } while (*(koordNotZero + SIZE * SIZE) == 0);
 
     memcpy (matrix, copyArr, SIZE * SIZE);
 
