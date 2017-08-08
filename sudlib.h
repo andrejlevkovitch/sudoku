@@ -29,8 +29,6 @@
 
 void initialization (unsigned char * array, const unsigned char size_c);
 
-void printMas (const unsigned char * array, const unsigned char type, const unsigned char size_s, const unsigned char size_c);
-
 void randArr (unsigned char * outputArr, unsigned char * inputArr);
 
 void zeros (unsigned char * array);

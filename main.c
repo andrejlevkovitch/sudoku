@@ -11,7 +11,7 @@ int main (void)
     unsigned char sudoku [SIZE][SIZE] = {};
 
     unsigned char type = 0;
-    unsigned char crosDig =0;
+    unsigned char crosDig = 0;
 
     do {
         type = inputType();
