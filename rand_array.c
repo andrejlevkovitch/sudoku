@@ -18,10 +18,10 @@ void randArr (unsigned char * outputArr, unsigned char * inputArr)
 
     unsigned char endPsblDgt = 0;
 
-    unsigned char copyInArr[SIZE][SIZE] = {};
-    unsigned char copyMasEmpty[SIZE] = {}, masEmpty[SIZE] = {};
-    unsigned char copyRezerv[SIZE] = {}, rezerv[SIZE] = {};
-    unsigned char operMasEmpty[SIZE] = {};
+    unsigned char copyInArr [SIZE][SIZE] = {};
+    unsigned char copyMasEmpty [SIZE] = {}, masEmpty[SIZE] = {};
+    unsigned char copyRezerv [SIZE] = {}, rezerv[SIZE] = {};
+    unsigned char operMasEmpty [SIZE] = {};
 
     initialization (inputArr, SIZE);
 

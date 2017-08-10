@@ -8,12 +8,12 @@
 
 void sudMaker (unsigned char * matrix, const unsigned char rmDigits)
 {
-    unsigned char trueArr[SIZE][SIZE] = {};
-    unsigned char copyArr[SIZE][SIZE] = {};
-    unsigned char koordNotZero[SIZE * SIZE + 1] = {};
+    unsigned char trueArr [SIZE][SIZE] = {};
+    unsigned char copyArr [SIZE][SIZE] = {};
+    unsigned char koordNotZero [SIZE * SIZE + 1] = {};
 
-    unsigned char psblS[SIZE][SIZE + 1] = {};
-    unsigned char psblC[SIZE][SIZE + 1] = {};
+    unsigned char psblS [SIZE][SIZE + 1] = {};
+    unsigned char psblC [SIZE][SIZE + 1] = {};
 
     unsigned char indexNull = 0;
 
