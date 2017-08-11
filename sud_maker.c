@@ -28,14 +28,14 @@ void sudMaker (unsigned char * matrix, const unsigned char rmDigits)
 
     srand (time(NULL));
 
+    for (unsigned char i = 0; i < SIZE; ++i) {
+        for (unsigned char j = 0; j < SIZE; ++j) {
+            *(koordNotZero + i * SIZE + j) = i * 10 + j;
+        }
+    }
+
     do {
         memcpy (copyArr, matrix, SIZE * SIZE);
-
-        for (unsigned char i = 0; i < SIZE; ++i) {
-            for (unsigned char j = 0; j < SIZE; ++j) {
-                *(koordNotZero + i * SIZE + j) = i * 10 + j;
-            }
-        }
 
         *(koordNotZero + SIZE * SIZE) = SIZE * SIZE;
         indexNull = 0;
