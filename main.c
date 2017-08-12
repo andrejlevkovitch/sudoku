@@ -15,14 +15,8 @@ int main (void)
     unsigned char crosDig = 0;
 
     initscr();
-//проверка на поддержку цветов
-    if (!has_colors()) {
-        endwin();
-        printf ("%s", "Colors are not supported!");
-        exit (EXIT_FAILURE);
-    }
 
-    start_color();
+    colors();
 
     do {
         type = inputType();

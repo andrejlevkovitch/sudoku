@@ -7,11 +7,11 @@
 
 unsigned char numCros (void)
 {
-    unsigned int crosDigit = 0;
+    unsigned char crosDigit = 0;
 
-    printw ("%s 0<=n<=%i\n", "How many digits do you want to cross out?", MAXCROSSDIGIT);
+    printw ("%s 0<=n<=%hhu\n", "How many digits do you want to cross out?", MAXCROSSDIGIT);
 
-    scanw ("%u", &crosDigit);
+    scanw ("%hhu", &crosDigit);
 
     if (crosDigit > MAXCROSSDIGIT) {
         endwin();

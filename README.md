@@ -72,43 +72,46 @@ main.c
 
 {
 
-    input_type.c
+    colors.c
 
-    num_of_cros.c
+    do {
 
-    rand_array.c
-    {
-        init.c
-        sort_array.c
-        zeros.c
-    }
+        input_type.c
 
-    sud_maker.c
-    {
-        psbl_sc.c
+        num_of_cros.c
+
+        rand_array.c
         {
             init.c
-            input_psbl_sc.c
-            revers.c
+            sort_array.c
+            zeros.c
         }
 
-        decision.c
+        sud_maker.c
         {
-            substitution.c
-            revers.c
-        }
-    }
+            psbl_sc.c
+            {
+                init.c
+                input_psbl_sc.c
+                revers.c
+            }
 
-    io_system.c
-    {
-        colors.c
-        frame.c
-        cursor.c
-        {
-            coincidence.c
-            message.c
+            decision.c
+            {
+                substitution.c
+                revers.c
+            }
         }
-    }
+
+    } while (io_system.c)
+        {
+            frame.c
+            cursor.c
+            {
+                coincidence.c
+                message.c
+            }
+        }
 
 }
 ______

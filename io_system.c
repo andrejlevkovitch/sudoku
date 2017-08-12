@@ -13,8 +13,6 @@ bool ioSystem (const unsigned char * matrix, const unsigned char type, const uns
     chtype outputElements [SIZE][SIZE] = {};
     chtype space = 0;
 
-    colors();
-
     frame();
 
     for (unsigned char i = 0; i < 3; ++i) {

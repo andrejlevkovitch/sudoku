@@ -27,9 +27,9 @@ bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
 
     do {
         move (Y0, X0 + 22);
-        printw ("%s %d", "Turn is:", turnCounter);
+        printw ("%s %hu", "Turn is:", turnCounter);
         move (Y0 + 1, X0 + 22);
-        printw ("%s %2d", "Empty values:", emptyValueCounter);
+        printw ("%s %2hu", "Empty values:", emptyValueCounter);
 
         move (koordY, koordX);
 
