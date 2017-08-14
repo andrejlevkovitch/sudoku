@@ -23,6 +23,7 @@ void colors (void)
     init_pair (6, COLOR_RED, COLOR_MAGENTA);
     init_pair (7, COLOR_RED, COLOR_BLACK);
     init_pair (8, COLOR_YELLOW, COLOR_BLACK);
+    init_pair (9, COLOR_BLACK, COLOR_YELLOW);
 
     return;
 }

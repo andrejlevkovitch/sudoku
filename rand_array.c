@@ -5,9 +5,11 @@
 #include <string.h>
 #include "sudlib.h"
 
-void randArr (unsigned char * outputArr, unsigned char * inputArr)
+void randArr (unsigned char * outputArr, const char variety)
 {
     srand (time (NULL));
+
+    unsigned char psblDgts [SIZE][SIZE] = {};
 
     unsigned char randElem = 0;
 
@@ -23,7 +25,9 @@ void randArr (unsigned char * outputArr, unsigned char * inputArr)
     unsigned char copyRezerv [SIZE] = {}, rezerv[SIZE] = {};
     unsigned char operMasEmpty [SIZE] = {};
 
-    initialization (inputArr, SIZE);
+    unsigned char girandola [SIZE] = {0, 8, 14, 41, 44, 47, 74, 80, 88};
+
+    initialization (*psblDgts, SIZE);
 
     for (unsigned char i = 0; i < SIZE; ++i) {
         switch (i) {
@@ -37,12 +41,12 @@ void randArr (unsigned char * outputArr, unsigned char * inputArr)
 
         do {
             if (availElem > 0) {
-                memcpy (copyInArr, inputArr, SIZE * SIZE);
+                memcpy (copyInArr, psblDgts, SIZE * SIZE);
                 memcpy (copyMasEmpty, masEmpty, SIZE);
                 memcpy (copyRezerv, rezerv, SIZE);
             }
             else {
-                memcpy (inputArr, copyInArr, SIZE * SIZE);
+                memcpy (psblDgts, copyInArr, SIZE * SIZE);
                 memcpy (masEmpty, copyMasEmpty, SIZE);
                 memcpy (rezerv, copyRezerv, SIZE);
             }
@@ -61,7 +65,7 @@ void randArr (unsigned char * outputArr, unsigned char * inputArr)
                 }
                 randElem = 0 + rand() % availElem;
 
-                *(outputArr + i * SIZE + j) = *(inputArr + j * SIZE + randElem);
+                *(outputArr + i * SIZE + j) = psblDgts [j][randElem];
 
                 switch (j) {
                     case 0: case 1: case 2:
@@ -81,15 +85,15 @@ void randArr (unsigned char * outputArr, unsigned char * inputArr)
                             *(rezerv + l) = *(masEmpty + l) - *(operMasEmpty + l);
                         }
 
-                        if (*(outputArr + i * SIZE + j) == *(inputArr + l * SIZE + k)) {
-                            tempStore = *(inputArr + l * SIZE + k);
-                            *(inputArr + l * SIZE + k) = *(inputArr + l * SIZE + endPsblDgt - *(masEmpty + l));
+                        if (*(outputArr + i * SIZE + j) == psblDgts [l][k]) {
+                            tempStore = psblDgts [l][k];
+                            psblDgts [l][k] = psblDgts [l][endPsblDgt - *(masEmpty + l)];
 
                             if (l != j) {
-                                *(inputArr + l * SIZE + endPsblDgt - *(masEmpty + l)) = tempStore;
+                                psblDgts [l][endPsblDgt - *(masEmpty + l)] = tempStore;
                             }
                             else {
-                                *(inputArr + l * SIZE + endPsblDgt - *(masEmpty + l)) = UNKN_ELEMENT;
+                                psblDgts [l][endPsblDgt - *(masEmpty + l)] = UNKN_ELEMENT;
                             }
 
                             *(masEmpty + l) += 1;
@@ -115,9 +119,9 @@ void randArr (unsigned char * outputArr, unsigned char * inputArr)
                     for (unsigned char l = 3; l < SIZE; ++l) {
                         for (signed char k = endPsblDgt - *(operMasEmpty + l); k > endPsblDgt - 3 - *(operMasEmpty + l); --k) {
                             if (k - *(rezerv + l) >= 0) {
-                                tempStore = *(inputArr + l * SIZE + k - *(rezerv +l));
-                                *(inputArr + l * SIZE + k - *(rezerv + l)) = *(inputArr + l * SIZE + k);
-                                *(inputArr + l * SIZE + k) = tempStore;
+                                tempStore = psblDgts [l][k - *(rezerv +l)];
+                                psblDgts [l][k - *(rezerv + l)] = psblDgts [l][k];
+                                psblDgts [l][k] = tempStore;
                             }
                         }
                     }
@@ -126,7 +130,7 @@ void randArr (unsigned char * outputArr, unsigned char * inputArr)
         } while (availElem == 0);
 
         if (i == 2 || i == 5) {
-            sortArr (inputArr, endPsblDgt);
+            sortArr (*psblDgts, endPsblDgt);
             zeros (masEmpty);
             zeros (rezerv);
             zeros (operMasEmpty);

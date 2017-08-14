@@ -4,7 +4,7 @@
 #include <string.h>
 #include "sudlib.h"
 
-void message (const unsigned char numS, const unsigned char numC, const unsigned char operace, const unsigned char value)
+void message (const unsigned char numS, const unsigned char numC, const char operace, const unsigned char value)
 {
     char string [50] = {};
 
@@ -39,7 +39,13 @@ void message (const unsigned char numS, const unsigned char numC, const unsigned
         case GAME:
             attron (A_BOLD);
             attron (COLOR_PAIR (8));
-            strcat (string, "You want to play a new game? If Yes - press Enter");
+            strcat (string, "You want to play a new game? If Yes - press Enter.");
+            insertln();
+            break;
+        case SOLUTION:
+            attron (A_BOLD);
+            attron (COLOR_PAIR (8));
+            strcat (string, "You want to see a solution? If Yes - press Enter.");
             insertln();
             break;
     }

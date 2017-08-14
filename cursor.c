@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include "sudlib.h"
 
-bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const unsigned char type, const unsigned char quantityCrosDigits)
+bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const unsigned char type, const unsigned char quantityCrosDigits, const char modify)
 {
     unsigned char inputChar = 0;
     unsigned char koordY = Y0;
@@ -52,7 +52,7 @@ bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
             inputChar = 0;
             }
         else {
-            if (inputChar != ESC) {
+            if (inputChar != ESC && modify != DECISION) {
                 if (emptyValueCounter != 0 || *(errorStore + MAXCROSSDIGIT) != 0) {
                     string = koordY - Y0;
                     colum = (koordX - (X0 + 1))/2;
@@ -132,7 +132,12 @@ bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
                 }
 
                 if (inputChar == '\n' || inputChar == RESTART) {
-                    message (string, colum, GAME, UNKN_ELEMENT);
+                    if (modify == DEFAULT) {
+                        message (string, colum, GAME, UNKN_ELEMENT);
+                    }
+                    else if (modify == SOLUTION) {
+                        message (string, colum, SOLUTION, UNKN_ELEMENT);
+                    }
 
                     if (getch() == '\n') {
                         inputChar = ESC;

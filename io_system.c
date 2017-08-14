@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-bool ioSystem (const unsigned char * matrix, const unsigned char type, const unsigned char quantityCrosDigits)
+bool ioSystem (unsigned char * matrix, const unsigned char type, const unsigned char quantityCrosDigits, const char modify)
 {
     bool biColorType = true;
 
@@ -13,7 +13,7 @@ bool ioSystem (const unsigned char * matrix, const unsigned char type, const uns
     chtype outputElements [SIZE][SIZE] = {};
     chtype space = 0;
 
-    frame();
+    frame(modify);
 
     for (unsigned char i = 0; i < 3; ++i) {
         for (unsigned char j = 0; j < 3; ++j) {
@@ -38,7 +38,15 @@ bool ioSystem (const unsigned char * matrix, const unsigned char type, const uns
         }
     }
 
-    newGame = cursor(*outputElements, matrix, type, quantityCrosDigits);
+    newGame = cursor(*outputElements, matrix, type, quantityCrosDigits, modify);
+
+    if (modify == SOLUTION && newGame) {
+        for (unsigned char i = 0; i < SIZE; ++i) {
+            for (unsigned char j = 0; j < SIZE; ++j) {
+                *(matrix + i * SIZE + j) = outputElements [i][j];
+            }
+        }
+    }
 
     clear();
 

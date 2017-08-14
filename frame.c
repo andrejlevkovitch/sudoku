@@ -3,10 +3,11 @@
 #include <ncurses.h>
 #include "sudlib.h"
 
-void frame (void)
+void frame (const char modify)
 {
     chtype frameElement;
 
+    move (Y0 - 1, 0);
     printw ("  ");
 
     for (unsigned char i = 0; i < SIZE; ++i) {
@@ -27,7 +28,12 @@ void frame (void)
     move (Y0 + 7, X0 + 22);
     printw ("%s", "If you want to leave the game, press ESC (twice).");
     move (Y0 + 8, X0 + 22);
-    printw ("%s", "If you want to play a new game, press Enter.");
+    if (modify == DEFAULT) {
+        printw ("%s", "If you want to play a new game, press Enter.");
+    }
+    else if (modify == SOLUTION) {
+        printw ("%s", "If you want to see the solution, press Enter.");
+    }
 
     return;
 }
