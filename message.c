@@ -15,33 +15,39 @@ void message (const unsigned char numS, const unsigned char numC, const char ope
             strcat (string, "You input value");
             insertln();
             break;
+
         case ERROR:
             attron (A_BOLD);
             strcat (string, "You can not do this! It defolt value.");
             insertln();
             break;
+
         case REMOVE:
             strcat (string, "You remove value");
             insertln();
             break;
+
         case COINCIDENCE:
             attron (A_BOLD);
             attron (COLOR_PAIR (6));
             strcat (string, "There is already such a value");
             insertln();
             break;
+
         case WIN:
             attron (A_BOLD);
             attron (COLOR_PAIR (7));
             strcat (string, "YOU WIN!!!");
             insertln();
             break;
+
         case GAME:
             attron (A_BOLD);
             attron (COLOR_PAIR (8));
             strcat (string, "You want to play a new game? If Yes - press Enter.");
             insertln();
             break;
+
         case SOLUTION:
             attron (A_BOLD);
             attron (COLOR_PAIR (8));

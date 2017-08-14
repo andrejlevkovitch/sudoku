@@ -28,11 +28,17 @@ void frame (const char modify)
     move (Y0 + 7, X0 + 22);
     printw ("%s", "If you want to leave the game, press ESC (twice).");
     move (Y0 + 8, X0 + 22);
-    if (modify == DEFAULT) {
-        printw ("%s", "If you want to play a new game, press Enter.");
-    }
-    else if (modify == SOLUTION) {
-        printw ("%s", "If you want to see the solution, press Enter.");
+    switch (modify) {
+        case DECISION:
+            break;
+
+        case SOLUTION:
+            printw ("%s", "If you want to see the solution, press Enter.");
+            break;
+
+        default: 
+            printw ("%s", "If you want to play a new game, press Enter.");
+            break;
     }
 
     return;
