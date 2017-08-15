@@ -6,8 +6,7 @@
 
 void colors (void)
 {
-//проверка на поддержку цветов
-    if (!has_colors()) {
+    if (!has_colors()) {//проверка на поддержку цветов
         endwin();
         printf ("%s", "Colors are not supported!");
         exit (EXIT_FAILURE);
@@ -24,6 +23,7 @@ void colors (void)
     init_pair (7, COLOR_RED, COLOR_BLACK);
     init_pair (8, COLOR_YELLOW, COLOR_BLACK);
     init_pair (9, COLOR_BLACK, COLOR_YELLOW);
+    init_pair (10, COLOR_CYAN, COLOR_YELLOW);
 
     return;
 }

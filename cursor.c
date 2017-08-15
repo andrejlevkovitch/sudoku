@@ -5,10 +5,10 @@
 #include <unistd.h>
 #include "sudlib.h"
 
-bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const unsigned char type, const unsigned char quantityCrosDigits, const char modify)
+bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SIZE], const unsigned char type, const unsigned char quantityCrosDigits, const char modify)
 {
     unsigned char inputChar = 0;
-    unsigned char koordY = Y0;
+    unsigned char koordY = Y0;//координаты первго элемента судоку
     unsigned char koordX = X0 + 1;
 
     unsigned char string = 0;
@@ -16,25 +16,25 @@ bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
 
     unsigned char tempStore = 0;
 
-    unsigned short turnCounter = 0;
-    unsigned char emptyValueCounter = quantityCrosDigits;
+    unsigned short turnCounter = 0;//количество ходов
+    unsigned char emptyValueCounter = quantityCrosDigits;//количество незаполненых клеток
 
-    unsigned char errorStore [MAXCROSSDIGIT + 1] = {};
+    unsigned char errorStore [MAXCROSSDIGIT + 1] = {};//сдесь заисываются ошибочные значения для того, чтобы заполнение произвольными числами всех пустых клеток не приводило бы к победе; последний элемент массива хранит количество значений во всей матрице
 
-    bool newGame = false;
+    bool newGame = false;//проверка на желание начать новую игру
 
     noecho();
 
     do {
-        move (Y0, X0 + 22);
+        move (Y0, X0 + 22);//вывод счетчиков
         printw ("%s %hu", "Turn is:", turnCounter);
         move (Y0 + 1, X0 + 22);
         printw ("%s %2hu", "Empty values:", emptyValueCounter);
 
-        move (koordY, koordX);
+        move (koordY, koordX);//перемещение в верхний левый угол вывода
 
-        if ((inputChar = getch()) == ESC && getch() == 91) {
-            switch (getch()) {
+        if ((inputChar = getch()) == ESC && getch() == 91) {//стрелка = 3 байтам, 27 91 и далее значащий байт
+            switch (getch()) {//перемещение
                 case UP:
                     if (koordY != Y0) koordY -= 1;
                     break;
@@ -53,24 +53,24 @@ bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
             }
         else {
             if (inputChar != ESC && modify != DECISION) {
-                if (emptyValueCounter != 0 || *(errorStore + MAXCROSSDIGIT) != 0) {
-                    string = koordY - Y0;
+                if (emptyValueCounter != 0 || errorStore [MAXCROSSDIGIT] != 0) {//ввод возможен пока судоку не решено
+                    string = koordY - Y0;//определение соответсвующих координат матрицы
                     colum = (koordX - (X0 + 1))/2;
 
-                    if (*(basisMatrix + string * SIZE + colum) == UNKN_ELEMENT) {
-                        if (inputChar == DELETE) {
-                            tempStore = *(outputMatrix + string * SIZE + colum);
-                            *(outputMatrix + string * SIZE + colum) -= tempStore;
-                            *(outputMatrix + string * SIZE + colum) += UNKN_ELEMENT;
+                    if (basisMatrix [string][colum] == UNKN_ELEMENT) {//только если это не дефолтное значение судоку
+                        if (inputChar == DELETE) {//удаление символа
+                            tempStore = outputMatrix [string][colum];//для сохранения значений цвета, которые хранятся в перезаписываемом элементе
+                            outputMatrix [string][colum] -= tempStore;
+                            outputMatrix [string][colum] += UNKN_ELEMENT;
 
-                            addch (*(outputMatrix + string * SIZE + colum) | A_BOLD);
+                            addch (outputMatrix [string][colum] | A_BOLD);
 
                             message (string, colum, REMOVE, tempStore + type);
 
-                            if (*(errorStore + MAXCROSSDIGIT) != 0) {
-                                for (unsigned char i = 0; i < *(errorStore + MAXCROSSDIGIT); ++i) {
-                                    if ((string * 10 + colum) == *(errorStore + i)) {
-                                        *(errorStore + MAXCROSSDIGIT) -= 1;
+                            if (errorStore [MAXCROSSDIGIT] != 0) {
+                                for (unsigned char i = 0; i < errorStore [MAXCROSSDIGIT]; ++i) {
+                                    if ((string * 10 + colum) == errorStore [i]) {
+                                        errorStore [MAXCROSSDIGIT] -= 1;//если был удален ошибочный элемент
                                         break;
                                     }
                                 }
@@ -79,64 +79,64 @@ bool cursor (chtype * outputMatrix, const unsigned char * basisMatrix, const uns
                             ++turnCounter;
                             ++emptyValueCounter;
                         }
-                        else if ((inputChar -= type) < SIZE) {
-                            tempStore = *(outputMatrix + string * SIZE + colum);
+                        else if ((inputChar -= type) < SIZE) {//ввод нужного значения
+                            tempStore = outputMatrix [string][colum];
 
-                            if (tempStore == UNKN_ELEMENT) --emptyValueCounter;
+                            if (tempStore == UNKN_ELEMENT) --emptyValueCounter;//если элемент размещается в не занятую до этого клетку
 
-                            *(outputMatrix + string * SIZE + colum) -= tempStore;
-                            *(outputMatrix + string * SIZE + colum) += inputChar;
+                            outputMatrix [string][colum] -= tempStore;
+                            outputMatrix [string][colum] += inputChar;
 
-                            if (*(errorStore + MAXCROSSDIGIT) != 0) {
-                                for (unsigned char i = 0; i < *(errorStore + MAXCROSSDIGIT); ++i) {
-                                    if ((string * 10 + colum) == *(errorStore + i)) {
-                                        *(errorStore + MAXCROSSDIGIT) -= 1;
+                            if (errorStore [MAXCROSSDIGIT] != 0) {
+                                for (unsigned char i = 0; i < errorStore [MAXCROSSDIGIT]; ++i) {
+                                    if ((string * 10 + colum) == errorStore [i]) {
+                                        errorStore [MAXCROSSDIGIT] -= 1;
                                         break;
                                     }
                                 }
                             }
 
-                            if (!coincidence(outputMatrix, string, colum)) {
-                                addch ((*(outputMatrix + string * SIZE + colum) + type) | A_BOLD);
+                            if (!coincidence (outputMatrix, string, colum)) {
+                                addch ((outputMatrix [string][colum] + type) | A_BOLD);
 
                                 message (string, colum, INPUT, inputChar + type);
 
                                 ++turnCounter;
                             }
-                            else {
+                            else {//в случае, если это значение уже встречалось
                                 attron (A_BOLD);
                                 attron (COLOR_PAIR(6));
-                                printw ("%c", *(outputMatrix + string * SIZE + colum) + type);
+                                printw ("%c", outputMatrix [string][colum] + type);
 
                                 attroff (A_BOLD);
                                 attroff (COLOR_PAIR(6));
 
                                 message (string, colum, COINCIDENCE, inputChar + type);
 
-                                *(errorStore + *(errorStore + MAXCROSSDIGIT)) = string * 10 + colum;
-                                *(errorStore + MAXCROSSDIGIT) += 1;
+                                errorStore [errorStore [MAXCROSSDIGIT]] = string * 10 + colum;
+                                errorStore [MAXCROSSDIGIT] += 1;
 
                                 ++turnCounter;
                             }
                         }
                     }
-                    else if (inputChar == DELETE || (inputChar -= type) < SIZE) {
+                    else if (inputChar == DELETE || (inputChar -= type) < SIZE) {//если это дефолтное значение, то об этом всплывает сообщение
                         message (string, colum, ERROR, UNKN_ELEMENT);
 
                         ++turnCounter;
                     }
 
-                    if (emptyValueCounter == 0 && (*(errorStore + MAXCROSSDIGIT)) == 0 && quantityCrosDigits != 0) {
+                    if (emptyValueCounter == 0 && (errorStore [MAXCROSSDIGIT]) == 0 && quantityCrosDigits != 0) {//сообщение о победе
                         message (string, colum, WIN, UNKN_ELEMENT);
                     }
                 }
 
-                if (inputChar == '\n' || inputChar == RESTART) {
-                    if (modify == DEFAULT) {
-                        message (string, colum, GAME, UNKN_ELEMENT);
-                    }
-                    else if (modify == SOLUTION) {
+                if (inputChar == '\n' || inputChar == RESTART) {//предложение рестарта
+                    if (modify == SOLUTION) {
                         message (string, colum, SOLUTION, UNKN_ELEMENT);
+                    }
+                    else {
+                        message (string, colum, GAME, UNKN_ELEMENT);
                     }
 
                     if (getch() == '\n') {

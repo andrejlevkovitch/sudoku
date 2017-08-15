@@ -4,26 +4,27 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-bool coincidence (chtype * array, const unsigned char numS, const unsigned char numC)
+bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC)
 {
-    bool indicator = false;
+    bool indicator = false;//индикатор совпадений
 
     unsigned char digit = 0;
 
-    unsigned char krajline = 0;
-    unsigned char krajcolum = 0;
+    unsigned char beginstring = 0;//показатели верхнего левого угла малых квадратов
+    unsigned char begincolum = 0;
 
-    chtype tempStore = *(array + numS * SIZE + numC);
+    chtype tempStore = array [numS][numC];
     const unsigned char value = tempStore;
-    *(array + numS * SIZE + numC) = UNKN_ELEMENT;
+
+    array [numS][numC] = UNKN_ELEMENT;//чтобы проверяемый элемент не мешал
 
     for (unsigned char i = 0; i < SIZE; ++i) {
-        if ((digit = *(array + i * SIZE + numC)) == value) {
+        if ((digit = array [i][numC]) == value) {//проверка в строке
             indicator = true;
             break;
         }
 
-        if ((digit = *(array + numS * SIZE + i)) == value) {
+        if ((digit = array [numS][i]) == value) {//проверка в столбце
             indicator = true;
             break;
         }
@@ -31,33 +32,33 @@ bool coincidence (chtype * array, const unsigned char numS, const unsigned char 
 
     switch (numS) {
         case 0: case 1: case 2:
-            krajline = 0;
+            beginstring = 0;
             break;
         case 3: case 4: case 5:
-            krajline = 3;
+            beginstring = 3;
             break;
         case 6: case 7: case 8:
-            krajline = 6;
+            beginstring = 6;
             break;
     }
 
     switch (numC) {
         case 0: case 1: case 2:
-            krajcolum = 0;
+            begincolum = 0;
             break;
         case 3: case 4: case 5:
-            krajcolum = 3;
+            begincolum = 3;
             break;
         case 6: case 7: case 8:
-            krajcolum = 6;
+            begincolum = 6;
             break;
     }
 
 
-    if (!indicator) {
-        for (unsigned char i = krajline; i < krajline + 3; ++i) {
-            for (unsigned char j = krajcolum; j < krajcolum + 3; ++j) {
-                if ((digit =*(array + i * SIZE + j)) == value) {
+    if (!indicator) {//проверка в малом квадрате
+        for (unsigned char i = beginstring; i < beginstring + 3; ++i) {
+            for (unsigned char j = begincolum; j < begincolum + 3; ++j) {
+                if ((digit = array [i][j]) == value) {
                     indicator = true;
                     break;
                 }
@@ -65,7 +66,7 @@ bool coincidence (chtype * array, const unsigned char numS, const unsigned char 
         }
     }
 
-    *(array + numS * SIZE + numC) = tempStore;
+    array [numS][numC] = tempStore;//возврат проверяемого значения в матрицу
 
     return indicator;
 }

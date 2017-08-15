@@ -8,29 +8,30 @@
 
 int main (int argc, char *argv[])
 {
-    unsigned char bgnMtrx [SIZE][SIZE] = {};
-    unsigned char sudoku [SIZE][SIZE] = {};
+    unsigned char bgnMtrx [SIZE][SIZE] = {};//начальная матрица
+    unsigned char sudoku [SIZE][SIZE] = {};//сюда запишем судоку
 
-    unsigned char type = 0;
-    unsigned char crosDig = 0;
+    unsigned char type = 0;//тип судоку
+    unsigned char crosDig = 0;//количество вычеркнутых цифр
 
-    unsigned char variety = DEFAULT;
+    unsigned char variety = DEFAULT;//модификатор, нужен для реализации решения судоку и разных вариантов судоку
 
-    char *validFlags [FLAGQ] = {"-help", "-solution", "-girandola"};
-    char *descriptionFlags [FLAGQ] = {"for help", "if you want to solve any Sudoku", "Sudoku-girandola"};
+    char *validFlags [FLAGQ] = {"-help", "-solution", "-girandola"};//флаги
+    char *descriptionFlags [FLAGQ] = {"for help", "if you want to solve any Sudoku", "Sudoku-girandola"};//описание флагов
 
-    if (argc > 2){
+    unsigned char numOfFlag;//номер флага
+
+    if (argc > 2){//ввести можно не более одного флага
         printf ("\033[01;31mYou can not enter more than one flag!\033[0m\n");
         exit (EXIT_FAILURE);
     }
     else if (argc == 2) {
-        unsigned char numOfFlag;
-        for (numOfFlag = 0; numOfFlag < FLAGQ; ++numOfFlag) {
+        for (numOfFlag = 0; numOfFlag < FLAGQ; ++numOfFlag) {//определение номера флага
            if (strcmp (argv [1], validFlags [numOfFlag]) == 0) break; 
         }
         
-        switch (numOfFlag) {
-            case 0:
+        switch (numOfFlag) {//сценарии для флагов
+            case 0://help
                     printf ("This program generates unique Sudoku, which have only one solution.\n");
                     printf ("You can choose the type of Sudoku: with letters or numbers; and complexity: up to %hhu crossed out numbers.\n\n", MAXCROSSDIGIT);
 
@@ -50,29 +51,29 @@ int main (int argc, char *argv[])
 
                     exit (EXIT_SUCCESS);
                     break;
-            case 1:
+            case 1://решение стороннего судоку
                     initscr();
                     colors();
 
-                    for (unsigned char i = 0; i < SIZE; ++i) {
+                    for (unsigned char i = 0; i < SIZE; ++i) {//обнуление всего судоку
                         for (unsigned char j = 0; j < SIZE; ++j) {
                             sudoku [i][j] = UNKN_ELEMENT;
                         }
                     }
                     
-                    type = '1';
-                    crosDig = 81;
+                    type = '1';//фиксированный тип
+                    crosDig = 81;//поле судоку полностью пустое
                     printw ("Input Sudoku.\n");
                     printw ("When you are done, press Enter.\n");
-                    if (ioSystem (*sudoku, type, crosDig, SOLUTION)){
+                    if (ioSystem (sudoku, type, crosDig, SOLUTION)){//если судоку введено и подтверждено желание получить решение, то введенное судоку решается
                         unsigned char psblS [SIZE][SIZE + 1] = {};
                         unsigned char psblC [SIZE][SIZE + 1] = {};
 
-                        psblSC (*psblS, *psblC, *sudoku);
-                        decision (*psblS, *psblC, *sudoku);
+                        psblSC (psblS, psblC, sudoku);//формирование матриц возможных строк и столбцов
+                        decision (psblS, psblC, sudoku);//решение судоку
 
                         crosDig = 0;
-                        for (unsigned char i = 0; i < SIZE; ++i) {
+                        for (unsigned char i = 0; i < SIZE; ++i) {//если судоку не имеет решения получаем ненулевое значение
                             for (unsigned char j = 0; j < SIZE; ++j) {
                                 if (sudoku [i][j] == UNKN_ELEMENT) {
                                     crosDig += 1;
@@ -93,7 +94,7 @@ int main (int argc, char *argv[])
                             attroff (COLOR_PAIR (6));
                         }
 
-                        ioSystem (*sudoku, type, crosDig, DECISION);
+                        ioSystem (sudoku, type, crosDig, DECISION);//вывод результата
                     }
 
                     endwin();
@@ -103,7 +104,7 @@ int main (int argc, char *argv[])
             case 2:
                     variety = GIRANDOLA;
                     break;
-            default:
+            default://если флаг неизвестен
                     printf ("\033[01;31mThis flag does not exist!\033[0m\n");
                     printf ("Use -help to inform.\n");
 
@@ -118,15 +119,15 @@ int main (int argc, char *argv[])
     colors();
 
     do {
-        type = inputType();
-        crosDig = numCros();
+        type = inputType();//ввод типа
+        crosDig = numCros();//ввод количества вычеркиваемых значений
 
-        randArr (*bgnMtrx, variety);
+        randArr (bgnMtrx, variety);//рандомизация, получение уникальной начальной матрицы
 
         memcpy (sudoku, bgnMtrx, SIZE * SIZE);
-        if (crosDig != 0) sudMaker (*sudoku, crosDig);
+        if (crosDig != 0) sudMaker (sudoku, crosDig);//составление судоку
 
-    } while (ioSystem (*sudoku, type, crosDig, variety));
+    } while (ioSystem (sudoku, type, crosDig, variety));//система ввода-вывода с возможностью начать новую игру
 
     endwin();
 
