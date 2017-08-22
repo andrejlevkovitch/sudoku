@@ -5,7 +5,7 @@
 #include <string.h>
 #include "sudlib.h"
 
-void randArr (unsigned char outputArr[][SIZE], const char variety)
+void randArr (unsigned char outputArr[][SIZE])
 {
     srand (time (NULL));
 
@@ -94,7 +94,9 @@ void randArr (unsigned char outputArr[][SIZE], const char variety)
 
                         if (outputArr [i][j] == psblDgts [l][k]) {//если сгенерированный элемент есть в строке - он переносится в конец, если он еще и совпадает со столбцом - то вычеркивается
                             tempStore = psblDgts [l][k];
-                            psblDgts [l][k] = psblDgts [l][endPsblDgt - masEmpty [l]];
+                            if (k != endPsblDgt - masEmpty [l]) {
+                                psblDgts [l][k] = psblDgts [l][endPsblDgt - masEmpty [l]];
+                            }
 
                             if (l != j) {
                                 psblDgts [l][endPsblDgt - masEmpty [l]] = tempStore;
@@ -126,9 +128,11 @@ void randArr (unsigned char outputArr[][SIZE], const char variety)
                     for (unsigned char l = 3; l < SIZE; ++l) {
                         for (signed char k = endPsblDgt - operMasEmpty [l]; k > endPsblDgt - 3 - operMasEmpty [l]; --k) {
                             if (k - rezerv [l] >= 0) {
-                                tempStore = psblDgts [l][k - rezerv [l]];
-                                psblDgts [l][k - rezerv [l]] = psblDgts [l][k];
-                                psblDgts [l][k] = tempStore;
+                                if (k != k - rezerv [l]) {
+                                    tempStore = psblDgts [l][k - rezerv [l]];
+                                    psblDgts [l][k - rezerv [l]] = psblDgts [l][k];
+                                    psblDgts [l][k] = tempStore;
+                                }
                             }
                         }
                     }

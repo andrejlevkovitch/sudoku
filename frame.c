@@ -25,6 +25,11 @@ void frame (const char modify)
         addch (frameElement | A_BOLD);
     }
 
+    move (Y0, X0 + 22);
+    printw ("%s", "Turn number: ");
+    move (Y0 + 1, X0 + 22);
+    printw ("%s", "Empty values: ");
+
     move (Y0 + 7, X0 + 22);
     printw ("%s", "If you want to leave the game, press ESC (twice).");
 

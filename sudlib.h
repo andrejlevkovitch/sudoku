@@ -33,10 +33,15 @@
 #define DEFAULT 'd'
 #define DECISION 'q'
 #define GIRANDOLA 'G'
+#define CREATURE 'C'
 
 void initialization (unsigned char * array, const unsigned char size_c);
 
-void randArr (unsigned char outputArr [][SIZE], const char variety);
+void randArr (unsigned char outputArr [][SIZE]);
+
+void randArrSpecial (unsigned char outputArr [][SIZE], const unsigned char variety);
+
+void forecasting (unsigned char inArr [][SIZE], signed char prognoz [][SIZE][SIZE + 1], unsigned char string, unsigned char colum);
 
 void zeros (unsigned char array []);
 

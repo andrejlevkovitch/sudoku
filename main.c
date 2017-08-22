@@ -51,6 +51,7 @@ int main (int argc, char *argv[])
 
                     exit (EXIT_SUCCESS);
                     break;
+
             case 1://решение стороннего судоку
                     initscr();
                     colors();
@@ -101,6 +102,7 @@ int main (int argc, char *argv[])
                     
                     exit (EXIT_SUCCESS);
                     break;
+
             case 2:
                     variety = GIRANDOLA;
                     break;
@@ -122,7 +124,12 @@ int main (int argc, char *argv[])
         type = inputType();//ввод типа
         crosDig = numCros();//ввод количества вычеркиваемых значений
 
-        randArr (bgnMtrx, variety);//рандомизация, получение уникальной начальной матрицы
+        if (variety == DEFAULT) {
+            randArr (bgnMtrx);//рандомизация, получение уникальной начальной матрицы
+        }
+        else if (variety == GIRANDOLA) {
+            randArrSpecial (bgnMtrx, GIRANDOLA);
+        }
 
         memcpy (sudoku, bgnMtrx, SIZE * SIZE);
         if (crosDig != 0) sudMaker (sudoku, crosDig);//составление судоку

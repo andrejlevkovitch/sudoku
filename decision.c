@@ -92,10 +92,12 @@ void decision (unsigned char arrayS [][SIZE + 1], unsigned char arrayC [][SIZE +
                                 for (unsigned char n = 0; n < masBuzyQuadr [SIZE]; ++n) {
                                     if (arrayC [masFreeColum [l]][m] == masBuzyQuadr [n]) {//вычеркивание из массива возможных значений встречающихся в квадрате значений
 
-                                        tempStore = arrayC [masFreeColum [l]][m];
                                         arrayC [masFreeColum [l]][SIZE] -= 1;
-                                        arrayC [masFreeColum [l]][m] = arrayC [masFreeColum [l]][arrayC [masFreeColum [l]][SIZE]];
-                                        arrayC [masFreeColum [l]][arrayC [masFreeColum [l]][SIZE]] = tempStore;
+                                        if (m != arrayC [masFreeColum [l]][SIZE]) {
+                                            tempStore = arrayC [masFreeColum [l]][m];
+                                            arrayC [masFreeColum [l]][m] = arrayC [masFreeColum [l]][arrayC [masFreeColum [l]][SIZE]];
+                                            arrayC [masFreeColum [l]][arrayC [masFreeColum [l]][SIZE]] = tempStore;
+                                        }
 
                                         masBuzyQuadr [SIZE] -= 1;
                                         masBuzyQuadr [n] = masBuzyQuadr [masBuzyQuadr [SIZE]];

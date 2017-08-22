@@ -26,10 +26,10 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
     noecho();
 
     do {
-        move (Y0, X0 + 22);//вывод счетчиков
-        printw ("%s %hu", "Turn is:", turnCounter);
-        move (Y0 + 1, X0 + 22);
-        printw ("%s %2hu", "Empty values:", emptyValueCounter);
+        move (Y0, X0 + 36);//вывод счетчиков
+        printw ("%hu", turnCounter);
+        move (Y0 + 1, X0 + 36);
+        printw ("%2hu", emptyValueCounter);
 
         move (koordY, koordX);//перемещение в верхний левый угол вывода
 
