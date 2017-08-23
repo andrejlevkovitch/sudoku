@@ -22,7 +22,17 @@ int main (int argc, char *argv[])
     unsigned char numOfFlag;//номер флага
 
     if (argc > 2){//ввести можно не более одного флага
+
+#ifdef linux
+
         printf ("\033[01;31mYou can not enter more than one flag!\033[0m\n");
+
+#else
+
+        printf ("You can not enter more than one flag!\n");
+
+#endif
+
         exit (EXIT_FAILURE);
     }
     else if (argc == 2) {
