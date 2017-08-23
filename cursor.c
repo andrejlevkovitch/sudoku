@@ -53,6 +53,8 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
             inputChar = 0;
         }
 #else
+        inputChar = getch();
+
         if (inputChar == UP || inputChar == DOWN || inputChar == LEFT || inputChar == RIGHT) {
             switch (inputChar) {
                 case UP:
@@ -68,6 +70,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
                     if (koordX != (X0 + 1 + (SIZE - 1) * 2)) koordX += 2;
                     break;
             }
+        }
 #endif
 
         else {
