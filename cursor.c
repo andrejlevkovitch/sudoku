@@ -26,10 +26,10 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
     noecho();
 
     do {
-        move (Y0, X0 + 36);//вывод счетчиков
-        printw ("%hu", turnCounter);
-        move (Y0 + 1, X0 + 36);
-        printw ("%2hu", emptyValueCounter);
+//        move (Y0, X0 + 36);//вывод счетчиков
+        mvprintw (Y0, X0 + 36, "%hu", turnCounter);
+//        move (Y0 + 1, X0 + 36);
+        mvprintw (Y0 + 1, X0 + 36, "%2hu", emptyValueCounter);
 
         move (koordY, koordX);//перемещение в верхний левый угол вывода
 
@@ -53,10 +53,8 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
             inputChar = 0;
         }
 #else
-        inputChar = getch();
-
-        if (inputChar == UP || inputChar == DOWN || inputChar == LEFT || inputChar == RIGHT) {
-            switch (inputChar) {
+        if ((inputChar = mygetch()) == ESC) {
+            switch (mygetch()) {
                 case UP:
                     if (koordY != Y0) koordY -= 1;
                     break;

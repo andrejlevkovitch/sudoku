@@ -1,7 +1,7 @@
 # Makefile for sudoku project, Windows
 
-sudoku: main.o input_type.o num_of_cros.o rand_array.o init.o sort_array.o zeros.o sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o
-	gcc -o sudoku main.o input_type.o num_of_cros.o rand_array.o init.o sort_array.o zeros.c sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o -lpdcurses -std=gnu99 -Wall
+sudoku: main.o input_type.o num_of_cros.o rand_array.o init.o sort_array.o zeros.o sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o
+	gcc -o sudoku main.o input_type.o num_of_cros.o rand_array.o init.o sort_array.o zeros.c sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o -lpdcurses -std=gnu99 -Wall
 
 main.o: main.c
 	gcc -c main.c -std=gnu99 -Wall
@@ -59,6 +59,9 @@ frame.o: frame.c
 
 cursor.o: cursor.c
 	gcc -c cursor.c -std=gnu99 -Wall
+
+mygetch.o: mygetch.c
+    gcc -c mygetch.c -std=gnu99 -Wall
 
 coincidence.o: coincidence.c
 	gcc -c coincidence.c -std=gnu99 -Wall
