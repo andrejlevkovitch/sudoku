@@ -61,7 +61,7 @@ cursor.o: cursor.c
 	gcc -c cursor.c -std=gnu99 -Wall
 
 mygetch.o: mygetch.c
-    gcc -c mygetch.c -std=gnu99 -Wall
+	gcc -c mygetch.c -std=gnu99 -Wall
 
 coincidence.o: coincidence.c
 	gcc -c coincidence.c -std=gnu99 -Wall
