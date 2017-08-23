@@ -2,7 +2,7 @@
 
 #include <conio.h>
 
-char mygetch (void)
+unsigned char mygetch (void)
 {
     return getch();
 }

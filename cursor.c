@@ -151,7 +151,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
                         message (string, colum, WIN, UNKN_ELEMENT);
                     }
                 }
-                else if (inputChar == '\n') {
+                else if (inputChar == CONFIRM) {
                     if (modify == SOLUTION) {
                         message (string, colum, SOLUTION, UNKN_ELEMENT);
                     }
@@ -159,7 +159,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
                         message (string, colum, GAME, UNKN_ELEMENT);
                     }
 
-                    if (getch() == '\n') {
+                    if (getch() == CONFIRM) {
                         inputChar = ESC;
                         newGame = true;
                     }

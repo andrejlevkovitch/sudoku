@@ -22,11 +22,17 @@
     #define DOWN 66
     #define RIGHT 67
     #define LEFT 68
+
+    #define DELETE 127
+    #define CONFIRM '\n'
 #else
     #define UP 72
     #define DOWN 80
     #define RIGHT 77
     #define LEFT 75
+
+    #define DELETE 8
+    #define CONFIRM 13
 #endif
 
 #define INPUT 'i'//для мессенджа
@@ -36,7 +42,6 @@
 #define WIN 'w'
 #define GAME 'g'
 
-#define DELETE 127
 #define ESC 27
 
 #define SOLUTION 's'//модификаторы
@@ -81,6 +86,8 @@ void frame (const char modify);
     bool cursor (chtype array [][SIZE], const unsigned char basisMatrix [][SIZE], const unsigned char type, const unsigned char quantityCrosDigits, const char modify);
 
     bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC, const char modify);
+
+    unsigned char mygetch (void);
 #endif
 
 void message (const unsigned char numS, const unsigned char numC, const char operace, const unsigned char value);
