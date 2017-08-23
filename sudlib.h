@@ -1,6 +1,10 @@
 //sudlib.h - заголовочный файл, включающий объявление всех используемых ф-ций в программе
 
-#include <curses.h>
+#ifdef linux
+    #include <curses.h>
+#else
+    #include <stdbool.h>
+#endif
 
 #define FLAGQ 3//количество используемых флагов
 
@@ -13,10 +17,17 @@
 #define Y0 5//начальная позиция вывода судоку в системе ввода-вывода
 #define X0 2
 
-#define UP 65//стрелки
-#define DOWN 66
-#define RIGHT 67
-#define LEFT 68
+#ifdef linux
+    #define UP 65//стрелки
+    #define DOWN 66
+    #define RIGHT 67
+    #define LEFT 68
+#else
+    #define UP 'i'
+    #define DOWN 'o'
+    #define RIGHT 'u'
+    #define LEFT 'p'
+#endif
 
 #define INPUT 'i'//для мессенджа
 #define ERROR 'e'
@@ -66,10 +77,12 @@ bool ioSystem (unsigned char array [][SIZE], const unsigned char type, const uns
 
 void frame (const char modify);
 
-bool cursor (chtype array [][SIZE], const unsigned char basisMatrix [][SIZE], const unsigned char type, const unsigned char quantityCrosDigits, const char modify);
+#ifdef linux
+    bool cursor (chtype array [][SIZE], const unsigned char basisMatrix [][SIZE], const unsigned char type, const unsigned char quantityCrosDigits, const char modify);
+
+    bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC, const char modify);
+#endif
 
 void message (const unsigned char numS, const unsigned char numC, const char operace, const unsigned char value);
-
-bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC, const char modify);
 
 void colors (void);

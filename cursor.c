@@ -33,7 +33,11 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
 
         move (koordY, koordX);//перемещение в верхний левый угол вывода
 
+#ifdef linux
         if ((inputChar = getch()) == ESC && getch() == 91) {//стрелка = 3 байтам, 27 91 и далее значащий байт
+#else
+        if (inputChar == UP || inputChar == DOWN || inputChar == LEFT || inputChar == RIGHT) {
+#endif
             switch (getch()) {//перемещение
                 case UP:
                     if (koordY != Y0) koordY -= 1;
@@ -50,7 +54,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
             }
 
             inputChar = 0;
-            }
+        }
         else {
             if (inputChar != ESC && modify != DECISION) {
                 if ((emptyValueCounter != 0 || errorStore [MAXCROSSDIGIT] != 0) && inputChar != '\n') {//ввод возможен пока судоку не решено
