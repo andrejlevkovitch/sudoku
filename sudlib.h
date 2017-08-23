@@ -22,15 +22,11 @@
     #define DOWN 66
     #define RIGHT 67
     #define LEFT 68
-
-    #define ESC 27
 #else
     #define UP 72
     #define DOWN 80
     #define RIGHT 77
     #define LEFT 75
-
-    #define ESC 224
 #endif
 
 #define INPUT 'i'//для мессенджа
@@ -41,6 +37,7 @@
 #define GAME 'g'
 
 #define DELETE 127
+#define ESC 27
 
 #define SOLUTION 's'//модификаторы
 #define DEFAULT 'd'

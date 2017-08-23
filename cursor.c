@@ -33,6 +33,8 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
 
         move (koordY, koordX);//перемещение в верхний левый угол вывода
 
+        refresh();
+
 #ifdef linux
         if ((inputChar = getch()) == ESC && getch() == 91) {//стрелка = 3 байтам, 27 91 и далее значащий байт
             switch (getch()) {//перемещение
@@ -53,7 +55,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
             inputChar = 0;
         }
 #else
-        if ((inputChar = mygetch()) == ESC) {
+        if ((inputChar = mygetch()) == 224) {
             switch (mygetch()) {
                 case UP:
                     if (koordY != Y0) koordY -= 1;
