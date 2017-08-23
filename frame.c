@@ -31,7 +31,16 @@ void frame (const char modify)
     printw ("%s", "Empty values: ");
 
     move (Y0 + 7, X0 + 22);
+
+#ifdef linux
+
     printw ("%s", "If you want to leave the game, press ESC (twice).");
+
+#else
+
+    printw ("%s", "If you want to leave the game, press ESC.");
+
+#endif
 
     move (Y0 + 8, X0 + 22);
     switch (modify) {//вывод в зависимости от модификатора

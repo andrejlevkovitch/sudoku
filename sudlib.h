@@ -33,6 +33,8 @@
 
     #define DELETE 8
     #define CONFIRM 13
+
+    #define ARROW 224
 #endif
 
 #define INPUT 'i'//для мессенджа
