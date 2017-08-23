@@ -15,7 +15,16 @@ unsigned char inputType (void)
 
     if (typeOfSud != '1' && typeOfSud != 'a' && typeOfSud != 'A') {
         endwin();
+
+#ifdef linux
+
         printf ("\033[01;31m%s\033[0m\n", ERROR_STRING);
+
+#else
+
+        printf ("%s\n", ERROR_STRING);
+
+#endif
         exit (EXIT_FAILURE);
     }
 

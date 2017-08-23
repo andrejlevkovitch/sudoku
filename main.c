@@ -107,7 +107,17 @@ int main (int argc, char *argv[])
                     variety = GIRANDOLA;
                     break;
             default://если флаг неизвестен
+
+#ifdef linux
+
                     printf ("\033[01;31mThis flag does not exist!\033[0m\n");
+
+#else
+
+                    printf ("This flag does not exist!\n");
+
+#endif
+
                     printf ("Use -help to inform.\n");
 
                     exit (EXIT_FAILURE);

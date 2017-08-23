@@ -15,7 +15,17 @@ unsigned char numCros (void)
 
     if (crosDigit > MAXCROSSDIGIT) {
         endwin();
+
+#ifdef linux
+
         printf ("\033[01;31m%s\n\033[0m", ERROR_STRING);
+
+#else
+
+        printf ("%s\n", ERROR_STRING);
+
+#endif
+
         exit (EXIT_FAILURE);
     }
 
