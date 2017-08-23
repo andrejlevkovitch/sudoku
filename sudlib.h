@@ -83,11 +83,15 @@ bool ioSystem (unsigned char array [][SIZE], const unsigned char type, const uns
 void frame (const char modify);
 
 #ifdef linux
+
     bool cursor (chtype array [][SIZE], const unsigned char basisMatrix [][SIZE], const unsigned char type, const unsigned char quantityCrosDigits, const char modify);
 
     bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC, const char modify);
 
+#else
+
     unsigned char mygetch (void);
+
 #endif
 
 void message (const unsigned char numS, const unsigned char numC, const char operace, const unsigned char value);

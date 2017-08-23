@@ -55,7 +55,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
             inputChar = 0;
         }
 #else
-        if ((inputChar = mygetch()) == 224) {
+        if ((inputChar = mygetch()) == ARROW) {
             switch (mygetch()) {
                 case UP:
                     if (koordY != Y0) koordY -= 1;
@@ -75,7 +75,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
 
         else {
             if (inputChar != ESC && modify != DECISION) {
-                if ((emptyValueCounter != 0 || errorStore [MAXCROSSDIGIT] != 0) && inputChar != '\n') {//ввод возможен пока судоку не решено
+                if ((emptyValueCounter != 0 || errorStore [MAXCROSSDIGIT] != 0) && inputChar != CONFIRM) {//ввод возможен пока судоку не решено
                     string = koordY - Y0;//определение соответсвующих координат матрицы
                     colum = (koordX - (X0 + 1))/2;
 
@@ -159,7 +159,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
                         message (string, colum, GAME, UNKN_ELEMENT);
                     }
 
-                    if (getch() == CONFIRM) {
+                    if (getch() == '\n') {
                         inputChar = ESC;
                         newGame = true;
                     }
