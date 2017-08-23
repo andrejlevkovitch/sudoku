@@ -35,9 +35,6 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
 
 #ifdef linux
         if ((inputChar = getch()) == ESC && getch() == 91) {//стрелка = 3 байтам, 27 91 и далее значащий байт
-#else
-        if (inputChar == UP || inputChar == DOWN || inputChar == LEFT || inputChar == RIGHT) {
-#endif
             switch (getch()) {//перемещение
                 case UP:
                     if (koordY != Y0) koordY -= 1;
@@ -55,6 +52,24 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
 
             inputChar = 0;
         }
+#else
+        if (inputChar == UP || inputChar == DOWN || inputChar == LEFT || inputChar == RIGHT) {
+            switch (inputChar) {
+                case UP:
+                    if (koordY != Y0) koordY -= 1;
+                    break;
+                case DOWN:
+                    if (koordY != (Y0 + SIZE - 1)) koordY += 1;
+                    break;
+                case LEFT:
+                    if (koordX != (X0 + 1)) koordX -= 2;
+                    break;
+                case RIGHT:
+                    if (koordX != (X0 + 1 + (SIZE - 1) * 2)) koordX += 2;
+                    break;
+            }
+#endif
+
         else {
             if (inputChar != ESC && modify != DECISION) {
                 if ((emptyValueCounter != 0 || errorStore [MAXCROSSDIGIT] != 0) && inputChar != '\n') {//ввод возможен пока судоку не решено
