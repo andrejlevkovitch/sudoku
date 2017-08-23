@@ -1,7 +1,7 @@
 //main.c - основное тело
 
 #include <stdio.h>
-#include <ncurses.h>
+#include <curses.h>
 #include <stdlib.h>
 #include <string.h>
 #include "sudlib.h"
@@ -62,7 +62,7 @@ int main (int argc, char *argv[])
                         }
                     }
                     
-                    type = '1';//фиксированный тип
+                    type = inputType();//фиксированный тип
                     crosDig = 81;//поле судоку полностью пустое
                     printw ("Input Sudoku.\n");
                     printw ("When you are done, press Enter.\n");

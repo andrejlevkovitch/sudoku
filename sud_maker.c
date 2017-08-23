@@ -46,7 +46,7 @@ void sudMaker (unsigned char matrix [][SIZE], const unsigned char rmDigits)
             num = 0 + rand() % koordNotZero [SIZE * SIZE];
 
             string = koordNotZero [num] / 10;//определение координат вычеркивоемого элемента
-            colum = koordNotZero [num] - string * 10;
+            colum = koordNotZero [num] % 10;
 
             tempStore = koordNotZero [num];
             koordNotZero [SIZE * SIZE] -= 1;

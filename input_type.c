@@ -1,6 +1,6 @@
 //input_type.c - ф-ция ввода типа судоку
 
-#include <ncurses.h>
+#include <curses.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include "sudlib.h"

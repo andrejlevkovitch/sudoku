@@ -1,6 +1,6 @@
 //sudlib.h - заголовочный файл, включающий объявление всех используемых ф-ций в программе
 
-#include <ncurses.h>
+#include <curses.h>
 
 #define FLAGQ 3//количество используемых флагов
 
@@ -27,7 +27,6 @@
 
 #define DELETE 127
 #define ESC 27
-#define RESTART 217
 
 #define SOLUTION 's'//модификаторы
 #define DEFAULT 'd'
@@ -39,7 +38,7 @@ void initialization (unsigned char * array, const unsigned char size_c);
 
 void randArr (unsigned char outputArr [][SIZE]);
 
-void randArrSpecial (unsigned char outputArr [][SIZE], const unsigned char variety);
+void randArrSpecial (unsigned char outputArr [][SIZE], const char variety);
 
 void forecasting (unsigned char inArr [][SIZE], signed char prognoz [][SIZE][SIZE + 1], unsigned char string, unsigned char colum);
 
@@ -71,6 +70,6 @@ bool cursor (chtype array [][SIZE], const unsigned char basisMatrix [][SIZE], co
 
 void message (const unsigned char numS, const unsigned char numC, const char operace, const unsigned char value);
 
-bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC);
+bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC, const char modify);
 
 void colors (void);

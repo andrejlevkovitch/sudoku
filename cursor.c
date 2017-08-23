@@ -1,6 +1,6 @@
 //cursor.c - передвигает курсор в поле судоку
 
-#include <ncurses.h>
+#include <curses.h>
 #include <stdbool.h>
 #include <unistd.h>
 #include "sudlib.h"
@@ -53,14 +53,13 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
             }
         else {
             if (inputChar != ESC && modify != DECISION) {
-                if (emptyValueCounter != 0 || errorStore [MAXCROSSDIGIT] != 0) {//ввод возможен пока судоку не решено
+                if ((emptyValueCounter != 0 || errorStore [MAXCROSSDIGIT] != 0) && inputChar != '\n') {//ввод возможен пока судоку не решено
                     string = koordY - Y0;//определение соответсвующих координат матрицы
                     colum = (koordX - (X0 + 1))/2;
 
                     if (basisMatrix [string][colum] == UNKN_ELEMENT) {//только если это не дефолтное значение судоку
-                        if (inputChar == DELETE) {//удаление символа
-                            tempStore = outputMatrix [string][colum];//для сохранения значений цвета, которые хранятся в перезаписываемом элементе
-                            outputMatrix [string][colum] -= tempStore;
+                        if (inputChar == DELETE && (tempStore = outputMatrix [string][colum]) != UNKN_ELEMENT) {//удаление символа
+                            outputMatrix [string][colum] -= tempStore;//для сохранения значений цвета, которые хранятся в перезаписываемом элементе
                             outputMatrix [string][colum] += UNKN_ELEMENT;
 
                             addch (outputMatrix [string][colum] | A_BOLD);
@@ -96,7 +95,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
                                 }
                             }
 
-                            if (!coincidence (outputMatrix, string, colum)) {
+                            if (!coincidence (outputMatrix, string, colum, modify)) {
                                 addch ((outputMatrix [string][colum] + type) | A_BOLD);
 
                                 message (string, colum, INPUT, inputChar + type);
@@ -130,8 +129,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
                         message (string, colum, WIN, UNKN_ELEMENT);
                     }
                 }
-
-                if (inputChar == '\n' || inputChar == RESTART) {//предложение рестарта
+                else if (inputChar == '\n') {
                     if (modify == SOLUTION) {
                         message (string, colum, SOLUTION, UNKN_ELEMENT);
                     }

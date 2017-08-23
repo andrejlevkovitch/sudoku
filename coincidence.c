@@ -1,10 +1,10 @@
 //coincidence.c - проверяет нет ли вводимого значения в уже имеющемся массиве
 
-#include <ncurses.h>
+#include <curses.h>
 #include <stdbool.h>
 #include "sudlib.h"
 
-bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC)
+bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC, const char modify)
 {
     bool indicator = false;//индикатор совпадений
 
@@ -12,6 +12,10 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
 
     unsigned char beginstring = 0;//показатели верхнего левого угла малых квадратов
     unsigned char begincolum = 0;
+
+    unsigned char girandolaKoords [SIZE] = {0, 8, 14, 41, 44, 47, 74, 80, 88};
+    unsigned char string = 0;
+    unsigned char colum = 0;
 
     chtype tempStore = array [numS][numC];
     const unsigned char value = tempStore;
@@ -23,7 +27,9 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
             indicator = true;
             break;
         }
+    }
 
+    for (unsigned char i = 0; i < SIZE; ++i) {
         if ((digit = array [numS][i]) == value) {//проверка в столбце
             indicator = true;
             break;
@@ -62,6 +68,17 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
                     indicator = true;
                     break;
                 }
+            }
+        }
+    }
+
+    if (!indicator && modify == GIRANDOLA) {//проверка жирандоля
+        for (unsigned char i = 0; i < SIZE; ++i) {
+            string = girandolaKoords [i] / 10;
+            colum = girandolaKoords [i] % 10;
+            if ((digit = array [string][colum]) == value) {
+                indicator = true;
+                break;
             }
         }
     }

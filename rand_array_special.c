@@ -1,4 +1,4 @@
-//rand_array_new.c - рандомизация для особых случаев
+//rand_array_special.c - рандомизация для особых случаев
 
 #include <stdlib.h>
 #include <stdbool.h>
@@ -6,7 +6,7 @@
 #include <string.h>
 #include "sudlib.h"
 
-void randArrSpecial (unsigned char outputArr[][SIZE], const unsigned char variety)
+void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
 {
     srand (time(NULL));
 
@@ -69,7 +69,7 @@ void randArrSpecial (unsigned char outputArr[][SIZE], const unsigned char variet
         if (variety == GIRANDOLA) {//вычеркивание значений жиндораля
             for (unsigned char i = 0; i < SIZE; ++i) {
                 string = girandolaKoords [i] / 10;
-                colum = girandolaKoords [i] - string * 10;
+                colum = girandolaKoords [i] % 10;
 
                 outputArr [string][colum] = girandolaValues [i];
                 forecasting (outputArr, prognoz, string, colum);

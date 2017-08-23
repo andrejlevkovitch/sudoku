@@ -1,6 +1,6 @@
 //io.c - система ввода-вывода
 
-#include <ncurses.h>
+#include <curses.h>
 #include <stdbool.h>
 #include "sudlib.h"
 
@@ -22,6 +22,7 @@ bool ioSystem (unsigned char matrix [][SIZE], const unsigned char type, const un
     for (unsigned char i = 0; i < 3; ++i) {
         for (unsigned char j = 0; j < 3; ++j) {
             biColorType = !biColorType;//изменение цвета
+
             for (unsigned char l = 0 + 3 * i; l < 3 + 3 * i; ++l) {
                 for (unsigned char n = 0 + 3 * j; n < 3 + 3 * j; ++n) {
                     move (Y0 + l, X0 + n * 2);

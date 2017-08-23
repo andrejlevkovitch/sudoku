@@ -1,6 +1,6 @@
 //frame.c - выводит на экран рамку для судоку
 
-#include <ncurses.h>
+#include <curses.h>
 #include "sudlib.h"
 
 void frame (const char modify)
