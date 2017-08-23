@@ -33,6 +33,8 @@ int main (int argc, char *argv[])
 
 #endif
 
+        printf ("Use -help to inform.\n");
+
         exit (EXIT_FAILURE);
     }
     else if (argc == 2) {
