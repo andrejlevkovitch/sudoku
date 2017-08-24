@@ -29,6 +29,9 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
 
     unsigned char tempStore = 0;
 
+    unsigned char beginstring = 0;
+    unsigned char begincolum = 0;
+
     bool solOne = false;
     bool solTwo = false;
     bool minPrognoz = false;
@@ -52,6 +55,9 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
     do {
         fromBegin = false;
 
+        outputArr [1][1] = 0;
+        forecasting (outputArr, prognoz, 1, 1, variety);
+
         for (unsigned char i = 0; i < SIZE; ++i) {//инициализация прогноза
             for (unsigned char j = 0; j < SIZE; ++j) {
                 for (unsigned char n = 0; n < SIZE + 1; ++n) {
@@ -72,7 +78,7 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
                 colum = girandolaKoords [i] % 10;
 
                 outputArr [string][colum] = girandolaValues [i];
-                forecasting (outputArr, prognoz, string, colum);
+                forecasting (outputArr, prognoz, string, colum, variety);
             }
         }
 
@@ -101,7 +107,7 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
                         if (solOne) break;
                     }
 
-                    forecasting (outputArr, prognoz, string, colum);
+                    forecasting (outputArr, prognoz, string, colum, variety);
 
                 } while (solOne);
 
@@ -114,7 +120,7 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
                 for (unsigned char i = 0; i < SIZE; ++i) {//редактирование прогноза после решения
                     for (unsigned char j = 0; j < SIZE; ++j) {
                         if (copyBasisArr [i][j] != outputArr[i][j]) {
-                            forecasting (outputArr, prognoz, i, j);
+                            forecasting (outputArr, prognoz, i, j, variety);
                             solTwo = true;
                         }
                     }
@@ -165,9 +171,55 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
 
             randElement = 0 + rand() % prognoz [string][colum][SIZE];//рандомный элемент
             outputArr [string][colum] = prognoz [string][colum][randElement];
-            forecasting (outputArr, prognoz, string, colum);
+            forecasting (outputArr, prognoz, string, colum, variety);
 
         } while (bigIter);
+
+        if (variety == WINDOKU && !fromBegin) {//проверка для виндоку, обусловлена тем, что decision не учитывает прогноз
+            for (unsigned char i = 0; i < 4; ++i) {
+                switch (i) {
+                    case 0:
+                        beginstring = 1;
+                        begincolum = 1;
+                        break;
+
+                    case 1:
+                        beginstring = 1;
+                        begincolum = 5;
+                        break;
+
+                    case 2:
+                        beginstring = 5;
+                        begincolum = 1;
+                        break;
+
+                    case 3:
+                        beginstring = 5;
+                        begincolum = 5;
+                }
+
+                for (unsigned char l = beginstring; l < 3 + beginstring; ++l) {
+                    for (unsigned char k = begincolum; k < 3 + begincolum; ++k) {
+                        for (unsigned char m = beginstring; m < 3 + beginstring; ++m) {
+                            for (unsigned char n = begincolum; n < 3 + begincolum; ++n) {
+                                if (outputArr [l][k] == outputArr [m][n] && m * 10 + n != l * 10 + k) {
+                                    fromBegin = true;
+                                    break;
+                                }
+                            }
+
+                            if (fromBegin) break;
+                        }
+
+                        if (fromBegin) break;
+                    }
+
+                    if (fromBegin) break;
+                }
+
+                if (fromBegin) break;
+            }
+        }
 
     } while (fromBegin);
 

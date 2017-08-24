@@ -7,6 +7,7 @@
 bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC, const char modify)
 {
     bool indicator = false;//индикатор совпадений
+    bool stopIter = false;
 
     unsigned char digit = 0;
 
@@ -85,6 +86,53 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
                 }
 
                 break;
+            }
+        }
+    }
+
+    if (!indicator && modify == WINDOKU) {
+        stopIter = false;
+
+        switch (numS) {
+            case 1: case 2: case 3:
+                beginstring = 1;
+                break;
+
+            case 5: case 6: case 7:
+                beginstring = 5;
+                break;
+
+            default:
+                stopIter = true;
+                break;
+        }
+
+        if (!stopIter) {
+            switch (numC) {
+                case 1: case 2: case 3:
+                    begincolum = 1;
+                    break;
+
+                case 5: case 6: case 7:
+                    begincolum = 5;
+                    break;
+
+                default:
+                    stopIter = true;
+                    break;
+            }
+        }
+
+        if (!stopIter) {
+            for (unsigned char i = beginstring; i < 3 + beginstring; ++i) {
+                for (unsigned char j = begincolum; j < 3 + begincolum; ++j) {
+                    if ((digit = array [i][j]) == value) {
+                        indicator = true;
+                        break;
+                    }
+                }
+
+                if (indicator) break;
             }
         }
     }

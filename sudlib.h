@@ -59,7 +59,7 @@ void randArr (unsigned char outputArr [][SIZE]);
 
 void randArrSpecial (unsigned char outputArr [][SIZE], const char variety);
 
-void forecasting (unsigned char inArr [][SIZE], signed char prognoz [][SIZE][SIZE + 1], unsigned char string, unsigned char colum);
+void forecasting (unsigned char inArr [][SIZE], signed char prognoz [][SIZE][SIZE + 1], unsigned char string, unsigned char colum, char variety);
 
 void zeros (unsigned char array []);
 
