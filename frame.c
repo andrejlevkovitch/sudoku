@@ -7,9 +7,7 @@ void frame (const char modify)
 {
     chtype frameElement;
 
-    move (Y0 - 1, 0);//перемещение к началу рамки относительно вывода судоку
-    printw ("  ");
-
+    move (Y0 - 1, 2);//перемещение к началу рамки относительно вывода судоку
     for (unsigned char i = 0; i < SIZE; ++i) {//верхняя часть
         frameElement = ' ' | COLOR_PAIR (1);
         addch (frameElement);
@@ -25,20 +23,16 @@ void frame (const char modify)
         addch (frameElement | A_BOLD);
     }
 
-    move (Y0, X0 + 22);
-    printw ("%s", "Turn number: ");
-    move (Y0 + 1, X0 + 22);
-    printw ("%s", "Empty values: ");
-
-    move (Y0 + 7, X0 + 22);
+    mvprintw (Y0, X0 + 22, "%s", "Turn number: ");
+    mvprintw (Y0 + 1, X0 + 22, "%s", "Empty values: ");
 
 #ifdef linux
 
-    printw ("%s", "If you want to leave the game, press ESC (twice).");
+    mvprintw (Y0 + 7, X0 + 22, "%s", "If you want to leave the game, press ESC (twice).");
 
 #else
 
-    printw ("%s", "If you want to leave the game, press ESC.");
+    mvprintw (Y0 + 7, X0 + 22, "%s", "If you want to leave the game, press ESC.");
 
 #endif
 

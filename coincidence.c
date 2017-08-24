@@ -74,10 +74,16 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
 
     if (!indicator && modify == GIRANDOLA) {//проверка жирандоля
         for (unsigned char i = 0; i < SIZE; ++i) {
-            string = girandolaKoords [i] / 10;
-            colum = girandolaKoords [i] % 10;
-            if ((digit = array [string][colum]) == value) {
-                indicator = true;
+            if (numS * 10 + numC == girandolaKoords [i]) {
+                for (unsigned char j = 0; j < SIZE; ++j) {
+                    string = girandolaKoords [j] / 10;
+                    colum = girandolaKoords [j] % 10;
+                    if ((digit = array [string][colum]) == value) {
+                        indicator = true;
+                        break;
+                    }
+                }
+
                 break;
             }
         }

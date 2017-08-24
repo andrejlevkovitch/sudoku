@@ -6,7 +6,7 @@
     #include <stdbool.h>
 #endif
 
-#define FLAGQ 3//количество используемых флагов
+#define FLAGQ 4//количество используемых флагов
 
 #define SIZE 9
 #define MAXCROSSDIGIT 58//максимальное количество вычеркиваемых значений
@@ -51,6 +51,7 @@
 #define DECISION 'q'
 #define GIRANDOLA 'G'
 #define CREATURE 'C'
+#define WINDOKU 'W'
 
 void initialization (unsigned char * array, const unsigned char size_c);
 

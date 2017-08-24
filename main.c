@@ -16,8 +16,8 @@ int main (int argc, char *argv[])
 
     unsigned char variety = DEFAULT;//модификатор, нужен для реализации решения судоку и разных вариантов судоку
 
-    char *validFlags [FLAGQ] = {"-help", "-solution", "-girandola"};//флаги
-    char *descriptionFlags [FLAGQ] = {"for help", "if you want to solve any Sudoku", "Sudoku-girandola"};//описание флагов
+    char *validFlags [FLAGQ] = {"-help", "-solution", "-girandola", "-windoku"};//флаги
+    char *descriptionFlags [FLAGQ] = {"for help", "if you want to solve any Sudoku", "Sudoku-girandola", "Sudoku-windoku"};//описание флагов
 
     unsigned char numOfFlag;//номер флага
 
@@ -118,6 +118,11 @@ int main (int argc, char *argv[])
             case 2:
                     variety = GIRANDOLA;
                     break;
+
+            case 3:
+                    variety = WINDOKU;
+                    break;
+
             default://если флаг неизвестен
 
 #ifdef linux
@@ -149,8 +154,8 @@ int main (int argc, char *argv[])
         if (variety == DEFAULT) {
             randArr (bgnMtrx);//рандомизация, получение уникальной начальной матрицы
         }
-        else if (variety == GIRANDOLA) {
-            randArrSpecial (bgnMtrx, GIRANDOLA);
+        else {
+            randArrSpecial (bgnMtrx, variety);
         }
 
         memcpy (sudoku, bgnMtrx, SIZE * SIZE);
