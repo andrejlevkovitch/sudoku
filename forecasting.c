@@ -8,7 +8,13 @@ void forecasting (unsigned char basisArr [][SIZE], signed char prognoz [][SIZE][
     unsigned char beginstring = 0;
     unsigned char begincolum = 0;
 
+    unsigned char numS = 0;
+    unsigned char numC = 0;
+
     bool stopIter = false;
+
+    unsigned char diagonalKoordsL [SIZE] = {0, 11, 22, 33, 44, 55, 66, 77, 88};
+    unsigned char diagonalKoordsR [SIZE] = {8, 17, 26, 35, 44, 53, 62, 71, 80};
 
     for (unsigned char i = 0; i < SIZE; ++i) {//вычеркивание встречающихся значений в строке
         if (basisArr [i][colum] == UNKN_ELEMENT) {
@@ -118,6 +124,48 @@ void forecasting (unsigned char basisArr [][SIZE], signed char prognoz [][SIZE][
                         }
                     }
                 }
+            }
+        }
+    }
+
+    if (variety == DIAGONAL) {
+        for (unsigned char i = 0; i < SIZE; ++i) {
+            if (string * 10 + colum == diagonalKoordsL [i]) {//вычеркивание значений прогноза из левой диагонали
+                for (unsigned char j = 0; j < SIZE; ++j) {
+                    numS = diagonalKoordsL [j] / 10;
+                    numC = diagonalKoordsL [j] % 10;
+
+                    if (basisArr [numS][numC] == UNKN_ELEMENT) {
+                        for (unsigned char n = 0; n < prognoz [numS][numC][SIZE]; ++n) {
+                            if (prognoz [numS][numC][n] == basisArr [string][colum]) {
+                                prognoz [numS][numC][SIZE] -= 1;
+                                prognoz [numS][numC][n] = prognoz [numS][numC][prognoz [numS][numC][SIZE]];
+                            }
+                        }
+                    }
+                }
+
+                break;
+            }
+        }
+
+        for (unsigned char i = 0; i < SIZE; ++i) {
+            if (string * 10 + colum == diagonalKoordsR [i]) {//вычеркивание значений из правой диагонали
+                for (unsigned char j = 0; j < SIZE; ++j) {
+                    numS = diagonalKoordsR [j] / 10;
+                    numC = diagonalKoordsR [j] % 10;
+
+                    if (basisArr [numS][numC] == UNKN_ELEMENT) {
+                        for (unsigned char n = 0; n < prognoz [numS][numC][SIZE]; ++n) {
+                            if (prognoz [numS][numC][n] == basisArr [string][colum]) {
+                                prognoz [numS][numC][SIZE] -= 1;
+                                prognoz [numS][numC][n] = prognoz [numS][numC][prognoz [numS][numC][SIZE]];
+                            }
+                        }
+                    }
+                }
+
+                break;
             }
         }
     }

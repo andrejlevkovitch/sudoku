@@ -15,6 +15,10 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
     unsigned char begincolum = 0;
 
     unsigned char girandolaKoords [SIZE] = {0, 8, 14, 41, 44, 47, 74, 80, 88};
+
+    unsigned char diagonalKoordsL [SIZE] = {0, 11, 22, 33, 44, 55, 66, 77, 88};
+    unsigned char diagonalKoordsR [SIZE] = {8, 17, 26, 35, 44, 53, 62, 71, 80};
+
     unsigned char string = 0;
     unsigned char colum = 0;
 
@@ -133,6 +137,42 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
                 }
 
                 if (indicator) break;
+            }
+        }
+    }
+
+    if (!indicator && modify == DIAGONAL) {
+        for (unsigned char i = 0; i < SIZE; ++i) {
+            if (numS * 10 + numC == diagonalKoordsL [i]) {
+                for (unsigned char l = 0; l < SIZE; ++l) {
+                    string = diagonalKoordsL [l] / 10;
+                    colum = diagonalKoordsL [l] % 10;
+
+                    if ((digit = array [string][colum]) == value) {
+                        indicator = true;
+                        break;
+                    }
+                }
+
+                if (indicator) break;
+            }
+        }
+
+        if (!indicator) {
+            for (unsigned char i = 0; i < SIZE; ++i) {
+                if (numS * 10 + numC == diagonalKoordsR [i]) {
+                    for (unsigned char l = 0; l < SIZE; ++l) {
+                        string = diagonalKoordsR [l] / 10;
+                        colum = diagonalKoordsR [l] % 10;
+
+                        if ((digit = array [string][colum]) == value) {
+                            indicator = true;
+                            break;
+                        }
+                    }
+
+                    if (indicator) break;
+                }
             }
         }
     }

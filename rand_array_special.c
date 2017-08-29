@@ -17,8 +17,14 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
     unsigned char girandolaKoords [SIZE] = {0, 8, 14, 41, 44, 47, 74, 80, 88};
     unsigned char girandolaValues [SIZE + 1] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
+    unsigned char diagonalKoordsL [SIZE] = {0, 11, 22, 33, 44, 55, 66, 77, 88};
+    unsigned char diagonalKoordsR [SIZE] = {8, 17, 26, 35, 44, 53, 62, 71, 80};
+
     unsigned char string = 0;
     unsigned char colum = 0;
+
+    unsigned char numS = 0;
+    unsigned char numC = 0;
 
     unsigned char psblS [SIZE][SIZE + 1] = {};
     unsigned char psblC [SIZE][SIZE + 1] = {};
@@ -218,6 +224,44 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
                 }
 
                 if (fromBegin) break;
+            }
+        }
+
+        if (variety == DIAGONAL && !fromBegin) {
+            for (unsigned char i = 0; i < SIZE; ++i) {//проверка в первой диагонали
+                string = diagonalKoordsL [i] / 10;
+                colum = diagonalKoordsL [i] % 10;
+
+                for (unsigned char j = 0; j < SIZE; ++j) {
+                    numS = diagonalKoordsL [j] / 10;
+                    numC = diagonalKoordsL [j] % 10;
+
+                    if (outputArr [string][colum] == outputArr [numS][numC] && diagonalKoordsL [i] != diagonalKoordsL [j]) {
+                        fromBegin = true;
+                        break;
+                    }
+                }
+
+                if (fromBegin) break;
+            }
+
+            if (!fromBegin) {
+                for (unsigned char i = 0; i < SIZE; ++i) {//проверка во второй диагонали
+                    string = diagonalKoordsR [i] / 10;
+                    colum = diagonalKoordsR [i] % 10;
+
+                    for (unsigned char j = 0; j < SIZE; ++j) {
+                        numS = diagonalKoordsR [j] / 10;
+                        numC = diagonalKoordsR [j] % 10;
+
+                        if (outputArr [string][colum] == outputArr [numS][numC] && diagonalKoordsR [i] != diagonalKoordsR [j]) {
+                            fromBegin = true;
+                            break;
+                        }
+                    }
+
+                    if (fromBegin) break;
+                }
             }
         }
 

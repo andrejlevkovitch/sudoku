@@ -14,6 +14,7 @@ bool ioSystem (unsigned char matrix [][SIZE], const unsigned char type, const un
 
     unsigned char girandolaKoords [SIZE + 1] = {0, 14, 8, 41, 44, 47, 80, 74, 88, 0};//координаты Жирандолы
     unsigned char windokuKoords [SIZE * 4 + 1] = {11, 12, 21, 22, 13, 15, 23, 25, 16, 17, 26, 27, 31, 32, 51, 52, 33, 35, 53, 55, 36, 37, 56, 57, 61, 62, 71, 72, 63, 65, 73, 75, 66, 67, 76, 77, 0};//координаты Виндоку
+    unsigned char diagonalKoords [SIZE + SIZE] = {0, 11, 22, 8, 17, 26, 33, 35, 44, 53, 55, 62, 71, 80, 66, 77, 88, 0};//диагональные координаты
 
     chtype outputElements [SIZE][SIZE] = {};//выводная матрица
     chtype space = 0;//просто пробел, заполнение пробелов между цифрами в судоку
@@ -28,7 +29,7 @@ bool ioSystem (unsigned char matrix [][SIZE], const unsigned char type, const un
                 for (unsigned char n = 0 + 3 * j; n < 3 + 3 * j; ++n) {
                     move (Y0 + l, X0 + n * 2);
 
-                    if (modify == GIRANDOLA || modify == WINDOKU) {
+                    if (modify == GIRANDOLA || modify == WINDOKU || modify == DIAGONAL) {
                         specialValue = l * 10 + n;
                     }
 
@@ -42,7 +43,7 @@ bool ioSystem (unsigned char matrix [][SIZE], const unsigned char type, const un
                     addch (space);
 
                     if (matrix [l][n] != UNKN_ELEMENT) {
-                        if ((modify == GIRANDOLA && specialValue == girandolaKoords [girandolaKoords [SIZE]]) || (modify == WINDOKU && specialValue == windokuKoords [windokuKoords [SIZE * 4]])) {
+                        if ((modify == GIRANDOLA && specialValue == girandolaKoords [girandolaKoords [SIZE]]) || (modify == WINDOKU && specialValue == windokuKoords [windokuKoords [SIZE * 4]]) || (modify == DIAGONAL && specialValue == diagonalKoords [diagonalKoords [SIZE + SIZE - 1]])) {
                             outputElements [l][n] = matrix [l][n] | COLOR_PAIR (9);
                         }
                         else {
@@ -51,7 +52,7 @@ bool ioSystem (unsigned char matrix [][SIZE], const unsigned char type, const un
                         addch ((outputElements [l][n] + type) | A_BOLD);
                     }
                     else {
-                        if ((modify == GIRANDOLA && specialValue == girandolaKoords [girandolaKoords [SIZE]]) || (modify == WINDOKU && specialValue == windokuKoords [windokuKoords [SIZE * 4]])) {
+                        if ((modify == GIRANDOLA && specialValue == girandolaKoords [girandolaKoords [SIZE]]) || (modify == WINDOKU && specialValue == windokuKoords [windokuKoords [SIZE * 4]]) || (modify == DIAGONAL && specialValue == diagonalKoords [diagonalKoords [SIZE + SIZE - 1]])) {
                             outputElements [l][n] = matrix [l][n] | COLOR_PAIR (10);
                         }
                         else {
@@ -65,6 +66,9 @@ bool ioSystem (unsigned char matrix [][SIZE], const unsigned char type, const un
                     }
                     else if (modify == WINDOKU && specialValue == windokuKoords [windokuKoords [SIZE * 4]]) {
                         windokuKoords [SIZE * 4] += 1;
+                    }
+                    else if (modify == DIAGONAL && specialValue == diagonalKoords [diagonalKoords [SIZE + SIZE - 1]]) {
+                        diagonalKoords [SIZE + SIZE - 1] += 1;
                     }
                 }
             }
