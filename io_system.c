@@ -17,7 +17,6 @@ bool ioSystem (unsigned char matrix [][SIZE], const unsigned char type, const un
     unsigned char diagonalKoords [SIZE + SIZE] = {0, 11, 22, 8, 17, 26, 33, 35, 44, 53, 55, 62, 71, 80, 66, 77, 88, 0};//диагональные координаты
 
     chtype outputElements [SIZE][SIZE] = {};//выводная матрица
-    chtype space = 0;//просто пробел, заполнение пробелов между цифрами в судоку
 
     frame(modify);//рамка
 
@@ -34,13 +33,11 @@ bool ioSystem (unsigned char matrix [][SIZE], const unsigned char type, const un
                     }
 
                     if (modify == WINDOKU && specialValue == windokuKoords [windokuKoords [SIZE * 4]] && n != 1 && n != 5) {
-                        space = ' ' | COLOR_PAIR (9);
+                        addch (UNKN_ELEMENT | COLOR_PAIR (9));
                     }
                     else {
-                        space = ' ' | COLOR_PAIR (biColorType + 2);
+                        addch (UNKN_ELEMENT | COLOR_PAIR (biColorType + 2));
                     }
-
-                    addch (space);
 
                     if (matrix [l][n] != UNKN_ELEMENT) {
                         if ((modify == GIRANDOLA && specialValue == girandolaKoords [girandolaKoords [SIZE]]) || (modify == WINDOKU && specialValue == windokuKoords [windokuKoords [SIZE * 4]]) || (modify == DIAGONAL && specialValue == diagonalKoords [diagonalKoords [SIZE + SIZE - 1]])) {
@@ -49,6 +46,7 @@ bool ioSystem (unsigned char matrix [][SIZE], const unsigned char type, const un
                         else {
                             outputElements [l][n] = matrix [l][n] | COLOR_PAIR (biColorType + 2);
                         }
+
                         addch ((outputElements [l][n] + type) | A_BOLD);
                     }
                     else {
@@ -58,6 +56,7 @@ bool ioSystem (unsigned char matrix [][SIZE], const unsigned char type, const un
                         else {
                             outputElements [l][n] = matrix [l][n] | COLOR_PAIR (biColorType + 4);
                         }
+
                         addch (outputElements [l][n] | A_BOLD);
                     }
 
