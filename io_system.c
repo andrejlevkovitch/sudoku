@@ -10,6 +10,8 @@ bool ioSystem (unsigned int matrix [][SIZE], const unsigned char type, const uns
 
     bool newGame = false;
 
+    unsigned char tempStore = 0;
+
     unsigned int specialValue = 0;//для других типов судоку
 
     unsigned int girandolaKoords [SIZE + 1] = {0, 14, 8, 41, 44, 47, 80, 74, 88, 0};//координаты Жирандолы
@@ -79,7 +81,7 @@ bool ioSystem (unsigned int matrix [][SIZE], const unsigned char type, const uns
     if (modify == SOLUTION && newGame) {//если игрок требует решить стороннее судоку
         for (unsigned int i = 0; i < SIZE; ++i) {
             for (unsigned int j = 0; j < SIZE; ++j) {
-                matrix [i][j] = outputElements [i][j];
+                matrix [i][j] = tempStore = outputElements [i][j];
             }
         }
     }
