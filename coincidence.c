@@ -4,37 +4,37 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigned char numC, const char modify)
+bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify)
 {
     bool indicator = false;//индикатор совпадений
     bool stopIter = false;
 
-    unsigned char digit = 0;
+    unsigned int digit = 0;
 
-    unsigned char beginstring = 0;//показатели верхнего левого угла малых квадратов
-    unsigned char begincolum = 0;
+    unsigned int beginstring = 0;//показатели верхнего левого угла малых квадратов
+    unsigned int begincolum = 0;
 
-    unsigned char girandolaKoords [SIZE] = {0, 8, 14, 41, 44, 47, 74, 80, 88};
+    unsigned int girandolaKoords [SIZE] = {0, 8, 14, 41, 44, 47, 74, 80, 88};
 
-    unsigned char diagonalKoordsL [SIZE] = {0, 11, 22, 33, 44, 55, 66, 77, 88};
-    unsigned char diagonalKoordsR [SIZE] = {8, 17, 26, 35, 44, 53, 62, 71, 80};
+    unsigned int diagonalKoordsL [SIZE] = {0, 11, 22, 33, 44, 55, 66, 77, 88};
+    unsigned int diagonalKoordsR [SIZE] = {8, 17, 26, 35, 44, 53, 62, 71, 80};
 
-    unsigned char string = 0;
-    unsigned char colum = 0;
+    unsigned int string = 0;
+    unsigned int colum = 0;
 
     chtype tempStore = array [numS][numC];
-    const unsigned char value = tempStore;
+    const unsigned int value = tempStore;
 
     array [numS][numC] = UNKN_ELEMENT;//чтобы проверяемый элемент не мешал
 
-    for (unsigned char i = 0; i < SIZE; ++i) {
+    for (unsigned int i = 0; i < SIZE; ++i) {
         if ((digit = array [i][numC]) == value) {//проверка в строке
             indicator = true;
             break;
         }
     }
 
-    for (unsigned char i = 0; i < SIZE; ++i) {
+    for (unsigned int i = 0; i < SIZE; ++i) {
         if ((digit = array [numS][i]) == value) {//проверка в столбце
             indicator = true;
             break;
@@ -67,8 +67,8 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
 
 
     if (!indicator) {//проверка в малом квадрате
-        for (unsigned char i = beginstring; i < beginstring + 3; ++i) {
-            for (unsigned char j = begincolum; j < begincolum + 3; ++j) {
+        for (unsigned int i = beginstring; i < beginstring + 3; ++i) {
+            for (unsigned int j = begincolum; j < begincolum + 3; ++j) {
                 if ((digit = array [i][j]) == value) {
                     indicator = true;
                     break;
@@ -78,9 +78,9 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
     }
 
     if (!indicator && modify == GIRANDOLA) {//проверка жирандоля
-        for (unsigned char i = 0; i < SIZE; ++i) {
+        for (unsigned int i = 0; i < SIZE; ++i) {
             if (numS * 10 + numC == girandolaKoords [i]) {
-                for (unsigned char j = 0; j < SIZE; ++j) {
+                for (unsigned int j = 0; j < SIZE; ++j) {
                     string = girandolaKoords [j] / 10;
                     colum = girandolaKoords [j] % 10;
                     if ((digit = array [string][colum]) == value) {
@@ -128,8 +128,8 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
         }
 
         if (!stopIter) {
-            for (unsigned char i = beginstring; i < 3 + beginstring; ++i) {
-                for (unsigned char j = begincolum; j < 3 + begincolum; ++j) {
+            for (unsigned int i = beginstring; i < 3 + beginstring; ++i) {
+                for (unsigned int j = begincolum; j < 3 + begincolum; ++j) {
                     if ((digit = array [i][j]) == value) {
                         indicator = true;
                         break;
@@ -142,9 +142,9 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
     }
 
     if (!indicator && modify == DIAGONAL) {
-        for (unsigned char i = 0; i < SIZE; ++i) {
+        for (unsigned int i = 0; i < SIZE; ++i) {
             if (numS * 10 + numC == diagonalKoordsL [i]) {
-                for (unsigned char l = 0; l < SIZE; ++l) {
+                for (unsigned int l = 0; l < SIZE; ++l) {
                     string = diagonalKoordsL [l] / 10;
                     colum = diagonalKoordsL [l] % 10;
 
@@ -159,9 +159,9 @@ bool coincidence (chtype array [][SIZE], const unsigned char numS, const unsigne
         }
 
         if (!indicator) {
-            for (unsigned char i = 0; i < SIZE; ++i) {
+            for (unsigned int i = 0; i < SIZE; ++i) {
                 if (numS * 10 + numC == diagonalKoordsR [i]) {
-                    for (unsigned char l = 0; l < SIZE; ++l) {
+                    for (unsigned int l = 0; l < SIZE; ++l) {
                         string = diagonalKoordsR [l] / 10;
                         colum = diagonalKoordsR [l] % 10;
 

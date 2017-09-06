@@ -8,18 +8,18 @@
 
 int main (int argc, char *argv[])
 {
-    unsigned char bgnMtrx [SIZE][SIZE] = {};//начальная матрица
-    unsigned char sudoku [SIZE][SIZE] = {};//сюда запишем судоку
+    unsigned int bgnMtrx [SIZE][SIZE] = {};//начальная матрица
+    unsigned int sudoku [SIZE][SIZE] = {};//сюда запишем судоку
 
     unsigned char type = 0;//тип судоку
-    unsigned char crosDig = 0;//количество вычеркнутых цифр
+    unsigned int crosDig = 0;//количество вычеркнутых цифр
 
     unsigned char variety = DEFAULT;//модификатор, нужен для реализации решения судоку и разных вариантов судоку
 
     char *validFlags [FLAGQ] = {"-help", "-solution", "-girandola", "-windoku", "-diagonal"};//флаги
     char *descriptionFlags [FLAGQ] = {"for help", "if you want to solve any Sudoku", "Sudoku-girandola", "Sudoku-windoku", "diagonal Sudoku"};//описание флагов
 
-    unsigned char numOfFlag;//номер флага
+    unsigned int numOfFlag = 0;//номер флага
 
     if (argc > 2){//ввести можно не более одного флага
 
@@ -54,7 +54,7 @@ int main (int argc, char *argv[])
                     printf ("If you want a new game, press ENTER.\n\n");
 
                     printf ("Valid flags:\n");
-                    for (unsigned char i = 0; i < FLAGQ; ++i) {
+                    for (unsigned int i = 0; i < FLAGQ; ++i) {
                         printf ("%-15s%s\n", validFlags [i], descriptionFlags [i]);
                     }
                     printf ("\n");
@@ -68,8 +68,8 @@ int main (int argc, char *argv[])
                     initscr();
                     colors();
 
-                    for (unsigned char i = 0; i < SIZE; ++i) {//обнуление всего судоку
-                        for (unsigned char j = 0; j < SIZE; ++j) {
+                    for (unsigned int i = 0; i < SIZE; ++i) {//обнуление всего судоку
+                        for (unsigned int j = 0; j < SIZE; ++j) {
                             sudoku [i][j] = UNKN_ELEMENT;
                         }
                     }
@@ -79,15 +79,15 @@ int main (int argc, char *argv[])
                     printw ("Input Sudoku.\n");
                     printw ("When you are done, press Enter.\n");
                     if (ioSystem (sudoku, type, crosDig, SOLUTION)){//если судоку введено и подтверждено желание получить решение, то введенное судоку решается
-                        unsigned char psblS [SIZE][SIZE + 1] = {};
-                        unsigned char psblC [SIZE][SIZE + 1] = {};
+                        unsigned int psblS [SIZE][SIZE + 1] = {};
+                        unsigned int psblC [SIZE][SIZE + 1] = {};
 
                         psblSC (psblS, psblC, sudoku);//формирование матриц возможных строк и столбцов
                         decision (psblS, psblC, sudoku);//решение судоку
 
                         crosDig = 0;
-                        for (unsigned char i = 0; i < SIZE; ++i) {//если судоку не имеет решения получаем ненулевое значение
-                            for (unsigned char j = 0; j < SIZE; ++j) {
+                        for (unsigned int i = 0; i < SIZE; ++i) {//если судоку не имеет решения получаем ненулевое значение
+                            for (unsigned int j = 0; j < SIZE; ++j) {
                                 if (sudoku [i][j] == UNKN_ELEMENT) {
                                     crosDig += 1;
                                 }
@@ -162,7 +162,7 @@ int main (int argc, char *argv[])
             randArrSpecial (bgnMtrx, variety);
         }
 
-        memcpy (sudoku, bgnMtrx, SIZE * SIZE);
+        memcpy (sudoku, bgnMtrx, SIZE * SIZE * sizeof (**sudoku));
         if (crosDig != 0) sudMaker (sudoku, crosDig);//составление судоку
 
     } while (ioSystem (sudoku, type, crosDig, variety));//система ввода-вывода с возможностью начать новую игру

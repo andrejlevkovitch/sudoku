@@ -5,13 +5,13 @@
 #include <stdlib.h>
 #include "sudlib.h"
 
-unsigned char numCros (void)
+unsigned int numCros (void)
 {
-    unsigned char crosDigit = 0;
+    unsigned int crosDigit = 0;
 
-    printw ("%s 0<=n<=%hhu\n", "How many digits do you want to cross out?", MAXCROSSDIGIT);
+    printw ("%s 0<=n<=%u\n", "How many digits do you want to cross out?", MAXCROSSDIGIT);
 
-    scanw ("%hhu", &crosDigit);
+    scanw ("%u", &crosDigit);
 
     if (crosDigit > MAXCROSSDIGIT) {
         endwin();

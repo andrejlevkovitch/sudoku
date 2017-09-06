@@ -3,22 +3,22 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-void decision (unsigned char arrayS [][SIZE + 1], unsigned char arrayC [][SIZE + 1], unsigned char matrix [][SIZE])
+void decision (unsigned int arrayS [][SIZE + 1], unsigned int arrayC [][SIZE + 1], unsigned int matrix [][SIZE])
 {
-    unsigned char numColum = 0;//координаты текущей строки и столбца
-    unsigned char numString = 0;
+    unsigned int numColum = 0;//координаты текущей строки и столбца
+    unsigned int numString = 0;
 
-    unsigned char beginstring = 0;//координаты малого квадрата (левый верхний угол)
-    unsigned char begincolum = 0;
+    unsigned int beginstring = 0;//координаты малого квадрата (левый верхний угол)
+    unsigned int begincolum = 0;
 
-    unsigned char rezult = 0;//количество совпадений
+    unsigned int rezult = 0;//количество совпадений
 
-    unsigned char indexCoincidence = 0;
+    unsigned int indexCoincidence = 0;
 
-    unsigned char tempStore = 0;
+    unsigned int tempStore = 0;
 
-    unsigned char masFreeColum [SIZE + 1] = {};//незанятые значения в строке
-    unsigned char masBuzyQuadr [SIZE + 1] = {};//занятые значения в малом квадрате
+    unsigned int masFreeColum [SIZE + 1] = {};//незанятые значения в строке
+    unsigned int masBuzyQuadr [SIZE + 1] = {};//занятые значения в малом квадрате
 
     bool reversOn = false;
     bool solution = false;
@@ -30,22 +30,22 @@ void decision (unsigned char arrayS [][SIZE + 1], unsigned char arrayC [][SIZE +
         do {
             solution = false;
 
-            for (unsigned char i = 0; i < SIZE; ++i) {
+            for (unsigned int i = 0; i < SIZE; ++i) {
                 if (arrayS [i][SIZE] != 0) {
 
                     masFreeColum [SIZE] = 0;
 
-                    for (unsigned char j = 0; j < SIZE; ++j) {//формирование матрицы свободных значений в строке
+                    for (unsigned int j = 0; j < SIZE; ++j) {//формирование матрицы свободных значений в строке
                         if (matrix [i][j] == UNKN_ELEMENT) {
                             masFreeColum [masFreeColum [SIZE]] = j;
                             masFreeColum [SIZE] += 1;
                         }
                     }
 
-                    for (signed char j = arrayS [i][SIZE] - 1; j >= 0; --j) {
+                    for (signed int j = arrayS [i][SIZE] - 1; j >= 0; --j) {
                         rezult = 0;
 
-                        for (unsigned char l = 0; l < masFreeColum [SIZE]; ++l) {
+                        for (unsigned int l = 0; l < masFreeColum [SIZE]; ++l) {
 
                             switch (i) {
                                 case 0: case 1: case 2:
@@ -77,8 +77,8 @@ void decision (unsigned char arrayS [][SIZE + 1], unsigned char arrayC [][SIZE +
 
                             masBuzyQuadr [SIZE] = 0;
 
-                            for (unsigned char k = beginstring; k < beginstring + 3; ++k) {//формирование матрицы занятых значений в текущем малом квадрате
-                                for (unsigned char n = begincolum; n < begincolum + 3; ++n) {
+                            for (unsigned int k = beginstring; k < beginstring + 3; ++k) {//формирование матрицы занятых значений в текущем малом квадрате
+                                for (unsigned int n = begincolum; n < begincolum + 3; ++n) {
                                     if (matrix [k][n] != UNKN_ELEMENT) {
                                         masBuzyQuadr [masBuzyQuadr [SIZE]] = matrix [k][n];
                                         masBuzyQuadr [SIZE] += 1;
@@ -88,8 +88,8 @@ void decision (unsigned char arrayS [][SIZE + 1], unsigned char arrayC [][SIZE +
 
                             indexCoincidence = 0;
 
-                            for (signed char m = arrayC [masFreeColum [l]][SIZE] - 1; m >= 0; --m) {
-                                for (unsigned char n = 0; n < masBuzyQuadr [SIZE]; ++n) {
+                            for (signed int m = arrayC [masFreeColum [l]][SIZE] - 1; m >= 0; --m) {
+                                for (unsigned int n = 0; n < masBuzyQuadr [SIZE]; ++n) {
                                     if (arrayC [masFreeColum [l]][m] == masBuzyQuadr [n]) {//вычеркивание из массива возможных значений встречающихся в квадрате значений
 
                                         arrayC [masFreeColum [l]][SIZE] -= 1;
@@ -107,7 +107,7 @@ void decision (unsigned char arrayS [][SIZE + 1], unsigned char arrayC [][SIZE +
                                 }
                             }
 
-                            for (unsigned char m = 0; m < arrayC [masFreeColum [l]][SIZE]; ++m) {
+                            for (unsigned int m = 0; m < arrayC [masFreeColum [l]][SIZE]; ++m) {
                                 if (arrayS [i][j] == arrayC [masFreeColum [l]][m]) {//есть ли возможность вставить значение
                                     ++rezult;
                                     numString = m;
@@ -138,7 +138,7 @@ void decision (unsigned char arrayS [][SIZE + 1], unsigned char arrayC [][SIZE +
         } while (solution);
 
         if (rezInIter) {//если решение найдено не было, но в предыдудущих итерациях еще были найдены верные значения, то матрица переварачивается
-            for (unsigned char i = 0; i < SIZE; ++i) {
+            for (unsigned int i = 0; i < SIZE; ++i) {
                 if (arrayS [i][SIZE] != 0) {
                     subs (arrayS, arrayC);
                     revers (matrix);

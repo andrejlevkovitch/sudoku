@@ -3,13 +3,13 @@
 #include <string.h>
 #include "sudlib.h"
 
-void subs (unsigned char array1 [][SIZE + 1], unsigned char array2 [][SIZE + 1])
+void subs (unsigned int array1 [][SIZE + 1], unsigned int array2 [][SIZE + 1])
 {
-    unsigned char zamena [SIZE][SIZE + 1] = {};
+    unsigned int zamena [SIZE][SIZE + 1] = {};
 
-    memcpy (zamena, array1, SIZE * (SIZE + 1));
-    memcpy (array1, array2, SIZE * (SIZE + 1));
-    memcpy (array2, zamena, SIZE * (SIZE + 1));
+    memcpy (zamena, array1, SIZE * (SIZE + 1) * sizeof (**array1));
+    memcpy (array1, array2, SIZE * (SIZE + 1) * sizeof (**array1));
+    memcpy (array2, zamena, SIZE * (SIZE + 1) * sizeof (**array2));
 
     return;
 }

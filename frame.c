@@ -8,14 +8,14 @@ void frame (const char modify)
     chtype frameElement;
 
     move (Y0 - 1, 2);//перемещение к началу рамки относительно вывода судоку
-    for (unsigned char i = 0; i < SIZE; ++i) {//верхняя часть
+    for (unsigned int i = 0; i < SIZE; ++i) {//верхняя часть
         frameElement = ' ' | COLOR_PAIR (1);
         addch (frameElement);
         frameElement = (i + 'A') | COLOR_PAIR (1);
         addch (frameElement | A_BOLD);
     }
 
-    for (unsigned char i = 0; i < SIZE; ++i) {//нижняя часть
+    for (unsigned int i = 0; i < SIZE; ++i) {//нижняя часть
         printw ("\n");
         frameElement = ' ' | COLOR_PAIR (1);
         addch (frameElement);

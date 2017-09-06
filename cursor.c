@@ -5,21 +5,21 @@
 #include <unistd.h>
 #include "sudlib.h"
 
-bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SIZE], const unsigned char type, const unsigned char quantityCrosDigits, const char modify)
+bool cursor (chtype outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)
 {
-    unsigned char inputChar = 0;
-    unsigned char koordY = Y0;//координаты первго элемента судоку
-    unsigned char koordX = X0 + 1;
+    unsigned int inputChar = 0;
+    unsigned int koordY = Y0;//координаты первго элемента судоку
+    unsigned int koordX = X0 + 1;
 
-    unsigned char string = 0;
-    unsigned char colum = 0;
+    unsigned int string = 0;
+    unsigned int colum = 0;
 
-    unsigned char tempStore = 0;
+    unsigned int tempStore = 0;
 
     unsigned short turnCounter = 0;//количество ходов
-    unsigned char emptyValueCounter = quantityCrosDigits;//количество незаполненых клеток
+    unsigned int emptyValueCounter = quantityCrosDigits;//количество незаполненых клеток
 
-    unsigned char errorStore [MAXCROSSDIGIT + 1] = {};//сдесь заисываются ошибочные значения для того, чтобы заполнение произвольными числами всех пустых клеток не приводило бы к победе; последний элемент массива хранит количество значений во всей матрице
+    unsigned int errorStore [MAXCROSSDIGIT + 1] = {};//сдесь заисываются ошибочные значения для того, чтобы заполнение произвольными числами всех пустых клеток не приводило бы к победе; последний элемент массива хранит количество значений во всей матрице
 
     bool newGame = false;//проверка на желание начать новую игру
 
@@ -89,7 +89,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
                             message (string, colum, REMOVE, tempStore + type);
 
                             if (errorStore [MAXCROSSDIGIT] != 0) {
-                                for (unsigned char i = 0; i < errorStore [MAXCROSSDIGIT]; ++i) {
+                                for (unsigned int i = 0; i < errorStore [MAXCROSSDIGIT]; ++i) {
                                     if ((string * 10 + colum) == errorStore [i]) {
                                         errorStore [MAXCROSSDIGIT] -= 1;//если был удален ошибочный элемент
                                         break;
@@ -109,7 +109,7 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned char basisMatrix [][SI
                             outputMatrix [string][colum] += inputChar;
 
                             if (errorStore [MAXCROSSDIGIT] != 0) {
-                                for (unsigned char i = 0; i < errorStore [MAXCROSSDIGIT]; ++i) {
+                                for (unsigned int i = 0; i < errorStore [MAXCROSSDIGIT]; ++i) {
                                     if ((string * 10 + colum) == errorStore [i]) {
                                         errorStore [MAXCROSSDIGIT] -= 1;
                                         break;

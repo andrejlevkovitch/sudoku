@@ -3,14 +3,14 @@
 #include <string.h>
 #include "sudlib.h"
 
-void revers (unsigned char array [][SIZE]) 
+void revers (unsigned int array [][SIZE]) 
 {
-    unsigned char store [SIZE][SIZE] = {};
+    unsigned int store [SIZE][SIZE] = {};
 
-    memcpy (store, array, SIZE * SIZE);
+    memcpy (store, array, SIZE * SIZE * sizeof (**array));
 
-    for (unsigned char i = 0; i < SIZE; ++i) {
-        for (unsigned char j = 0; j < SIZE; ++j) {
+    for (unsigned int i = 0; i < SIZE; ++i) {
+        for (unsigned int j = 0; j < SIZE; ++j) {
             array [j][i] = store [i][j];
         }
     }

@@ -6,37 +6,37 @@
 #include <string.h>
 #include "sudlib.h"
 
-void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
+void randArrSpecial (unsigned int outputArr [][SIZE], const char variety)
 {
     srand (time(NULL));
 
-    signed char prognoz [SIZE][SIZE][SIZE + 1] = {};//1 и 2 измерения - это строки и столбцы судоку, а 3-е - возможные значения в данной клетке; SIZE + 1 - хранит количество возможных элементов
+    signed int prognoz [SIZE][SIZE][SIZE + 1] = {};//1 и 2 измерения - это строки и столбцы судоку, а 3-е - возможные значения в данной клетке; SIZE + 1 - хранит количество возможных элементов
 
-    unsigned char randElement = 0;
+    unsigned int randElement = 0;
 
-    unsigned char girandolaKoords [SIZE] = {0, 8, 14, 41, 44, 47, 74, 80, 88};
-    unsigned char girandolaValues [SIZE + 1] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+    unsigned int girandolaKoords [SIZE] = {0, 8, 14, 41, 44, 47, 74, 80, 88};
+    unsigned int girandolaValues [SIZE + 1] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    unsigned char diagonalKoordsL [SIZE] = {0, 11, 22, 33, 44, 55, 66, 77, 88};
-    unsigned char diagonalKoordsR [SIZE] = {8, 17, 26, 35, 44, 53, 62, 71, 80};
+    unsigned int diagonalKoordsL [SIZE] = {0, 11, 22, 33, 44, 55, 66, 77, 88};
+    unsigned int diagonalKoordsR [SIZE] = {8, 17, 26, 35, 44, 53, 62, 71, 80};
 
-    unsigned char string = 0;
-    unsigned char colum = 0;
+    unsigned int string = 0;
+    unsigned int colum = 0;
 
-    unsigned char numS = 0;
-    unsigned char numC = 0;
+    unsigned int numS = 0;
+    unsigned int numC = 0;
 
-    unsigned char psblS [SIZE][SIZE + 1] = {};
-    unsigned char psblC [SIZE][SIZE + 1] = {};
+    unsigned int psblS [SIZE][SIZE + 1] = {};
+    unsigned int psblC [SIZE][SIZE + 1] = {};
 
-    unsigned char copyBasisArr [SIZE][SIZE] = {};
+    unsigned int copyBasisArr [SIZE][SIZE] = {};
 
-    unsigned char minValue = 0;
+    unsigned int minValue = 0;
 
-    unsigned char tempStore = 0;
+    unsigned int tempStore = 0;
 
-    unsigned char beginstring = 0;
-    unsigned char begincolum = 0;
+    unsigned int beginstring = 0;
+    unsigned int begincolum = 0;
 
     bool solOne = false;
     bool solTwo = false;
@@ -45,7 +45,7 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
     bool fromBegin = false;
 
     if (variety == GIRANDOLA) {//рандомизация константных значений жирандоля
-        for (unsigned char i = 0; i < SIZE; ++i) {
+        for (unsigned int i = 0; i < SIZE; ++i) {
             randElement = 0 + rand() % girandolaValues [SIZE];
 
             girandolaValues [SIZE] -= 1;
@@ -64,22 +64,22 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
         outputArr [1][1] = 0;
         forecasting (outputArr, prognoz, 1, 1, variety);
 
-        for (unsigned char i = 0; i < SIZE; ++i) {//инициализация прогноза
-            for (unsigned char j = 0; j < SIZE; ++j) {
-                for (unsigned char n = 0; n < SIZE + 1; ++n) {
+        for (unsigned int i = 0; i < SIZE; ++i) {//инициализация прогноза
+            for (unsigned int j = 0; j < SIZE; ++j) {
+                for (unsigned int n = 0; n < SIZE + 1; ++n) {
                     prognoz [i][j][n] = n;
                 }
             }
         }
 
-        for (unsigned char i = 0; i < SIZE; ++i) {//обнуление начальной матрицы
-            for (unsigned char j = 0; j < SIZE; ++j) {
+        for (unsigned int i = 0; i < SIZE; ++i) {//обнуление начальной матрицы
+            for (unsigned int j = 0; j < SIZE; ++j) {
                 outputArr [i][j] = UNKN_ELEMENT;
             }
         }
 
         if (variety == GIRANDOLA) {//вычеркивание значений жиндораля
-            for (unsigned char i = 0; i < SIZE; ++i) {
+            for (unsigned int i = 0; i < SIZE; ++i) {
                 string = girandolaKoords [i] / 10;
                 colum = girandolaKoords [i] % 10;
 
@@ -93,8 +93,8 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
                 do {
                     solOne = false;
 
-                    for (unsigned char i = 0; i < SIZE; ++i) {//нахождение единственно-возможного значения
-                        for (unsigned char j = 0; j < SIZE; ++j) {
+                    for (unsigned int i = 0; i < SIZE; ++i) {//нахождение единственно-возможного значения
+                        for (unsigned int j = 0; j < SIZE; ++j) {
                             if (outputArr [i][j] == UNKN_ELEMENT) {
                                 if (prognoz [i][j][SIZE] == 1) {
                                     prognoz [i][j][SIZE] -= 1;
@@ -119,12 +119,12 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
 
                 solTwo = false;
 
-                memcpy (copyBasisArr, outputArr, SIZE * SIZE);//решение
+                memcpy (copyBasisArr, outputArr, SIZE * SIZE * sizeof (**outputArr));//решение
                 psblSC (psblS, psblC, outputArr);
                 decision (psblS, psblC, outputArr);
 
-                for (unsigned char i = 0; i < SIZE; ++i) {//редактирование прогноза после решения
-                    for (unsigned char j = 0; j < SIZE; ++j) {
+                for (unsigned int i = 0; i < SIZE; ++i) {//редактирование прогноза после решения
+                    for (unsigned int j = 0; j < SIZE; ++j) {
                         if (copyBasisArr [i][j] != outputArr[i][j]) {
                             forecasting (outputArr, prognoz, i, j, variety);
                             solTwo = true;
@@ -135,8 +135,8 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
 
             bigIter = false;
 
-            for (unsigned char i = 0; i < SIZE; ++i) {//проверка на наличие пустых ячеек
-                for (unsigned char j = 0; j < SIZE; ++j) {
+            for (unsigned int i = 0; i < SIZE; ++i) {//проверка на наличие пустых ячеек
+                for (unsigned int j = 0; j < SIZE; ++j) {
                     if (outputArr [i][j] == UNKN_ELEMENT) {
                         bigIter = true;
                         break;
@@ -151,8 +151,8 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
             minValue = 9;
             minPrognoz = false;
 
-            for (unsigned char i = 0; i < SIZE; ++i) {//нахождение минимальных прогнозов для последующего рандомного выбора
-                for (unsigned char j = 0; j < SIZE; ++j) {
+            for (unsigned int i = 0; i < SIZE; ++i) {//нахождение минимальных прогнозов для последующего рандомного выбора
+                for (unsigned int j = 0; j < SIZE; ++j) {
                     if (outputArr [i][j] == UNKN_ELEMENT && prognoz [i][j][SIZE] < minValue) {
                         string = i;
                         colum = j;
@@ -182,7 +182,7 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
         } while (bigIter);
 
         if (variety == WINDOKU && !fromBegin) {//проверка для виндоку, обусловлена тем, что decision не учитывает прогноз
-            for (unsigned char i = 0; i < 4; ++i) {
+            for (unsigned int i = 0; i < 4; ++i) {
                 switch (i) {
                     case 0:
                         beginstring = 1;
@@ -204,10 +204,10 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
                         begincolum = 5;
                 }
 
-                for (unsigned char l = beginstring; l < 3 + beginstring; ++l) {
-                    for (unsigned char k = begincolum; k < 3 + begincolum; ++k) {
-                        for (unsigned char m = beginstring; m < 3 + beginstring; ++m) {
-                            for (unsigned char n = begincolum; n < 3 + begincolum; ++n) {
+                for (unsigned int l = beginstring; l < 3 + beginstring; ++l) {
+                    for (unsigned int k = begincolum; k < 3 + begincolum; ++k) {
+                        for (unsigned int m = beginstring; m < 3 + beginstring; ++m) {
+                            for (unsigned int n = begincolum; n < 3 + begincolum; ++n) {
                                 if (outputArr [l][k] == outputArr [m][n] && m * 10 + n != l * 10 + k) {
                                     fromBegin = true;
                                     break;
@@ -228,11 +228,11 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
         }
 
         if (variety == DIAGONAL && !fromBegin) {
-            for (unsigned char i = 0; i < SIZE; ++i) {//проверка в первой диагонали
+            for (unsigned int i = 0; i < SIZE; ++i) {//проверка в первой диагонали
                 string = diagonalKoordsL [i] / 10;
                 colum = diagonalKoordsL [i] % 10;
 
-                for (unsigned char j = 0; j < SIZE; ++j) {
+                for (unsigned int j = 0; j < SIZE; ++j) {
                     numS = diagonalKoordsL [j] / 10;
                     numC = diagonalKoordsL [j] % 10;
 
@@ -246,11 +246,11 @@ void randArrSpecial (unsigned char outputArr [][SIZE], const char variety)
             }
 
             if (!fromBegin) {
-                for (unsigned char i = 0; i < SIZE; ++i) {//проверка во второй диагонали
+                for (unsigned int i = 0; i < SIZE; ++i) {//проверка во второй диагонали
                     string = diagonalKoordsR [i] / 10;
                     colum = diagonalKoordsR [i] % 10;
 
-                    for (unsigned char j = 0; j < SIZE; ++j) {
+                    for (unsigned int j = 0; j < SIZE; ++j) {
                         numS = diagonalKoordsR [j] / 10;
                         numC = diagonalKoordsR [j] % 10;
 

@@ -2,10 +2,10 @@
 
 #include "sudlib.h"
 
-void initialization (unsigned char * array, const unsigned char size_c)
+void initialization (unsigned int * array, const unsigned int size_c)
 {
-    for (unsigned char i = 0; i < SIZE; ++i) {//инициализирует строки значениями от 0 до 8
-        for (unsigned char j = 0; j < SIZE; ++j) {
+    for (unsigned int i = 0; i < SIZE; ++i) {//инициализирует строки значениями от 0 до 8
+        for (unsigned int j = 0; j < SIZE; ++j) {
             *(array + i * size_c + j) = j;
         }
     }

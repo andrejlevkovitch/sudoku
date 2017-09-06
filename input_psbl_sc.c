@@ -2,14 +2,14 @@
 
 #include "sudlib.h"
 
-void inputPsblS (unsigned char psblArr [][SIZE + 1], const unsigned char matrix [][SIZE])
+void inputPsblS (unsigned int psblArr [][SIZE + 1], const unsigned int matrix [][SIZE])
 {
-    for (unsigned char i = 0; i < SIZE; ++i) {
+    for (unsigned int i = 0; i < SIZE; ++i) {
         psblArr [i][SIZE] = 9;//последний столбец хранит в себе количество элементов в строке
 
-        for (unsigned char j = 0; j < SIZE; ++j) {
+        for (unsigned int j = 0; j < SIZE; ++j) {
             if (matrix [i][j] != UNKN_ELEMENT) {
-                for (unsigned char l = 0; l < psblArr [i][SIZE]; ++l) {
+                for (unsigned int l = 0; l < psblArr [i][SIZE]; ++l) {
                     if (matrix [i][j] == psblArr [i][l]) {
                         psblArr [i][SIZE] -= 1;
                         psblArr [i][l] = psblArr [i][psblArr [i][SIZE]];
