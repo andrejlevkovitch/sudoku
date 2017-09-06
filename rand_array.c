@@ -7,7 +7,6 @@
 
 void randArr (unsigned int outputArr[][SIZE])
 {
-    endwin ();
     srand (time (NULL));
 
     unsigned int psblDgts [SIZE][SIZE] = {};//возможные значения
@@ -95,13 +94,7 @@ void randArr (unsigned int outputArr[][SIZE])
 
                         if (outputArr [i][j] == psblDgts [l][k]) {//если сгенерированный элемент есть в строке - он переносится в конец, если он еще и совпадает со столбцом - то вычеркивается
                             tempStore = psblDgts [l][k];
-                            printf ("end = %u, mas = %u, rez = %i\n", endPsblDgt, masEmpty [l], (endPsblDgt - masEmpty [l]));
 
-                            printf ("i = %u, j = %u, l = %u\n", i, j, l);
-                            for (unsigned int o = 0; o < SIZE; ++o) {
-                                printf ("%2d", masEmpty [o]);
-                            }
-                            printf ("\n\n");
                             if (k != endPsblDgt - masEmpty [l]) {
                                 psblDgts [l][k] = psblDgts [l][endPsblDgt - masEmpty [l]];
                             }
