@@ -5,8 +5,6 @@
 void inputPsblS (unsigned int psblArr [][SIZE + 1], const unsigned int matrix [][SIZE])
 {
     for (unsigned int i = 0; i < SIZE; ++i) {
-        psblArr [i][SIZE] = 9;//последний столбец хранит в себе количество элементов в строке
-
         for (unsigned int j = 0; j < SIZE; ++j) {
             if (matrix [i][j] != UNKN_ELEMENT) {
                 for (unsigned int l = 0; l < psblArr [i][SIZE]; ++l) {

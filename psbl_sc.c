@@ -4,8 +4,8 @@
 
 void psblSC (unsigned int arrayS [][SIZE + 1], unsigned int arrayC [][SIZE + 1], unsigned int matrix [][SIZE])
 {
-    initialization (*arrayS, SIZE + 1);
-    initialization (*arrayC, SIZE + 1);
+    initialization (arrayS);
+    initialization (arrayC);
 
     inputPsblS (arrayS, matrix);//ввод возможных значений в строках
 

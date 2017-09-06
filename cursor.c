@@ -7,14 +7,14 @@
 
 bool cursor (chtype outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)
 {
-    unsigned int inputChar = 0;
+    unsigned char inputChar = 0;
     unsigned int koordY = Y0;//координаты первго элемента судоку
     unsigned int koordX = X0 + 1;
 
     unsigned int string = 0;
     unsigned int colum = 0;
 
-    unsigned int tempStore = 0;
+    unsigned char tempStore = 0;
 
     unsigned short turnCounter = 0;//количество ходов
     unsigned int emptyValueCounter = quantityCrosDigits;//количество незаполненых клеток

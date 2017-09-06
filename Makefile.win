@@ -1,7 +1,7 @@
 # Makefile for sudoku project, Windows
 
-sudoku: main.o input_type.o num_of_cros.o rand_array.o init.o sort_array.o zeros.o sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o
-	gcc -o sudoku main.o input_type.o num_of_cros.o rand_array.o init.o sort_array.o zeros.o sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o -lpdcurses -std=gnu99 -Wall
+sudoku: main.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o
+	gcc -o sudoku main.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o -lpdcurses -std=gnu99 -Wall
 
 main.o: main.c
 	gcc -c main.c -std=gnu99 -Wall
@@ -12,9 +12,6 @@ input_type.o: input_type.c
 num_of_cros.o: num_of_cros.c
 	gcc -c num_of_cros.c -std=gnu99 -Wall
 
-rand_array.o: rand_array.c
-	gcc -c rand_array.c -std=gnu99 -Wall
-
 rand_array_special.o: rand_array_special.c
 	gcc -c rand_array_special.c -std=gnu99 -Wall
 
@@ -23,12 +20,6 @@ forecasting.o: forecasting.c
 
 init.o: init.c
 	gcc -c init.c -std=gnu99 -Wall
-
-sort_array.o: sort_array.c
-	gcc -c sort_array.c -std=gnu99 -Wall
-
-zeros.o: zeros.c
-	gcc -c zeros.c -std=gnu99 -Wall
 
 sud_maker.o: sud_maker.c
 	gcc -c sud_maker.c -std=gnu99 -Wall

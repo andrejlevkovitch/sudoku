@@ -155,12 +155,7 @@ int main (int argc, char *argv[])
         type = inputType();//ввод типа
         crosDig = numCros();//ввод количества вычеркиваемых значений
 
-        if (variety == DEFAULT) {
-            randArr (bgnMtrx);//рандомизация, получение уникальной начальной матрицы
-        }
-        else {
-            randArrSpecial (bgnMtrx, variety);
-        }
+        randArrSpecial (bgnMtrx, variety);//рандомизация, получение уникальной начальной матрицы
 
         memcpy (sudoku, bgnMtrx, SIZE * SIZE * sizeof (**sudoku));
         if (crosDig != 0) sudMaker (sudoku, crosDig);//составление судоку

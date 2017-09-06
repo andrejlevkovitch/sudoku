@@ -9,7 +9,7 @@ bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned
     bool indicator = false;//индикатор совпадений
     bool stopIter = false;
 
-    unsigned int digit = 0;
+    unsigned char digit = 0;
 
     unsigned int beginstring = 0;//показатели верхнего левого угла малых квадратов
     unsigned int begincolum = 0;
@@ -23,7 +23,7 @@ bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned
     unsigned int colum = 0;
 
     chtype tempStore = array [numS][numC];
-    const unsigned int value = tempStore;
+    const unsigned char value = tempStore;
 
     array [numS][numC] = UNKN_ELEMENT;//чтобы проверяемый элемент не мешал
 

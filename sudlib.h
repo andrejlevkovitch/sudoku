@@ -54,21 +54,15 @@
 #define WINDOKU 'W'
 #define DIAGONAL 'D'
 
-void initialization (unsigned int * array, const unsigned int size_c);
-
-void randArr (unsigned int outputArr [][SIZE]);
+void initialization (unsigned int array [][SIZE + 1]);
 
 void randArrSpecial (unsigned int outputArr [][SIZE], const char variety);
 
 void forecasting (unsigned int inArr [][SIZE], signed int prognoz [][SIZE][SIZE + 1], unsigned int string, unsigned int colum, char variety);
 
-void zeros (unsigned char array []);
-
 unsigned int numCros (void);
 
 unsigned char inputType (void);
-
-void sortArr (unsigned int array [][SIZE], const unsigned int endArr);
 
 void sudMaker (unsigned int array [][SIZE], const unsigned int quantityCrosDigits);
 
