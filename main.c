@@ -45,7 +45,7 @@ int main (int argc, char *argv[])
         switch (numOfFlag) {//сценарии для флагов
             case 0://help
                     printf ("This program generates unique Sudoku, which have only one solution.\n");
-                    printf ("You can choose the type of Sudoku: with letters or numbers; and complexity: up to %hhu crossed out numbers.\n\n", MAXCROSSDIGIT);
+                    printf ("You can choose the type of Sudoku: with letters or numbers; and complexity: up to %i crossed out numbers.\n\n", MAXCROSSDIGIT);
 
                     printf ("Control if carried out by arrows.\n");
                     printf ("The values can be entered using the keyboard (latin only).\n");
