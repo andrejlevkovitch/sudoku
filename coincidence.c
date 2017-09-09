@@ -9,8 +9,6 @@ bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned
     bool indicator = false;//индикатор совпадений
     bool stopIter = false;
 
-    unsigned char digit = 0;
-
     unsigned int beginstring = 0;//показатели верхнего левого угла малых квадратов
     unsigned int begincolum = 0;
 
@@ -28,14 +26,14 @@ bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned
     array [numS][numC] = UNKN_ELEMENT;//чтобы проверяемый элемент не мешал
 
     for (unsigned int i = 0; i < SIZE; ++i) {
-        if ((digit = array [i][numC]) == value) {//проверка в строке
+        if (((char) array [i][numC]) == value) {//проверка в строке
             indicator = true;
             break;
         }
     }
 
     for (unsigned int i = 0; i < SIZE; ++i) {
-        if ((digit = array [numS][i]) == value) {//проверка в столбце
+        if (((char) array [numS][i]) == value) {//проверка в столбце
             indicator = true;
             break;
         }
@@ -69,7 +67,7 @@ bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned
     if (!indicator) {//проверка в малом квадрате
         for (unsigned int i = beginstring; i < beginstring + 3; ++i) {
             for (unsigned int j = begincolum; j < begincolum + 3; ++j) {
-                if ((digit = array [i][j]) == value) {
+                if (((char) array [i][j]) == value) {
                     indicator = true;
                     break;
                 }
@@ -83,7 +81,7 @@ bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned
                 for (unsigned int j = 0; j < SIZE; ++j) {
                     string = girandolaKoords [j] / 10;
                     colum = girandolaKoords [j] % 10;
-                    if ((digit = array [string][colum]) == value) {
+                    if (((char) array [string][colum]) == value) {
                         indicator = true;
                         break;
                     }
@@ -130,7 +128,7 @@ bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned
         if (!stopIter) {
             for (unsigned int i = beginstring; i < 3 + beginstring; ++i) {
                 for (unsigned int j = begincolum; j < 3 + begincolum; ++j) {
-                    if ((digit = array [i][j]) == value) {
+                    if (((char) array [i][j]) == value) {
                         indicator = true;
                         break;
                     }
@@ -148,7 +146,7 @@ bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned
                     string = diagonalKoordsL [l] / 10;
                     colum = diagonalKoordsL [l] % 10;
 
-                    if ((digit = array [string][colum]) == value) {
+                    if (((char) array [string][colum]) == value) {
                         indicator = true;
                         break;
                     }
@@ -165,7 +163,7 @@ bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned
                         string = diagonalKoordsR [l] / 10;
                         colum = diagonalKoordsR [l] % 10;
 
-                        if ((digit = array [string][colum]) == value) {
+                        if (((char) array [string][colum]) == value) {
                             indicator = true;
                             break;
                         }
