@@ -7,7 +7,8 @@ void frame (const char modify)
 {
     chtype frameElement;
 
-    move (Y0 - 1, 2);//перемещение к началу рамки относительно вывода судоку
+    move (Y0 - 1, X0);//перемещение к началу рамки относительно вывода судоку
+
     for (unsigned int i = 0; i < SIZE; ++i) {//верхняя часть
         frameElement = ' ' | COLOR_PAIR (1);
         addch (frameElement);
@@ -16,7 +17,7 @@ void frame (const char modify)
     }
 
     for (unsigned int i = 0; i < SIZE; ++i) {//нижняя часть
-        printw ("\n");
+        move (Y0 + i, X0 - 2);
         frameElement = ' ' | COLOR_PAIR (1);
         addch (frameElement);
         frameElement = (i + '1') | COLOR_PAIR (1);
