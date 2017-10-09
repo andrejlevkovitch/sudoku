@@ -95,3 +95,5 @@ void frame (const char modify);
 void message (const unsigned int numS, const unsigned int numC, const char operace, const unsigned char value);
 
 void colors (void);
+
+char flags (int argc, char *argv []);
