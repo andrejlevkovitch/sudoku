@@ -75,6 +75,8 @@ main.c
 
 {
 
+    flags.c
+
     colors.c
 
     do {
