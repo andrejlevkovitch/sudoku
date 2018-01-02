@@ -1,67 +1,67 @@
 # Makefile for sudoku project, Windows
 
 sudoku: main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o
-	gcc -o sudoku main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o -lpdcurses -std=gnu99 -Wall
+	gcc -o sudoku main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o -lpdcurses -Wall
 
 main.o: main.c
-	gcc -c main.c -std=gnu99 -Wall
+	gcc -c main.c -Wall
 
 flags.o: flags.c
-	gcc -c flags.c -std=gnu99 -Wall
+	gcc -c flags.c -Wall
 
 input_type.o: input_type.c
-	gcc -c input_type.c -std=gnu99 -Wall
+	gcc -c input_type.c -Wall
 
 num_of_cros.o: num_of_cros.c
-	gcc -c num_of_cros.c -std=gnu99 -Wall
+	gcc -c num_of_cros.c -Wall
 
 rand_array_special.o: rand_array_special.c
-	gcc -c rand_array_special.c -std=gnu99 -Wall
+	gcc -c rand_array_special.c -Wall
 
 forecasting.o: forecasting.c
-	gcc -c forecasting.c -std=gnu99 -Wall
+	gcc -c forecasting.c -Wall
 
 init.o: init.c
-	gcc -c init.c -std=gnu99 -Wall
+	gcc -c init.c -Wall
 
 sud_maker.o: sud_maker.c
-	gcc -c sud_maker.c -std=gnu99 -Wall
+	gcc -c sud_maker.c -Wall
 
 psbl_sc.o: psbl_sc.c
-	gcc -c psbl_sc.c -std=gnu99 -Wall
+	gcc -c psbl_sc.c -Wall
 
 input_psbl_sc.o: input_psbl_sc.c
-	gcc -c input_psbl_sc.c -std=gnu99 -Wall
+	gcc -c input_psbl_sc.c -Wall
 
 revers.o: revers.c
-	gcc -c revers.c -std=gnu99 -Wall
+	gcc -c revers.c -Wall
 
 decision.o: decision.c
-	gcc -c decision.c -std=gnu99 -Wall
+	gcc -c decision.c -Wall
 
 substitution.o: substitution.c
-	gcc -c substitution.c -std=gnu99 -Wall
+	gcc -c substitution.c -Wall
 
 io_system.o: io_system.c
-	gcc -c io_system.c -std=gnu99 -Wall
+	gcc -c io_system.c -Wall
 
 colors.o: colors.c
-	gcc -c colors.c -std=gnu99 -Wall
+	gcc -c colors.c -Wall
 
 frame.o: frame.c
-	gcc -c frame.c -std=gnu99 -Wall
+	gcc -c frame.c -Wall
 
 cursor.o: cursor.c
-	gcc -c cursor.c -std=gnu99 -Wall
+	gcc -c cursor.c -Wall
 
 mygetch.o: mygetch.c
-	gcc -c mygetch.c -std=gnu99 -Wall
+	gcc -c mygetch.c -Wall
 
 coincidence.o: coincidence.c
-	gcc -c coincidence.c -std=gnu99 -Wall
+	gcc -c coincidence.c -Wall
 
 message.o: message.c
-	gcc -c message.c -std=gnu99 -Wall
+	gcc -c message.c -Wall
 
 clean:
 	rm -f *.o *.a *.so sudoku

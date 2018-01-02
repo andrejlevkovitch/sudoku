@@ -1,67 +1,67 @@
 # Makefile for sudoku project, Linux
 
 sudoku: main.o libsudoku.so
-	gcc -o sudoku main.o -lncurses -L. -lsudoku
+	clang -o sudoku main.o -lncurses -L. -lsudoku
 
 libsudoku.so: flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o
-	gcc -shared -o libsudoku.so flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o -std=gnu99 -Wall
+	clang -shared -o libsudoku.so flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o -Wall
 
 main.o: main.c
-	gcc -c -fPIC main.c -std=gnu99 -Wall
+	clang -c -fPIC main.c -Wall
 
 flags.o: flags.c
-	gcc -c -fPIC flags.c -std=gnu99 -Wall
+	clang -c -fPIC flags.c -Wall
 
 input_type.o: input_type.c
-	gcc -c -fPIC input_type.c -std=gnu99 -Wall
+	clang -c -fPIC input_type.c -Wall
 
 num_of_cros.o: num_of_cros.c
-	gcc -c -fPIC num_of_cros.c -std=gnu99 -Wall
+	clang -c -fPIC num_of_cros.c -Wall
 
 rand_array_special.o: rand_array_special.c
-	gcc -c -fPIC rand_array_special.c -std=gnu99 -Wall
+	clang -c -fPIC rand_array_special.c -Wall
 
 forecasting.o: forecasting.c
-	gcc -c -fPIC forecasting.c -std=gnu99 -Wall
+	clang -c -fPIC forecasting.c -Wall
 
 init.o: init.c
-	gcc -c -fPIC init.c -std=gnu99 -Wall
+	clang -c -fPIC init.c -Wall
 
 sud_maker.o: sud_maker.c
-	gcc -c -fPIC sud_maker.c -std=gnu99 -Wall
+	clang -c -fPIC sud_maker.c -Wall
 
 psbl_sc.o: psbl_sc.c
-	gcc -c -fPIC psbl_sc.c -std=gnu99 -Wall
+	clang -c -fPIC psbl_sc.c -Wall
 
 input_psbl_sc.o: input_psbl_sc.c
-	gcc -c -fPIC input_psbl_sc.c -std=gnu99 -Wall
+	clang -c -fPIC input_psbl_sc.c -Wall
 
 revers.o: revers.c
-	gcc -c -fPIC revers.c -std=gnu99 -Wall
+	clang -c -fPIC revers.c -Wall
 
 decision.o: decision.c
-	gcc -c -fPIC decision.c -std=gnu99 -Wall
+	clang -c -fPIC decision.c -Wall
 
 substitution.o: substitution.c
-	gcc -c -fPIC substitution.c -std=gnu99 -Wall
+	clang -c -fPIC substitution.c -Wall
 
 io_system.o: io_system.c
-	gcc -c -fPIC io_system.c -std=gnu99 -Wall
+	clang -c -fPIC io_system.c -Wall
 
 colors.o: colors.c
-	gcc -c -fPIC colors.c -std=gnu99 -Wall
+	clang -c -fPIC colors.c -Wall
 
 frame.o: frame.c
-	gcc -c -fPIC frame.c -std=gnu99 -Wall
+	clang -c -fPIC frame.c -Wall
 
 cursor.o: cursor.c
-	gcc -c -fPIC cursor.c -std=gnu99 -Wall
+	clang -c -fPIC cursor.c -Wall
 
 coincidence.o: coincidence.c
-	gcc -c -fPIC coincidence.c -std=gnu99 -Wall
+	clang -c -fPIC coincidence.c -Wall
 
 message.o: message.c
-	gcc -c -fPIC message.c -std=gnu99 -Wall
+	clang -c -fPIC message.c -Wall
 
 clean:
 	rm -f *.o *.a *.so sudoku
