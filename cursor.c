@@ -36,7 +36,7 @@ int cursor (chtype outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZE
         refresh ();
 
 #ifdef linux
-        if ((inputChar = getch()) == ESC && getch() == 91) { //стрелка = 3 байтам, 27 91 и далее значащий байт
+        if ((inputChar = getch()) == ESC && getch() == 91 && !(inputChar = 0)) { //стрелка = 3 байтам, 27 91 и далее значащий байт
 #else
         if ((inputChar = mygetch()) == ARROW) {
 #endif
@@ -54,9 +54,6 @@ int cursor (chtype outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZE
                     if (koordX != (X0 + 1 + (SIZE - 1) * 2)) koordX += 2;
                     break;
             }
-#ifdef linux             
-            inputChar = 0;
-#endif            
         }
         else {
             if (inputChar != ESC && modify != DECISION) {
