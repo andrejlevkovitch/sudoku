@@ -1,8 +1,8 @@
 //coincidence.c - проверяет нет ли вводимого значения в уже имеющемся массиве
 
+#include "sudlib.h"
 #include <curses.h>
 #include <stdbool.h>
-#include "sudlib.h"
 
 int coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify)
 {

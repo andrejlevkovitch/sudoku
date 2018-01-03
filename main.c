@@ -1,9 +1,9 @@
 //main.c - основное тело
 
+#include "sudlib.h"
 #include <curses.h>
 #include <stdlib.h>
 #include <string.h>
-#include "sudlib.h"
 
 int main (int argc, char *argv [])
 {

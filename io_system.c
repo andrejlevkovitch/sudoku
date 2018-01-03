@@ -1,8 +1,8 @@
 //io.c - система ввода-вывода
 
+#include "sudlib.h"
 #include <curses.h>
 #include <stdbool.h>
-#include "sudlib.h"
 
 int ioSystem (unsigned int matrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)
 {

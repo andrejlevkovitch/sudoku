@@ -1,7 +1,7 @@
 //substitution.c - меняет массивы местами
 
-#include <string.h>
 #include "sudlib.h"
+#include <string.h>
 
 void subs (unsigned int array1 [][SIZE + 1], unsigned int array2 [][SIZE + 1])
 {

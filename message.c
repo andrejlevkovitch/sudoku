@@ -1,8 +1,8 @@
 //mesage.c - выводит сообщения на экран
 
+#include "sudlib.h"
 #include <curses.h>
 #include <string.h>
-#include "sudlib.h"
 
 void message (const unsigned int numS, const unsigned int numC, const char operace, const unsigned char value)
 {

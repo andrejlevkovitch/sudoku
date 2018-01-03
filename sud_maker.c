@@ -1,10 +1,10 @@
 //sud_maker.c - создает из начальной матрицы судоку - матрицу судоку, имеющую только одно решение
 
+#include "sudlib.h"
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
 #include <stdbool.h>
-#include "sudlib.h"
 
 void sudMaker (unsigned int matrix [][SIZE], const unsigned int rmDigits)
 {

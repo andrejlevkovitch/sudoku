@@ -1,10 +1,10 @@
 //rand_array_special.c - рандомизация для особых случаев
 
+#include "sudlib.h"
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>
 #include <string.h>
-#include "sudlib.h"
 
 void randArrSpecial (unsigned int outputArr [][SIZE], const char variety)
 {

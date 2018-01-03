@@ -1,9 +1,9 @@
 //num_of_cros.c - вводит количество вычеркиваемых элементов
 
+#include "sudlib.h"
 #include <curses.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "sudlib.h"
 
 unsigned int numCros (void)
 {

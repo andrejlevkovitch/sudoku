@@ -1,7 +1,7 @@
 //revers.c - зеркально отображает матрицу судоку
 
-#include <string.h>
 #include "sudlib.h"
+#include <string.h>
 
 void revers (unsigned int array [][SIZE]) 
 {

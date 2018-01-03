@@ -1,9 +1,9 @@
 //input_type.c - ф-ция ввода типа судоку
 
+#include "sudlib.h"
 #include <curses.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "sudlib.h"
 
 unsigned char inputType (void)
 {

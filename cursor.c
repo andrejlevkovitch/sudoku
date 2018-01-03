@@ -1,9 +1,9 @@
 //cursor.c - передвигает курсор в поле судоку
 
+#include "sudlib.h"
 #include <curses.h>
 #include <stdbool.h>
 #include <unistd.h>
-#include "sudlib.h"
 
 int cursor (chtype outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)
 {

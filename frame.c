@@ -1,7 +1,7 @@
 //frame.c - выводит на экран рамку для судоку
 
-#include <curses.h>
 #include "sudlib.h"
+#include <curses.h>
 
 void frame (const char modify)
 {

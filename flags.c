@@ -1,9 +1,9 @@
 //flags.c - флаги
 
+#include "sudlib.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "sudlib.h"
 
 char flags (int argc, char *argv [])
 {

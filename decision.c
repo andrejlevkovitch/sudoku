@@ -1,7 +1,7 @@
 //decision.c - решает судоку
 
-#include <stdbool.h>
 #include "sudlib.h"
+#include <stdbool.h>
 
 void decision (unsigned int arrayS [][SIZE + 1], unsigned int arrayC [][SIZE + 1], unsigned int matrix [][SIZE])
 {

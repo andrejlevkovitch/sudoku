@@ -5,6 +5,7 @@ sudoku: main.o libsudoku.so
 
 libsudoku.so: main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o
 	clang -shared -o libsudoku.so main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o -Wall
+	rm -f *.o
 
 main.o: main.c
 	clang -c -fPIC main.c -Wall
@@ -72,6 +73,7 @@ clean:
 install:
 	sudo install libsudoku.so /usr/lib
 	sudo install ./sudoku /usr/local/bin
+	make clean
 
 uninstall:
 	sudo rm -rf /usr/lib/libsudoku.so
