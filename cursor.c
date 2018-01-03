@@ -5,7 +5,7 @@
 #include <unistd.h>
 #include "sudlib.h"
 
-bool cursor (chtype outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)
+int cursor (chtype outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)
 {
     unsigned char inputChar = 0;
     unsigned int koordY = Y0;//координаты первго элемента судоку

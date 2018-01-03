@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify)
+int coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify)
 {
     bool indicator = false;//индикатор совпадений
     bool stopIter = false;

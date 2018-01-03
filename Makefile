@@ -1,10 +1,10 @@
 # Makefile for sudoku project, Linux
 
 sudoku: main.o libsudoku.so
-	clang -o sudoku main.o -lncurses -L. -lsudoku
+	clang -o sudoku -lncurses -L. -lsudoku
 
-libsudoku.so: flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o
-	clang -shared -o libsudoku.so flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o -Wall
+libsudoku.so: main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o
+	clang -shared -o libsudoku.so main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o -Wall
 
 main.o: main.c
 	clang -c -fPIC main.c -Wall

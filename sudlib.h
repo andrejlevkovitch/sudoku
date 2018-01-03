@@ -1,10 +1,6 @@
 //sudlib.h - заголовочный файл, включающий объявление всех используемых ф-ций в программе
 
-#ifdef linux
-    #include <curses.h>
-#else
-    #include <stdbool.h>
-#endif
+#include <curses.h>
 
 #define FLAGQ 5//количество используемых флагов
 
@@ -76,17 +72,13 @@ void subs (unsigned int array1 [][SIZE + 1], unsigned int array2 [][SIZE + 1]);
 
 void decision (unsigned int arrayS [][SIZE + 1], unsigned int arrayC [][SIZE + 1], unsigned int matrix [][SIZE]);
 
-bool ioSystem (unsigned int array [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify);
+int ioSystem (unsigned int array [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify);
 
 void frame (const char modify);
 
-#ifdef linux
+int cursor (chtype array [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify);
 
-    bool cursor (chtype array [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify);
-
-    bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify);
-
-#endif
+int coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify);
 
 unsigned char mygetch (void);
 

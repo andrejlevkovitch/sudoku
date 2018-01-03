@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include "sudlib.h"
 
-bool ioSystem (unsigned int matrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)
+int ioSystem (unsigned int matrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)
 {
     bool biColorType = true;//судоку выводится в двух чередующихся цветах, поэтому, для облегчения условия, использую булевский тип
 
