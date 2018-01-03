@@ -86,11 +86,9 @@ void frame (const char modify);
 
     bool coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify);
 
-#else
-
-    unsigned char mygetch (void);
-
 #endif
+
+unsigned char mygetch (void);
 
 void message (const unsigned int numS, const unsigned int numC, const char operace, const unsigned char value);
 

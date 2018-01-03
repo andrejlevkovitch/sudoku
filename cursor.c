@@ -36,26 +36,10 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZ
         refresh ();
 
 #ifdef linux
-        if ((inputChar = getch()) == ESC && getch() == 91) {//стрелка = 3 байтам, 27 91 и далее значащий байт
-            switch (getch()) {//перемещение
-                case UP:
-                    if (koordY != Y0) koordY -= 1;
-                    break;
-                case DOWN:
-                    if (koordY != (Y0 + SIZE - 1)) koordY += 1;
-                    break;
-                case LEFT:
-                    if (koordX != (X0 + 1)) koordX -= 2;
-                    break;
-                case RIGHT:
-                    if (koordX != (X0 + 1 + (SIZE - 1) * 2)) koordX += 2;
-                    break;
-            }
-
-            inputChar = 0;
-        }
+        if ((inputChar = getch()) == ESC && getch() == 91) { //стрелка = 3 байтам, 27 91 и далее значащий байт
 #else
         if ((inputChar = mygetch()) == ARROW) {
+#endif
             switch (mygetch()) {
                 case UP:
                     if (koordY != Y0) koordY -= 1;
@@ -70,9 +54,10 @@ bool cursor (chtype outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZ
                     if (koordX != (X0 + 1 + (SIZE - 1) * 2)) koordX += 2;
                     break;
             }
+#ifdef linux             
+            inputChar = 0;
+#endif            
         }
-#endif
-
         else {
             if (inputChar != ESC && modify != DECISION) {
                 if ((emptyValueCounter != 0 || errorStore [MAXCROSSDIGIT] != 0) && inputChar != CONFIRM) {//ввод возможен пока судоку не решено
