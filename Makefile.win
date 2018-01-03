@@ -64,5 +64,5 @@ message.o: message.c
 	gcc -c message.c -Wall
 
 clean:
-	rm -f *.o *.a *.so sudoku
+	rm -f *.o *.a *.so sudoku.exe
 
