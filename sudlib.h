@@ -1,7 +1,5 @@
 //sudlib.h - заголовочный файл, включающий объявление всех используемых ф-ций в программе
 
-#include <curses.h>
-
 #define FLAGQ 5//количество используемых флагов
 
 #define SIZE 9
@@ -76,9 +74,9 @@ int ioSystem (unsigned int array [][SIZE], const unsigned char type, const unsig
 
 void frame (const char modify);
 
-int cursor (chtype array [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify);
+int cursor (long array [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify);
 
-int coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify);
+int coincidence (long array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify);
 
 unsigned char mygetch (void);
 

@@ -4,7 +4,7 @@
 #include <curses.h>
 #include <stdbool.h>
 
-int coincidence (chtype array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify)
+int coincidence (long array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify)
 {
     bool indicator = false;//индикатор совпадений
     bool stopIter = false;

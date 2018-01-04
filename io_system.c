@@ -16,7 +16,7 @@ int ioSystem (unsigned int matrix [][SIZE], const unsigned char type, const unsi
     unsigned int windokuKoords [SIZE * 4 + 1] = {11, 12, 21, 22, 13, 15, 23, 25, 16, 17, 26, 27, 31, 32, 51, 52, 33, 35, 53, 55, 36, 37, 56, 57, 61, 62, 71, 72, 63, 65, 73, 75, 66, 67, 76, 77, 0};//координаты Виндоку
     unsigned int diagonalKoords [SIZE + SIZE] = {0, 11, 22, 8, 17, 26, 33, 35, 44, 53, 55, 62, 71, 80, 66, 77, 88, 0};//диагональные координаты
 
-    chtype outputElements [SIZE][SIZE] = {};//выводная матрица
+    long outputElements [SIZE][SIZE] = {};//выводная матрица
 
     frame(modify);//рамка
 
