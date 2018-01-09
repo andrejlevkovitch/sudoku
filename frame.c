@@ -27,15 +27,7 @@ void frame (const char modify)
     mvprintw (Y0, X0 + 22, "%s", "Turn number: ");
     mvprintw (Y0 + 1, X0 + 22, "%s", "Empty values: ");
 
-#ifdef linux
-
-    mvprintw (Y0 + 7, X0 + 22, "%s", "If you want to leave the game, press ESC (twice).");
-
-#else
-
     mvprintw (Y0 + 7, X0 + 22, "%s", "If you want to leave the game, press ESC.");
-
-#endif
 
     move (Y0 + 8, X0 + 22);
     switch (modify) {//вывод в зависимости от модификатора

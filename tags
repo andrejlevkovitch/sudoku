@@ -1,0 +1,52 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+COINCIDENCE	sudlib.h	23;"	d
+CONFIRM	sudlib.h	15;"	d
+CONFIRM	sudlib.h	17;"	d
+CREATURE	sudlib.h	33;"	d
+DECISION	sudlib.h	31;"	d
+DEFAULT	sudlib.h	30;"	d
+DIAGONAL	sudlib.h	35;"	d
+ERROR	sudlib.h	21;"	d
+ERROR_STRING	sudlib.h	9;"	d
+ESC	sudlib.h	27;"	d
+FLAGQ	sudlib.h	3;"	d
+GAME	sudlib.h	25;"	d
+GIRANDOLA	sudlib.h	32;"	d
+INPUT	sudlib.h	20;"	d
+MAXCROSSDIGIT	sudlib.h	6;"	d
+REMOVE	sudlib.h	22;"	d
+SIZE	sudlib.h	5;"	d
+SOLUTION	sudlib.h	29;"	d
+UNKN_ELEMENT	sudlib.h	7;"	d
+WIN	sudlib.h	24;"	d
+WINDOKU	sudlib.h	34;"	d
+X0	sudlib.h	12;"	d
+Y0	sudlib.h	11;"	d
+coincidence	coincidence.c	/^int coincidence (long array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify)$/;"	f
+colors	colors.c	/^void colors (void)$/;"	f
+cursor	cursor.c	/^int cursor (long outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)$/;"	f
+decision	decision.c	/^void decision (unsigned int arrayS [][SIZE + 1], unsigned int arrayC [][SIZE + 1], unsigned int matrix [][SIZE])$/;"	f
+flags	flags.c	/^char flags (int argc, char *argv [])$/;"	f
+forecasting	forecasting.c	/^void forecasting (unsigned int basisArr [][SIZE], signed int prognoz [][SIZE][SIZE + 1], unsigned int string, unsigned int colum, char variety)$/;"	f
+frame	frame.c	/^void frame (const char modify)$/;"	f
+initialization	init.c	/^void initialization (unsigned int array [][SIZE + 1])$/;"	f
+inputPsblS	input_psbl_sc.c	/^void inputPsblS (unsigned int psblArr [][SIZE + 1], const unsigned int matrix [][SIZE])$/;"	f
+inputType	input_type.c	/^unsigned char inputType (void)$/;"	f
+ioSystem	io_system.c	/^int ioSystem (unsigned int matrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)$/;"	f
+main	main.c	/^int main (int argc, char *argv [])$/;"	f
+message	message.c	/^void message (const unsigned int numS, const unsigned int numC, const char operace, const unsigned char value)$/;"	f
+mygetch	mygetch.c	/^unsigned char mygetch (void)$/;"	f
+numCros	num_of_cros.c	/^unsigned int numCros (void)$/;"	f
+psblSC	psbl_sc.c	/^void psblSC (unsigned int arrayS [][SIZE + 1], unsigned int arrayC [][SIZE + 1], unsigned int matrix [][SIZE])$/;"	f
+randArr	rand_array.c	/^void randArr (unsigned int outputArr[][SIZE])$/;"	f
+randArrSpecial	rand_array_special.c	/^void randArrSpecial (unsigned int outputArr [][SIZE], const char variety)$/;"	f
+revers	revers.c	/^void revers (unsigned int array [][SIZE]) $/;"	f
+sortArr	sort_array.c	/^void sortArr (unsigned int array [][SIZE], const unsigned int endArr)$/;"	f
+subs	substitution.c	/^void subs (unsigned int array1 [][SIZE + 1], unsigned int array2 [][SIZE + 1])$/;"	f
+sudMaker	sud_maker.c	/^void sudMaker (unsigned int matrix [][SIZE], const unsigned int rmDigits)$/;"	f
+zeros	zeros.c	/^void zeros (unsigned char array [])$/;"	f

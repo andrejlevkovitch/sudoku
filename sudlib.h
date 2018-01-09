@@ -12,23 +12,9 @@
 #define X0 2
 
 #ifdef linux
-    #define UP 65//стрелки
-    #define DOWN 66
-    #define RIGHT 67
-    #define LEFT 68
-
-    #define DELETE 127
     #define CONFIRM '\n'
 #else
-    #define UP 72
-    #define DOWN 80
-    #define RIGHT 77
-    #define LEFT 75
-
-    #define DELETE 8
     #define CONFIRM 13
-
-    #define ARROW 224
 #endif
 
 #define INPUT 'i'//для мессенджа
@@ -77,8 +63,6 @@ void frame (const char modify);
 int cursor (long array [][SIZE], const unsigned int basisMatrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify);
 
 int coincidence (long array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify);
-
-unsigned char mygetch (void);
 
 void message (const unsigned int numS, const unsigned int numC, const char operace, const unsigned char value);
 
