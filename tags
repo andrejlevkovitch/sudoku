@@ -4,27 +4,26 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-COINCIDENCE	sudlib.h	23;"	d
-CONFIRM	sudlib.h	15;"	d
-CONFIRM	sudlib.h	17;"	d
-CREATURE	sudlib.h	33;"	d
-DECISION	sudlib.h	31;"	d
-DEFAULT	sudlib.h	30;"	d
-DIAGONAL	sudlib.h	35;"	d
-ERROR	sudlib.h	21;"	d
+COINCIDENCE	sudlib.h	19;"	d
+CONFIRM	sudlib.h	14;"	d
+CREATURE	sudlib.h	29;"	d
+DECISION	sudlib.h	27;"	d
+DEFAULT	sudlib.h	26;"	d
+DIAGONAL	sudlib.h	31;"	d
+ERROR	sudlib.h	17;"	d
 ERROR_STRING	sudlib.h	9;"	d
-ESC	sudlib.h	27;"	d
+ESC	sudlib.h	23;"	d
 FLAGQ	sudlib.h	3;"	d
-GAME	sudlib.h	25;"	d
-GIRANDOLA	sudlib.h	32;"	d
-INPUT	sudlib.h	20;"	d
+GAME	sudlib.h	21;"	d
+GIRANDOLA	sudlib.h	28;"	d
+INPUT	sudlib.h	16;"	d
 MAXCROSSDIGIT	sudlib.h	6;"	d
-REMOVE	sudlib.h	22;"	d
+REMOVE	sudlib.h	18;"	d
 SIZE	sudlib.h	5;"	d
-SOLUTION	sudlib.h	29;"	d
+SOLUTION	sudlib.h	25;"	d
 UNKN_ELEMENT	sudlib.h	7;"	d
-WIN	sudlib.h	24;"	d
-WINDOKU	sudlib.h	34;"	d
+WIN	sudlib.h	20;"	d
+WINDOKU	sudlib.h	30;"	d
 X0	sudlib.h	12;"	d
 Y0	sudlib.h	11;"	d
 coincidence	coincidence.c	/^int coincidence (long array [][SIZE], const unsigned int numS, const unsigned int numC, const char modify)$/;"	f
@@ -40,7 +39,6 @@ inputType	input_type.c	/^unsigned char inputType (void)$/;"	f
 ioSystem	io_system.c	/^int ioSystem (unsigned int matrix [][SIZE], const unsigned char type, const unsigned int quantityCrosDigits, const char modify)$/;"	f
 main	main.c	/^int main (int argc, char *argv [])$/;"	f
 message	message.c	/^void message (const unsigned int numS, const unsigned int numC, const char operace, const unsigned char value)$/;"	f
-mygetch	mygetch.c	/^unsigned char mygetch (void)$/;"	f
 numCros	num_of_cros.c	/^unsigned int numCros (void)$/;"	f
 psblSC	psbl_sc.c	/^void psblSC (unsigned int arrayS [][SIZE + 1], unsigned int arrayC [][SIZE + 1], unsigned int matrix [][SIZE])$/;"	f
 randArr	rand_array.c	/^void randArr (unsigned int outputArr[][SIZE])$/;"	f
