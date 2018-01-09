@@ -1,7 +1,7 @@
 # Makefile for sudoku project, Windows
 
-sudoku: main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o
-	gcc -o sudoku main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o -lpdcurses -Wall
+sudoku: main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o
+	gcc -o sudoku main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o -lpdcurses -Wall
 
 main.o: main.c
 	gcc -c main.c -Wall
@@ -53,9 +53,6 @@ frame.o: frame.c
 
 cursor.o: cursor.c
 	gcc -c cursor.c -Wall
-
-mygetch.o: mygetch.c
-	gcc -c mygetch.c -Wall
 
 coincidence.o: coincidence.c
 	gcc -c coincidence.c -Wall

@@ -111,7 +111,6 @@ main.c
             frame.c
             cursor.c
             {
-                mygetch.c (только на windows)
                 coincidence.c
                 message.c
             }

@@ -11,11 +11,7 @@
 #define Y0 5//начальная позиция вывода судоку в системе ввода-вывода
 #define X0 2
 
-#ifdef linux
-    #define CONFIRM '\n'
-#else
-    #define CONFIRM 13
-#endif
+#define CONFIRM '\n'
 
 #define INPUT 'i'//для мессенджа
 #define ERROR 'e'

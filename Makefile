@@ -3,8 +3,8 @@
 sudoku: main.o libsudoku.so
 	clang -o sudoku -lncurses -L. -lsudoku -Wall
 
-libsudoku.so: main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o
-	clang -shared -o libsudoku.so main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o mygetch.o -Wall
+libsudoku.so: main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o
+	clang -shared -o libsudoku.so main.o flags.o input_type.o num_of_cros.o  init.o   sud_maker.o psbl_sc.o input_psbl_sc.o revers.o decision.o substitution.o io_system.o colors.o frame.o cursor.o message.o coincidence.o rand_array_special.o forecasting.o -Wall
 	rm -f *.o
 
 main.o: main.c
@@ -63,9 +63,6 @@ coincidence.o: coincidence.c
 
 message.o: message.c
 	clang -c -fPIC message.c -Wall
-
-mygetch.o: mygetch.c	
-	clang -c -fPIC mygetch.c -Wall
 
 clean:
 	rm -f *.o *.a *.so sudoku sudoku.exe
