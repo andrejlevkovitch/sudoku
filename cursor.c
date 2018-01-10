@@ -160,10 +160,10 @@ int cursor (long outputMatrix [][SIZE], const unsigned int basisMatrix [][SIZE],
                                 ++turnCounter;
                             }
                         }
-                    }
 
-                    if (emptyValueCounter == 0 && (errorStore [MAXCROSSDIGIT]) == 0 && quantityCrosDigits != 0) {//сообщение о победе, находится сдесь для одного-единственного вывода
-                        message (string, colum, WIN, UNKN_ELEMENT);
+                        if (emptyValueCounter == 0 && (errorStore [MAXCROSSDIGIT]) == 0 && quantityCrosDigits != 0) {//сообщение о победе, находится сдесь для одного-единственного вывода
+                            message (string, colum, WIN, UNKN_ELEMENT);
+                        }
                     }
 
                 }
