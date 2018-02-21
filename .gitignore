@@ -5,4 +5,5 @@ sudoku
 *.so
 cmake_install.cmake
 cmake_uninstall.cmake
-CmakeCache.txt
+CMakeCache.txt
+CMakeFiles/
