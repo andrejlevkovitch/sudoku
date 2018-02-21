@@ -3,7 +3,3 @@
 sudoku
 *.a
 *.so
-print_mas.c
-zeros.c
-sort_array.c
-rand_array.c

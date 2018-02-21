@@ -1,0 +1,2 @@
+/usr/lib/libsud.so
+/usr/local/bin/sudoku

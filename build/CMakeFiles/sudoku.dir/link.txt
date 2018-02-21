@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/sudoku.dir/sources/main.c.o  -o sudoku libsud.so -lncurses -Wl,-rpath,/home/andrej/Public/git/sudoku/build: 
