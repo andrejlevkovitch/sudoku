@@ -1,6 +1,6 @@
 //rand_array_special.c - рандомизация для особых случаев
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 #include <stdlib.h>
 #include <stdbool.h>
 #include <time.h>

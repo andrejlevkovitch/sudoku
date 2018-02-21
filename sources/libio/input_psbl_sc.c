@@ -1,6 +1,6 @@
 //input_psbl_sc.c - вводит возможные значения в массивы возможных чисел
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 
 void inputPsblS (unsigned int psblArr [][SIZE + 1], const unsigned int matrix [][SIZE])
 {

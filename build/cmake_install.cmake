@@ -57,6 +57,30 @@ file(INSTALL DESTINATION "/usr/lib" TYPE SHARED_LIBRARY FILES "/home/andrej/Publ
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  if(EXISTS "$ENV{DESTDIR}/usr/lib/libio.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/libio.so")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}/usr/lib/libio.so"
+         RPATH "")
+  endif()
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/usr/lib/libio.so")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/usr/lib" TYPE SHARED_LIBRARY FILES "/home/andrej/Public/git/sudoku/build/libio.so")
+  if(EXISTS "$ENV{DESTDIR}/usr/lib/libio.so" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/libio.so")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}/usr/lib/libio.so")
+    endif()
+  endif()
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   if(EXISTS "$ENV{DESTDIR}/usr/local/bin/sudoku" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/bin/sudoku")
     file(RPATH_CHECK

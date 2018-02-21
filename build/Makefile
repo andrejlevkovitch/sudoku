@@ -89,17 +89,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -121,6 +110,17 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,19 @@ sud/fast:
 .PHONY : sud/fast
 
 #=============================================================================
+# Target rules for targets named io
+
+# Build rule for target.
+io: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 io
+.PHONY : io
+
+# fast build rule for target.
+io/fast:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/build
+.PHONY : io/fast
+
+#=============================================================================
 # Target rules for targets named sudoku
 
 # Build rule for target.
@@ -192,6 +205,195 @@ uninstall: cmake_check_build_system
 uninstall/fast:
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
+
+sources/libio/colors.o: sources/libio/colors.c.o
+
+.PHONY : sources/libio/colors.o
+
+# target to build an object file
+sources/libio/colors.c.o:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/colors.c.o
+.PHONY : sources/libio/colors.c.o
+
+sources/libio/colors.i: sources/libio/colors.c.i
+
+.PHONY : sources/libio/colors.i
+
+# target to preprocess a source file
+sources/libio/colors.c.i:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/colors.c.i
+.PHONY : sources/libio/colors.c.i
+
+sources/libio/colors.s: sources/libio/colors.c.s
+
+.PHONY : sources/libio/colors.s
+
+# target to generate assembly for a file
+sources/libio/colors.c.s:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/colors.c.s
+.PHONY : sources/libio/colors.c.s
+
+sources/libio/cursor.o: sources/libio/cursor.c.o
+
+.PHONY : sources/libio/cursor.o
+
+# target to build an object file
+sources/libio/cursor.c.o:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/cursor.c.o
+.PHONY : sources/libio/cursor.c.o
+
+sources/libio/cursor.i: sources/libio/cursor.c.i
+
+.PHONY : sources/libio/cursor.i
+
+# target to preprocess a source file
+sources/libio/cursor.c.i:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/cursor.c.i
+.PHONY : sources/libio/cursor.c.i
+
+sources/libio/cursor.s: sources/libio/cursor.c.s
+
+.PHONY : sources/libio/cursor.s
+
+# target to generate assembly for a file
+sources/libio/cursor.c.s:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/cursor.c.s
+.PHONY : sources/libio/cursor.c.s
+
+sources/libio/frame.o: sources/libio/frame.c.o
+
+.PHONY : sources/libio/frame.o
+
+# target to build an object file
+sources/libio/frame.c.o:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/frame.c.o
+.PHONY : sources/libio/frame.c.o
+
+sources/libio/frame.i: sources/libio/frame.c.i
+
+.PHONY : sources/libio/frame.i
+
+# target to preprocess a source file
+sources/libio/frame.c.i:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/frame.c.i
+.PHONY : sources/libio/frame.c.i
+
+sources/libio/frame.s: sources/libio/frame.c.s
+
+.PHONY : sources/libio/frame.s
+
+# target to generate assembly for a file
+sources/libio/frame.c.s:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/frame.c.s
+.PHONY : sources/libio/frame.c.s
+
+sources/libio/input_psbl_sc.o: sources/libio/input_psbl_sc.c.o
+
+.PHONY : sources/libio/input_psbl_sc.o
+
+# target to build an object file
+sources/libio/input_psbl_sc.c.o:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/input_psbl_sc.c.o
+.PHONY : sources/libio/input_psbl_sc.c.o
+
+sources/libio/input_psbl_sc.i: sources/libio/input_psbl_sc.c.i
+
+.PHONY : sources/libio/input_psbl_sc.i
+
+# target to preprocess a source file
+sources/libio/input_psbl_sc.c.i:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/input_psbl_sc.c.i
+.PHONY : sources/libio/input_psbl_sc.c.i
+
+sources/libio/input_psbl_sc.s: sources/libio/input_psbl_sc.c.s
+
+.PHONY : sources/libio/input_psbl_sc.s
+
+# target to generate assembly for a file
+sources/libio/input_psbl_sc.c.s:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/input_psbl_sc.c.s
+.PHONY : sources/libio/input_psbl_sc.c.s
+
+sources/libio/input_type.o: sources/libio/input_type.c.o
+
+.PHONY : sources/libio/input_type.o
+
+# target to build an object file
+sources/libio/input_type.c.o:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/input_type.c.o
+.PHONY : sources/libio/input_type.c.o
+
+sources/libio/input_type.i: sources/libio/input_type.c.i
+
+.PHONY : sources/libio/input_type.i
+
+# target to preprocess a source file
+sources/libio/input_type.c.i:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/input_type.c.i
+.PHONY : sources/libio/input_type.c.i
+
+sources/libio/input_type.s: sources/libio/input_type.c.s
+
+.PHONY : sources/libio/input_type.s
+
+# target to generate assembly for a file
+sources/libio/input_type.c.s:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/input_type.c.s
+.PHONY : sources/libio/input_type.c.s
+
+sources/libio/io_system.o: sources/libio/io_system.c.o
+
+.PHONY : sources/libio/io_system.o
+
+# target to build an object file
+sources/libio/io_system.c.o:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/io_system.c.o
+.PHONY : sources/libio/io_system.c.o
+
+sources/libio/io_system.i: sources/libio/io_system.c.i
+
+.PHONY : sources/libio/io_system.i
+
+# target to preprocess a source file
+sources/libio/io_system.c.i:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/io_system.c.i
+.PHONY : sources/libio/io_system.c.i
+
+sources/libio/io_system.s: sources/libio/io_system.c.s
+
+.PHONY : sources/libio/io_system.s
+
+# target to generate assembly for a file
+sources/libio/io_system.c.s:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/io_system.c.s
+.PHONY : sources/libio/io_system.c.s
+
+sources/libio/message.o: sources/libio/message.c.o
+
+.PHONY : sources/libio/message.o
+
+# target to build an object file
+sources/libio/message.c.o:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/message.c.o
+.PHONY : sources/libio/message.c.o
+
+sources/libio/message.i: sources/libio/message.c.i
+
+.PHONY : sources/libio/message.i
+
+# target to preprocess a source file
+sources/libio/message.c.i:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/message.c.i
+.PHONY : sources/libio/message.c.i
+
+sources/libio/message.s: sources/libio/message.c.s
+
+.PHONY : sources/libio/message.s
+
+# target to generate assembly for a file
+sources/libio/message.c.s:
+	$(MAKE) -f CMakeFiles/io.dir/build.make CMakeFiles/io.dir/sources/libio/message.c.s
+.PHONY : sources/libio/message.c.s
 
 sources/libsud/coincidence.o: sources/libsud/coincidence.c.o
 
@@ -219,60 +421,6 @@ sources/libsud/coincidence.s: sources/libsud/coincidence.c.s
 sources/libsud/coincidence.c.s:
 	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/coincidence.c.s
 .PHONY : sources/libsud/coincidence.c.s
-
-sources/libsud/colors.o: sources/libsud/colors.c.o
-
-.PHONY : sources/libsud/colors.o
-
-# target to build an object file
-sources/libsud/colors.c.o:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/colors.c.o
-.PHONY : sources/libsud/colors.c.o
-
-sources/libsud/colors.i: sources/libsud/colors.c.i
-
-.PHONY : sources/libsud/colors.i
-
-# target to preprocess a source file
-sources/libsud/colors.c.i:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/colors.c.i
-.PHONY : sources/libsud/colors.c.i
-
-sources/libsud/colors.s: sources/libsud/colors.c.s
-
-.PHONY : sources/libsud/colors.s
-
-# target to generate assembly for a file
-sources/libsud/colors.c.s:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/colors.c.s
-.PHONY : sources/libsud/colors.c.s
-
-sources/libsud/cursor.o: sources/libsud/cursor.c.o
-
-.PHONY : sources/libsud/cursor.o
-
-# target to build an object file
-sources/libsud/cursor.c.o:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/cursor.c.o
-.PHONY : sources/libsud/cursor.c.o
-
-sources/libsud/cursor.i: sources/libsud/cursor.c.i
-
-.PHONY : sources/libsud/cursor.i
-
-# target to preprocess a source file
-sources/libsud/cursor.c.i:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/cursor.c.i
-.PHONY : sources/libsud/cursor.c.i
-
-sources/libsud/cursor.s: sources/libsud/cursor.c.s
-
-.PHONY : sources/libsud/cursor.s
-
-# target to generate assembly for a file
-sources/libsud/cursor.c.s:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/cursor.c.s
-.PHONY : sources/libsud/cursor.c.s
 
 sources/libsud/decision.o: sources/libsud/decision.c.o
 
@@ -355,33 +503,6 @@ sources/libsud/forecasting.c.s:
 	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/forecasting.c.s
 .PHONY : sources/libsud/forecasting.c.s
 
-sources/libsud/frame.o: sources/libsud/frame.c.o
-
-.PHONY : sources/libsud/frame.o
-
-# target to build an object file
-sources/libsud/frame.c.o:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/frame.c.o
-.PHONY : sources/libsud/frame.c.o
-
-sources/libsud/frame.i: sources/libsud/frame.c.i
-
-.PHONY : sources/libsud/frame.i
-
-# target to preprocess a source file
-sources/libsud/frame.c.i:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/frame.c.i
-.PHONY : sources/libsud/frame.c.i
-
-sources/libsud/frame.s: sources/libsud/frame.c.s
-
-.PHONY : sources/libsud/frame.s
-
-# target to generate assembly for a file
-sources/libsud/frame.c.s:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/frame.c.s
-.PHONY : sources/libsud/frame.c.s
-
 sources/libsud/init.o: sources/libsud/init.c.o
 
 .PHONY : sources/libsud/init.o
@@ -408,114 +529,6 @@ sources/libsud/init.s: sources/libsud/init.c.s
 sources/libsud/init.c.s:
 	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/init.c.s
 .PHONY : sources/libsud/init.c.s
-
-sources/libsud/input_psbl_sc.o: sources/libsud/input_psbl_sc.c.o
-
-.PHONY : sources/libsud/input_psbl_sc.o
-
-# target to build an object file
-sources/libsud/input_psbl_sc.c.o:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o
-.PHONY : sources/libsud/input_psbl_sc.c.o
-
-sources/libsud/input_psbl_sc.i: sources/libsud/input_psbl_sc.c.i
-
-.PHONY : sources/libsud/input_psbl_sc.i
-
-# target to preprocess a source file
-sources/libsud/input_psbl_sc.c.i:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.i
-.PHONY : sources/libsud/input_psbl_sc.c.i
-
-sources/libsud/input_psbl_sc.s: sources/libsud/input_psbl_sc.c.s
-
-.PHONY : sources/libsud/input_psbl_sc.s
-
-# target to generate assembly for a file
-sources/libsud/input_psbl_sc.c.s:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.s
-.PHONY : sources/libsud/input_psbl_sc.c.s
-
-sources/libsud/input_type.o: sources/libsud/input_type.c.o
-
-.PHONY : sources/libsud/input_type.o
-
-# target to build an object file
-sources/libsud/input_type.c.o:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/input_type.c.o
-.PHONY : sources/libsud/input_type.c.o
-
-sources/libsud/input_type.i: sources/libsud/input_type.c.i
-
-.PHONY : sources/libsud/input_type.i
-
-# target to preprocess a source file
-sources/libsud/input_type.c.i:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/input_type.c.i
-.PHONY : sources/libsud/input_type.c.i
-
-sources/libsud/input_type.s: sources/libsud/input_type.c.s
-
-.PHONY : sources/libsud/input_type.s
-
-# target to generate assembly for a file
-sources/libsud/input_type.c.s:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/input_type.c.s
-.PHONY : sources/libsud/input_type.c.s
-
-sources/libsud/io_system.o: sources/libsud/io_system.c.o
-
-.PHONY : sources/libsud/io_system.o
-
-# target to build an object file
-sources/libsud/io_system.c.o:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/io_system.c.o
-.PHONY : sources/libsud/io_system.c.o
-
-sources/libsud/io_system.i: sources/libsud/io_system.c.i
-
-.PHONY : sources/libsud/io_system.i
-
-# target to preprocess a source file
-sources/libsud/io_system.c.i:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/io_system.c.i
-.PHONY : sources/libsud/io_system.c.i
-
-sources/libsud/io_system.s: sources/libsud/io_system.c.s
-
-.PHONY : sources/libsud/io_system.s
-
-# target to generate assembly for a file
-sources/libsud/io_system.c.s:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/io_system.c.s
-.PHONY : sources/libsud/io_system.c.s
-
-sources/libsud/message.o: sources/libsud/message.c.o
-
-.PHONY : sources/libsud/message.o
-
-# target to build an object file
-sources/libsud/message.c.o:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/message.c.o
-.PHONY : sources/libsud/message.c.o
-
-sources/libsud/message.i: sources/libsud/message.c.i
-
-.PHONY : sources/libsud/message.i
-
-# target to preprocess a source file
-sources/libsud/message.c.i:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/message.c.i
-.PHONY : sources/libsud/message.c.i
-
-sources/libsud/message.s: sources/libsud/message.c.s
-
-.PHONY : sources/libsud/message.s
-
-# target to generate assembly for a file
-sources/libsud/message.c.s:
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/message.c.s
-.PHONY : sources/libsud/message.c.s
 
 sources/libsud/num_of_cros.o: sources/libsud/num_of_cros.c.o
 
@@ -715,21 +728,37 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... sud"
+	@echo "... io"
 	@echo "... edit_cache"
 	@echo "... sudoku"
 	@echo "... uninstall"
-	@echo "... install/local"
-	@echo "... install/strip"
+	@echo "... sources/libio/colors.o"
+	@echo "... sources/libio/colors.i"
+	@echo "... sources/libio/colors.s"
+	@echo "... sources/libio/cursor.o"
+	@echo "... sources/libio/cursor.i"
+	@echo "... sources/libio/cursor.s"
+	@echo "... sources/libio/frame.o"
+	@echo "... sources/libio/frame.i"
+	@echo "... sources/libio/frame.s"
+	@echo "... sources/libio/input_psbl_sc.o"
+	@echo "... sources/libio/input_psbl_sc.i"
+	@echo "... sources/libio/input_psbl_sc.s"
+	@echo "... sources/libio/input_type.o"
+	@echo "... sources/libio/input_type.i"
+	@echo "... sources/libio/input_type.s"
+	@echo "... sources/libio/io_system.o"
+	@echo "... sources/libio/io_system.i"
+	@echo "... sources/libio/io_system.s"
+	@echo "... sources/libio/message.o"
+	@echo "... sources/libio/message.i"
+	@echo "... sources/libio/message.s"
 	@echo "... sources/libsud/coincidence.o"
 	@echo "... sources/libsud/coincidence.i"
 	@echo "... sources/libsud/coincidence.s"
-	@echo "... sources/libsud/colors.o"
-	@echo "... sources/libsud/colors.i"
-	@echo "... sources/libsud/colors.s"
-	@echo "... sources/libsud/cursor.o"
-	@echo "... sources/libsud/cursor.i"
-	@echo "... sources/libsud/cursor.s"
 	@echo "... sources/libsud/decision.o"
 	@echo "... sources/libsud/decision.i"
 	@echo "... sources/libsud/decision.s"
@@ -739,24 +768,9 @@ help:
 	@echo "... sources/libsud/forecasting.o"
 	@echo "... sources/libsud/forecasting.i"
 	@echo "... sources/libsud/forecasting.s"
-	@echo "... sources/libsud/frame.o"
-	@echo "... sources/libsud/frame.i"
-	@echo "... sources/libsud/frame.s"
 	@echo "... sources/libsud/init.o"
 	@echo "... sources/libsud/init.i"
 	@echo "... sources/libsud/init.s"
-	@echo "... sources/libsud/input_psbl_sc.o"
-	@echo "... sources/libsud/input_psbl_sc.i"
-	@echo "... sources/libsud/input_psbl_sc.s"
-	@echo "... sources/libsud/input_type.o"
-	@echo "... sources/libsud/input_type.i"
-	@echo "... sources/libsud/input_type.s"
-	@echo "... sources/libsud/io_system.o"
-	@echo "... sources/libsud/io_system.i"
-	@echo "... sources/libsud/io_system.s"
-	@echo "... sources/libsud/message.o"
-	@echo "... sources/libsud/message.i"
-	@echo "... sources/libsud/message.s"
 	@echo "... sources/libsud/num_of_cros.o"
 	@echo "... sources/libsud/num_of_cros.i"
 	@echo "... sources/libsud/num_of_cros.s"

@@ -1,0 +1,1 @@
+/usr/bin/cc  -fPIC   -shared -Wl,-soname,libio.so -o libio.so CMakeFiles/io.dir/sources/libio/frame.c.o CMakeFiles/io.dir/sources/libio/cursor.c.o CMakeFiles/io.dir/sources/libio/input_type.c.o CMakeFiles/io.dir/sources/libio/io_system.c.o CMakeFiles/io.dir/sources/libio/input_psbl_sc.c.o CMakeFiles/io.dir/sources/libio/message.c.o CMakeFiles/io.dir/sources/libio/colors.c.o 

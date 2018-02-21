@@ -57,105 +57,9 @@ include CMakeFiles/sud.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/sud.dir/flags.make
 
-CMakeFiles/sud.dir/sources/libsud/frame.c.o: CMakeFiles/sud.dir/flags.make
-CMakeFiles/sud.dir/sources/libsud/frame.c.o: ../sources/libsud/frame.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sud.dir/sources/libsud/frame.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/frame.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/frame.c
-
-CMakeFiles/sud.dir/sources/libsud/frame.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sud.dir/sources/libsud/frame.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrej/Public/git/sudoku/sources/libsud/frame.c > CMakeFiles/sud.dir/sources/libsud/frame.c.i
-
-CMakeFiles/sud.dir/sources/libsud/frame.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sud.dir/sources/libsud/frame.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrej/Public/git/sudoku/sources/libsud/frame.c -o CMakeFiles/sud.dir/sources/libsud/frame.c.s
-
-CMakeFiles/sud.dir/sources/libsud/frame.c.o.requires:
-
-.PHONY : CMakeFiles/sud.dir/sources/libsud/frame.c.o.requires
-
-CMakeFiles/sud.dir/sources/libsud/frame.c.o.provides: CMakeFiles/sud.dir/sources/libsud/frame.c.o.requires
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/frame.c.o.provides.build
-.PHONY : CMakeFiles/sud.dir/sources/libsud/frame.c.o.provides
-
-CMakeFiles/sud.dir/sources/libsud/frame.c.o.provides.build: CMakeFiles/sud.dir/sources/libsud/frame.c.o
-
-
-CMakeFiles/sud.dir/sources/libsud/cursor.c.o: CMakeFiles/sud.dir/flags.make
-CMakeFiles/sud.dir/sources/libsud/cursor.c.o: ../sources/libsud/cursor.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/sud.dir/sources/libsud/cursor.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/cursor.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/cursor.c
-
-CMakeFiles/sud.dir/sources/libsud/cursor.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sud.dir/sources/libsud/cursor.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrej/Public/git/sudoku/sources/libsud/cursor.c > CMakeFiles/sud.dir/sources/libsud/cursor.c.i
-
-CMakeFiles/sud.dir/sources/libsud/cursor.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sud.dir/sources/libsud/cursor.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrej/Public/git/sudoku/sources/libsud/cursor.c -o CMakeFiles/sud.dir/sources/libsud/cursor.c.s
-
-CMakeFiles/sud.dir/sources/libsud/cursor.c.o.requires:
-
-.PHONY : CMakeFiles/sud.dir/sources/libsud/cursor.c.o.requires
-
-CMakeFiles/sud.dir/sources/libsud/cursor.c.o.provides: CMakeFiles/sud.dir/sources/libsud/cursor.c.o.requires
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/cursor.c.o.provides.build
-.PHONY : CMakeFiles/sud.dir/sources/libsud/cursor.c.o.provides
-
-CMakeFiles/sud.dir/sources/libsud/cursor.c.o.provides.build: CMakeFiles/sud.dir/sources/libsud/cursor.c.o
-
-
-CMakeFiles/sud.dir/sources/libsud/input_type.c.o: CMakeFiles/sud.dir/flags.make
-CMakeFiles/sud.dir/sources/libsud/input_type.c.o: ../sources/libsud/input_type.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/sud.dir/sources/libsud/input_type.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/input_type.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/input_type.c
-
-CMakeFiles/sud.dir/sources/libsud/input_type.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sud.dir/sources/libsud/input_type.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrej/Public/git/sudoku/sources/libsud/input_type.c > CMakeFiles/sud.dir/sources/libsud/input_type.c.i
-
-CMakeFiles/sud.dir/sources/libsud/input_type.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sud.dir/sources/libsud/input_type.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrej/Public/git/sudoku/sources/libsud/input_type.c -o CMakeFiles/sud.dir/sources/libsud/input_type.c.s
-
-CMakeFiles/sud.dir/sources/libsud/input_type.c.o.requires:
-
-.PHONY : CMakeFiles/sud.dir/sources/libsud/input_type.c.o.requires
-
-CMakeFiles/sud.dir/sources/libsud/input_type.c.o.provides: CMakeFiles/sud.dir/sources/libsud/input_type.c.o.requires
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/input_type.c.o.provides.build
-.PHONY : CMakeFiles/sud.dir/sources/libsud/input_type.c.o.provides
-
-CMakeFiles/sud.dir/sources/libsud/input_type.c.o.provides.build: CMakeFiles/sud.dir/sources/libsud/input_type.c.o
-
-
-CMakeFiles/sud.dir/sources/libsud/io_system.c.o: CMakeFiles/sud.dir/flags.make
-CMakeFiles/sud.dir/sources/libsud/io_system.c.o: ../sources/libsud/io_system.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/sud.dir/sources/libsud/io_system.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/io_system.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/io_system.c
-
-CMakeFiles/sud.dir/sources/libsud/io_system.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sud.dir/sources/libsud/io_system.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrej/Public/git/sudoku/sources/libsud/io_system.c > CMakeFiles/sud.dir/sources/libsud/io_system.c.i
-
-CMakeFiles/sud.dir/sources/libsud/io_system.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sud.dir/sources/libsud/io_system.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrej/Public/git/sudoku/sources/libsud/io_system.c -o CMakeFiles/sud.dir/sources/libsud/io_system.c.s
-
-CMakeFiles/sud.dir/sources/libsud/io_system.c.o.requires:
-
-.PHONY : CMakeFiles/sud.dir/sources/libsud/io_system.c.o.requires
-
-CMakeFiles/sud.dir/sources/libsud/io_system.c.o.provides: CMakeFiles/sud.dir/sources/libsud/io_system.c.o.requires
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/io_system.c.o.provides.build
-.PHONY : CMakeFiles/sud.dir/sources/libsud/io_system.c.o.provides
-
-CMakeFiles/sud.dir/sources/libsud/io_system.c.o.provides.build: CMakeFiles/sud.dir/sources/libsud/io_system.c.o
-
-
 CMakeFiles/sud.dir/sources/libsud/coincidence.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/coincidence.c.o: ../sources/libsud/coincidence.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/sud.dir/sources/libsud/coincidence.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/sud.dir/sources/libsud/coincidence.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/coincidence.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/coincidence.c
 
 CMakeFiles/sud.dir/sources/libsud/coincidence.c.i: cmake_force
@@ -179,7 +83,7 @@ CMakeFiles/sud.dir/sources/libsud/coincidence.c.o.provides.build: CMakeFiles/sud
 
 CMakeFiles/sud.dir/sources/libsud/psbl_sc.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/psbl_sc.c.o: ../sources/libsud/psbl_sc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/sud.dir/sources/libsud/psbl_sc.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/sud.dir/sources/libsud/psbl_sc.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/psbl_sc.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/psbl_sc.c
 
 CMakeFiles/sud.dir/sources/libsud/psbl_sc.c.i: cmake_force
@@ -203,7 +107,7 @@ CMakeFiles/sud.dir/sources/libsud/psbl_sc.c.o.provides.build: CMakeFiles/sud.dir
 
 CMakeFiles/sud.dir/sources/libsud/rand_array_special.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/rand_array_special.c.o: ../sources/libsud/rand_array_special.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/sud.dir/sources/libsud/rand_array_special.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/sud.dir/sources/libsud/rand_array_special.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/rand_array_special.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/rand_array_special.c
 
 CMakeFiles/sud.dir/sources/libsud/rand_array_special.c.i: cmake_force
@@ -227,7 +131,7 @@ CMakeFiles/sud.dir/sources/libsud/rand_array_special.c.o.provides.build: CMakeFi
 
 CMakeFiles/sud.dir/sources/libsud/init.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/init.c.o: ../sources/libsud/init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/sud.dir/sources/libsud/init.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/sud.dir/sources/libsud/init.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/init.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/init.c
 
 CMakeFiles/sud.dir/sources/libsud/init.c.i: cmake_force
@@ -251,7 +155,7 @@ CMakeFiles/sud.dir/sources/libsud/init.c.o.provides.build: CMakeFiles/sud.dir/so
 
 CMakeFiles/sud.dir/sources/libsud/sud_maker.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/sud_maker.c.o: ../sources/libsud/sud_maker.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/sud.dir/sources/libsud/sud_maker.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/sud.dir/sources/libsud/sud_maker.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/sud_maker.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/sud_maker.c
 
 CMakeFiles/sud.dir/sources/libsud/sud_maker.c.i: cmake_force
@@ -275,7 +179,7 @@ CMakeFiles/sud.dir/sources/libsud/sud_maker.c.o.provides.build: CMakeFiles/sud.d
 
 CMakeFiles/sud.dir/sources/libsud/flags.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/flags.c.o: ../sources/libsud/flags.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/sud.dir/sources/libsud/flags.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/sud.dir/sources/libsud/flags.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/flags.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/flags.c
 
 CMakeFiles/sud.dir/sources/libsud/flags.c.i: cmake_force
@@ -297,33 +201,9 @@ CMakeFiles/sud.dir/sources/libsud/flags.c.o.provides: CMakeFiles/sud.dir/sources
 CMakeFiles/sud.dir/sources/libsud/flags.c.o.provides.build: CMakeFiles/sud.dir/sources/libsud/flags.c.o
 
 
-CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o: CMakeFiles/sud.dir/flags.make
-CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o: ../sources/libsud/input_psbl_sc.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/input_psbl_sc.c
-
-CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrej/Public/git/sudoku/sources/libsud/input_psbl_sc.c > CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.i
-
-CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrej/Public/git/sudoku/sources/libsud/input_psbl_sc.c -o CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.s
-
-CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o.requires:
-
-.PHONY : CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o.requires
-
-CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o.provides: CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o.requires
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o.provides.build
-.PHONY : CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o.provides
-
-CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o.provides.build: CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o
-
-
 CMakeFiles/sud.dir/sources/libsud/substitution.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/substitution.c.o: ../sources/libsud/substitution.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/sud.dir/sources/libsud/substitution.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/sud.dir/sources/libsud/substitution.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/substitution.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/substitution.c
 
 CMakeFiles/sud.dir/sources/libsud/substitution.c.i: cmake_force
@@ -347,7 +227,7 @@ CMakeFiles/sud.dir/sources/libsud/substitution.c.o.provides.build: CMakeFiles/su
 
 CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o: ../sources/libsud/num_of_cros.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/num_of_cros.c
 
 CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.i: cmake_force
@@ -369,33 +249,9 @@ CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o.provides: CMakeFiles/sud.dir/s
 CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o.provides.build: CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o
 
 
-CMakeFiles/sud.dir/sources/libsud/message.c.o: CMakeFiles/sud.dir/flags.make
-CMakeFiles/sud.dir/sources/libsud/message.c.o: ../sources/libsud/message.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/sud.dir/sources/libsud/message.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/message.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/message.c
-
-CMakeFiles/sud.dir/sources/libsud/message.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sud.dir/sources/libsud/message.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrej/Public/git/sudoku/sources/libsud/message.c > CMakeFiles/sud.dir/sources/libsud/message.c.i
-
-CMakeFiles/sud.dir/sources/libsud/message.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sud.dir/sources/libsud/message.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrej/Public/git/sudoku/sources/libsud/message.c -o CMakeFiles/sud.dir/sources/libsud/message.c.s
-
-CMakeFiles/sud.dir/sources/libsud/message.c.o.requires:
-
-.PHONY : CMakeFiles/sud.dir/sources/libsud/message.c.o.requires
-
-CMakeFiles/sud.dir/sources/libsud/message.c.o.provides: CMakeFiles/sud.dir/sources/libsud/message.c.o.requires
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/message.c.o.provides.build
-.PHONY : CMakeFiles/sud.dir/sources/libsud/message.c.o.provides
-
-CMakeFiles/sud.dir/sources/libsud/message.c.o.provides.build: CMakeFiles/sud.dir/sources/libsud/message.c.o
-
-
 CMakeFiles/sud.dir/sources/libsud/revers.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/revers.c.o: ../sources/libsud/revers.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/sud.dir/sources/libsud/revers.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/sud.dir/sources/libsud/revers.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/revers.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/revers.c
 
 CMakeFiles/sud.dir/sources/libsud/revers.c.i: cmake_force
@@ -419,7 +275,7 @@ CMakeFiles/sud.dir/sources/libsud/revers.c.o.provides.build: CMakeFiles/sud.dir/
 
 CMakeFiles/sud.dir/sources/libsud/decision.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/decision.c.o: ../sources/libsud/decision.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/sud.dir/sources/libsud/decision.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/sud.dir/sources/libsud/decision.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/decision.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/decision.c
 
 CMakeFiles/sud.dir/sources/libsud/decision.c.i: cmake_force
@@ -443,7 +299,7 @@ CMakeFiles/sud.dir/sources/libsud/decision.c.o.provides.build: CMakeFiles/sud.di
 
 CMakeFiles/sud.dir/sources/libsud/forecasting.c.o: CMakeFiles/sud.dir/flags.make
 CMakeFiles/sud.dir/sources/libsud/forecasting.c.o: ../sources/libsud/forecasting.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/sud.dir/sources/libsud/forecasting.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/sud.dir/sources/libsud/forecasting.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/forecasting.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/forecasting.c
 
 CMakeFiles/sud.dir/sources/libsud/forecasting.c.i: cmake_force
@@ -465,75 +321,37 @@ CMakeFiles/sud.dir/sources/libsud/forecasting.c.o.provides: CMakeFiles/sud.dir/s
 CMakeFiles/sud.dir/sources/libsud/forecasting.c.o.provides.build: CMakeFiles/sud.dir/sources/libsud/forecasting.c.o
 
 
-CMakeFiles/sud.dir/sources/libsud/colors.c.o: CMakeFiles/sud.dir/flags.make
-CMakeFiles/sud.dir/sources/libsud/colors.c.o: ../sources/libsud/colors.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/sud.dir/sources/libsud/colors.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/sud.dir/sources/libsud/colors.c.o   -c /home/andrej/Public/git/sudoku/sources/libsud/colors.c
-
-CMakeFiles/sud.dir/sources/libsud/colors.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/sud.dir/sources/libsud/colors.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/andrej/Public/git/sudoku/sources/libsud/colors.c > CMakeFiles/sud.dir/sources/libsud/colors.c.i
-
-CMakeFiles/sud.dir/sources/libsud/colors.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/sud.dir/sources/libsud/colors.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/andrej/Public/git/sudoku/sources/libsud/colors.c -o CMakeFiles/sud.dir/sources/libsud/colors.c.s
-
-CMakeFiles/sud.dir/sources/libsud/colors.c.o.requires:
-
-.PHONY : CMakeFiles/sud.dir/sources/libsud/colors.c.o.requires
-
-CMakeFiles/sud.dir/sources/libsud/colors.c.o.provides: CMakeFiles/sud.dir/sources/libsud/colors.c.o.requires
-	$(MAKE) -f CMakeFiles/sud.dir/build.make CMakeFiles/sud.dir/sources/libsud/colors.c.o.provides.build
-.PHONY : CMakeFiles/sud.dir/sources/libsud/colors.c.o.provides
-
-CMakeFiles/sud.dir/sources/libsud/colors.c.o.provides.build: CMakeFiles/sud.dir/sources/libsud/colors.c.o
-
-
 # Object files for target sud
 sud_OBJECTS = \
-"CMakeFiles/sud.dir/sources/libsud/frame.c.o" \
-"CMakeFiles/sud.dir/sources/libsud/cursor.c.o" \
-"CMakeFiles/sud.dir/sources/libsud/input_type.c.o" \
-"CMakeFiles/sud.dir/sources/libsud/io_system.c.o" \
 "CMakeFiles/sud.dir/sources/libsud/coincidence.c.o" \
 "CMakeFiles/sud.dir/sources/libsud/psbl_sc.c.o" \
 "CMakeFiles/sud.dir/sources/libsud/rand_array_special.c.o" \
 "CMakeFiles/sud.dir/sources/libsud/init.c.o" \
 "CMakeFiles/sud.dir/sources/libsud/sud_maker.c.o" \
 "CMakeFiles/sud.dir/sources/libsud/flags.c.o" \
-"CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o" \
 "CMakeFiles/sud.dir/sources/libsud/substitution.c.o" \
 "CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o" \
-"CMakeFiles/sud.dir/sources/libsud/message.c.o" \
 "CMakeFiles/sud.dir/sources/libsud/revers.c.o" \
 "CMakeFiles/sud.dir/sources/libsud/decision.c.o" \
-"CMakeFiles/sud.dir/sources/libsud/forecasting.c.o" \
-"CMakeFiles/sud.dir/sources/libsud/colors.c.o"
+"CMakeFiles/sud.dir/sources/libsud/forecasting.c.o"
 
 # External object files for target sud
 sud_EXTERNAL_OBJECTS =
 
-libsud.so: CMakeFiles/sud.dir/sources/libsud/frame.c.o
-libsud.so: CMakeFiles/sud.dir/sources/libsud/cursor.c.o
-libsud.so: CMakeFiles/sud.dir/sources/libsud/input_type.c.o
-libsud.so: CMakeFiles/sud.dir/sources/libsud/io_system.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/coincidence.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/psbl_sc.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/rand_array_special.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/init.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/sud_maker.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/flags.c.o
-libsud.so: CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/substitution.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o
-libsud.so: CMakeFiles/sud.dir/sources/libsud/message.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/revers.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/decision.c.o
 libsud.so: CMakeFiles/sud.dir/sources/libsud/forecasting.c.o
-libsud.so: CMakeFiles/sud.dir/sources/libsud/colors.c.o
 libsud.so: CMakeFiles/sud.dir/build.make
 libsud.so: CMakeFiles/sud.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Linking C shared library libsud.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking C shared library libsud.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sud.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -541,24 +359,17 @@ CMakeFiles/sud.dir/build: libsud.so
 
 .PHONY : CMakeFiles/sud.dir/build
 
-CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/frame.c.o.requires
-CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/cursor.c.o.requires
-CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/input_type.c.o.requires
-CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/io_system.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/coincidence.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/psbl_sc.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/rand_array_special.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/init.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/sud_maker.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/flags.c.o.requires
-CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/input_psbl_sc.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/substitution.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/num_of_cros.c.o.requires
-CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/message.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/revers.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/decision.c.o.requires
 CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/forecasting.c.o.requires
-CMakeFiles/sud.dir/requires: CMakeFiles/sud.dir/sources/libsud/colors.c.o.requires
 
 .PHONY : CMakeFiles/sud.dir/requires
 

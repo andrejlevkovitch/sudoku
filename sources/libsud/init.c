@@ -1,6 +1,6 @@
 //init.c - инициализирует массив цифрами 0-8 в каждой строке
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 
 void initialization (unsigned int array [][SIZE + 1])
 {

@@ -1,6 +1,6 @@
 //colors.c - цвета
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 #include <curses.h>
 #include <stdlib.h>
 

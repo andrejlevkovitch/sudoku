@@ -6,43 +6,25 @@
 
 #IncludeRegexTransform: 
 
-../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 
 /home/andrej/Public/git/sudoku/sources/libsud/coincidence.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 curses.h
 -
 stdbool.h
--
-
-/home/andrej/Public/git/sudoku/sources/libsud/colors.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
-curses.h
--
-stdlib.h
--
-
-/home/andrej/Public/git/sudoku/sources/libsud/cursor.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
-curses.h
--
-stdbool.h
--
-unistd.h
 -
 
 /home/andrej/Public/git/sudoku/sources/libsud/decision.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 stdbool.h
 -
 
 /home/andrej/Public/git/sudoku/sources/libsud/flags.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 stdio.h
 -
 stdlib.h
@@ -51,54 +33,18 @@ string.h
 -
 
 /home/andrej/Public/git/sudoku/sources/libsud/forecasting.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 stdbool.h
--
-
-/home/andrej/Public/git/sudoku/sources/libsud/frame.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
-curses.h
 -
 
 /home/andrej/Public/git/sudoku/sources/libsud/init.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
-
-/home/andrej/Public/git/sudoku/sources/libsud/input_psbl_sc.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
-
-/home/andrej/Public/git/sudoku/sources/libsud/input_type.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
-curses.h
--
-stdio.h
--
-stdlib.h
--
-
-/home/andrej/Public/git/sudoku/sources/libsud/io_system.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
-curses.h
--
-stdbool.h
--
-
-/home/andrej/Public/git/sudoku/sources/libsud/message.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
-curses.h
--
-string.h
--
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 
 /home/andrej/Public/git/sudoku/sources/libsud/num_of_cros.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 curses.h
 -
 stdio.h
@@ -107,12 +53,12 @@ stdlib.h
 -
 
 /home/andrej/Public/git/sudoku/sources/libsud/psbl_sc.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 
 /home/andrej/Public/git/sudoku/sources/libsud/rand_array_special.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 stdlib.h
 -
 stdbool.h
@@ -123,20 +69,20 @@ string.h
 -
 
 /home/andrej/Public/git/sudoku/sources/libsud/revers.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 string.h
 -
 
 /home/andrej/Public/git/sudoku/sources/libsud/substitution.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 string.h
 -
 
 /home/andrej/Public/git/sudoku/sources/libsud/sud_maker.c
-sudlib.h
-/home/andrej/Public/git/sudoku/sources/libsud/sudlib.h
+../../include/sudlib.h
+/home/andrej/Public/git/sudoku/include/sudlib.h
 stdlib.h
 -
 time.h

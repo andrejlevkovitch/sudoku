@@ -1,2 +1,3 @@
 /usr/lib/libsud.so
+/usr/lib/libio.so
 /usr/local/bin/sudoku

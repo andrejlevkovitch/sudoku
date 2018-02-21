@@ -1,6 +1,6 @@
 //num_of_cros.c - вводит количество вычеркиваемых элементов
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 #include <curses.h>
 #include <stdio.h>
 #include <stdlib.h>

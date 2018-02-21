@@ -1,6 +1,6 @@
 //io.c - система ввода-вывода
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 #include <curses.h>
 #include <stdbool.h>
 

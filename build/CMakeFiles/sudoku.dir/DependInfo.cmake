@@ -16,6 +16,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/andrej/Public/git/sudoku/build/CMakeFiles/sud.dir/DependInfo.cmake"
+  "/home/andrej/Public/git/sudoku/build/CMakeFiles/io.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

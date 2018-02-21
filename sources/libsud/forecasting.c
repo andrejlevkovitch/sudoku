@@ -1,6 +1,6 @@
 //forecasting.c - редактрирование матрицы прогноза
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 #include <stdbool.h>
 
 void forecasting (unsigned int basisArr [][SIZE], signed int prognoz [][SIZE][SIZE + 1], unsigned int string, unsigned int colum, char variety)

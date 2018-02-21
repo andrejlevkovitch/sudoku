@@ -1,6 +1,6 @@
 //coincidence.c - проверяет нет ли вводимого значения в уже имеющемся массиве
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 #include <curses.h>
 #include <stdbool.h>
 
@@ -20,7 +20,7 @@ int coincidence (long array [][SIZE], const unsigned int numS, const unsigned in
     unsigned int string = 0;
     unsigned int colum = 0;
 
-    chtype tempStore = array [numS][numC];
+    long tempStore = array [numS][numC];
     const unsigned char value = tempStore;
 
     array [numS][numC] = UNKN_ELEMENT;//чтобы проверяемый элемент не мешал

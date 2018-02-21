@@ -1,6 +1,6 @@
 //revers.c - зеркально отображает матрицу судоку
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 #include <string.h>
 
 void revers (unsigned int array [][SIZE]) 

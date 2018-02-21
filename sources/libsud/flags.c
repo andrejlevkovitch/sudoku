@@ -1,6 +1,6 @@
 //flags.c - флаги
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

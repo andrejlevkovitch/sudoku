@@ -1,6 +1,6 @@
 //mesage.c - выводит сообщения на экран
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 #include <curses.h>
 #include <string.h>
 

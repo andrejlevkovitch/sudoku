@@ -91,6 +91,7 @@ sudoku_EXTERNAL_OBJECTS =
 sudoku: CMakeFiles/sudoku.dir/sources/main.c.o
 sudoku: CMakeFiles/sudoku.dir/build.make
 sudoku: libsud.so
+sudoku: libio.so
 sudoku: CMakeFiles/sudoku.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/andrej/Public/git/sudoku/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable sudoku"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sudoku.dir/link.txt --verbose=$(VERBOSE)

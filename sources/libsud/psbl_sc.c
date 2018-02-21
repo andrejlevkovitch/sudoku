@@ -1,6 +1,6 @@
 //psbl_sc.c - формирует два массива возможных строк и столбцов
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 
 void psblSC (unsigned int arrayS [][SIZE + 1], unsigned int arrayC [][SIZE + 1], unsigned int matrix [][SIZE])
 {

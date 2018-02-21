@@ -1,6 +1,6 @@
 //cursor.c - передвигает курсор в поле судоку
 
-#include "sudlib.h"
+#include "../../include/sudlib.h"
 #include <curses.h>
 #include <stdbool.h>
 #include <unistd.h>
